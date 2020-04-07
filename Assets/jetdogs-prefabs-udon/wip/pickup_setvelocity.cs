@@ -22,7 +22,7 @@ public class pickup_setvelocity : UdonSharpBehaviour
     {
         if (state)
         {
-            PlayerApiref.SetVelocity(transform.rotation * direction * speed);
+            PlayerApiref.SetVelocity(transform.rotation * direction.normalized * speed);
         }
     }
 

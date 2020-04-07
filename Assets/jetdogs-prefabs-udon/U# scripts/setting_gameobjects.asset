@@ -514,6 +514,7 @@ MonoBehaviour:
       line: 51
       lineChar: 16
       spanCodeSection: 
+  hasInteractEvent: 1
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 

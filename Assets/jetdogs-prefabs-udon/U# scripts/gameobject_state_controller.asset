@@ -700,6 +700,7 @@ MonoBehaviour:
       line: 59
       lineChar: 16
       spanCodeSection: 
+  hasInteractEvent: 0
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 

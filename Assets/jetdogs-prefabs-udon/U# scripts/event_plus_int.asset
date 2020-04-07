@@ -382,6 +382,7 @@ MonoBehaviour:
       line: 22
       lineChar: 33
       spanCodeSection: 
+  hasInteractEvent: 1
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
