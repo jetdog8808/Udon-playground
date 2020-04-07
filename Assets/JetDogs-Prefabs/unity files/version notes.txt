@@ -1,0 +1,103 @@
+V4.0
+*removed legacy prefabs
+*updated some prefabs to use prefab varients and nested prefabs.
+*engine change
+*updated guns
+*removed smooth shift
+*updated info panel
+*remade ui example
+*udated some ui with layout components
+*removed webpanels
+*keypad now has backspace
+*keyboards now have the "q" key.
+*keyboards using physical keyboards can use shift more then once now
+*dragable ui prefab
+*package manager support
+*added model to avatar pedastal example
+*changed postprocessing to post processing layer.
+
+
+V3.2
+*added avatar editor scripts
+*fixed particle guns
+*removed some shader keywords
+*changed pickup reseter to respawn method
+*random small fixes everywhere
+*fixed optimized mirror
+*added player audio override zone example
+*updated audio sources with vrc spatial audio source script
+*fixed car prefab
+*added synced world typing
+*added a better keypad
+*added third person controller examples
+*added rolling ball controller example
+*added ball vehicle
+*added world audio sfx
+
+V3.0.1
+*small fixes
+*updated button event
+*added simple car
+*added flying chair
+*added spawning example
+*added fps controlled camera
+
+V3.0.0
+*updated to Unity 2017.4.15f1
+*switched to post processing V2
+*added animation event example
+*added snap camera example
+*added audio bank example
+*added dynamic chair
+*added world HUD example
+*added post processing zone examples
+
+V2.1.0
+*added combat system example
+*added two way teleport pad
+*added thirdperson follow target
+*added thirdperson follow track
+*updated custom url UI
+*updated theaters
+*updated button prefab
+
+V2.0.1
+*added projectors
+*added ragdoll example
+*added url texture loader
+*added efficient mirror toggle + reflection
+*updated ui example
+*updated pano shader
+*updated url video player
+*rip webpanels
+
+V2.0
+open source update
+
+V1.6
+*added 360 video player
+*added two handed tool grips. Final IK and standard assets varients
+*added stationary turrets. Final IK and standard assets varients
+*added opposable doll
+*added easy edit book cover
+*added webpanel book varient
+*added camera types varients (steady cam, cam crane, position board, follow cam)
+*reorganized prefab folder
+
+V1.5
+*added multiple books
+*local book
+*synced book
+*large local book
+*added basic info panel
+*panosphere
+
+V1.4
+*added streaming panel
+*added html clock/date
+*created documentation+links folder
+*created theater project
+
+v1.3
+*added 88 key midi keyboard set up
+*custom url video panel

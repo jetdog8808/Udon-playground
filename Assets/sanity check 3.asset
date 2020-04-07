@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
+  m_Name: sanity check 3
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: b07d86647b594434ab5aad53b016b91d,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export newGameObjectVariable\r\n    \r\n
+    \   instance_0: %UnityEngineTransform, this\r\n    axis_0: %UnityEngineVector3,
+    null\r\n    angle_0: %SystemSingle, null\r\n    message_0: %SystemObject, null\r\n
+    \   String_0: %SystemString, null\r\n    instance_1: %UnityEngineGameObject, this\r\n
+    \   value_0: %SystemBoolean, null\r\n    newGameObjectVariable: %UnityEngineGameObject,
+    this\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _update\r\n    \r\n
+    \   _update:\r\n    \r\n        PUSH, instance_0\r\n        PUSH, axis_0\r\n        PUSH,
+    angle_0\r\n        EXTERN, \"UnityEngineTransform.__Rotate__UnityEngineVector3_SystemSingle__SystemVoid\"\r\n
+    \       JUMP, 0xFFFFFFFC\r\n    \r\n    .export _start\r\n    \r\n    _start:\r\n
+    \   \r\n        PUSH, String_0\r\n        PUSH, message_0\r\n        COPY\r\n
+    \       PUSH, message_0\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       JUMP, 0xFFFFFFFC\r\n    \r\n    .export turn_on\r\n    \r\n    turn_on:\r\n
+    \   \r\n        PUSH, newGameObjectVariable\r\n        PUSH, instance_1\r\n        COPY\r\n
+    \       PUSH, instance_1\r\n        PUSH, value_0\r\n        EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
+    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  assemblyError: 
+  graphData:
+    name: 
+    description: 
+    nodes:
+    - fullName: UnityEngineTransform.__Rotate__UnityEngineVector3_SystemSingle__SystemVoid
+      uid: 42715829-8dd0-4560-bea1-76b1fb923230
+      position: {x: 12, y: -108}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null|{"x":0.0,"y":1.0,"z":0.0}
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0.1
+    - fullName: Event_Update
+      uid: fdbc5e33-3813-4f21-b384-d46ab3ae2cef
+      position: {x: -204, y: -108}
+      nodeUIDs: []
+      flowUIDs:
+      - 42715829-8dd0-4560-bea1-76b1fb923230
+      nodeValues: []
+    - fullName: Event_Start
+      uid: eb513a88-4245-475e-acdb-a190d2365202
+      position: {x: -252, y: -432}
+      nodeUIDs: []
+      flowUIDs:
+      - ca862c55-a93e-461b-958c-e73438da6b9c
+      nodeValues: []
+    - fullName: UnityEngineDebug.__Log__SystemObject__SystemVoid
+      uid: ca862c55-a93e-461b-958c-e73438da6b9c
+      position: {x: -96, y: -432}
+      nodeUIDs:
+      - cc82dfa3-c588-4642-84a3-8ceada37ba5f|0
+      flowUIDs:
+      - 
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Const_SystemString
+      uid: cc82dfa3-c588-4642-84a3-8ceada37ba5f
+      position: {x: -504, y: -360}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|~!!!!!!!!!!!!!!!!!!!!!!!!!!!this
+          is a sannity check!!!!!!!!!!!!!!!!!! this is start
+    - fullName: Variable_UnityEngineGameObject
+      uid: 21ce5ecd-c103-46dd-aacc-7287d4e24f25
+      position: {x: 372, y: -696}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|newGameObjectVariable
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|~!!!!!!!!!!!!!!!!!!!!!!!!!!!this
+          is a sannity check!!!!!!!!!!!!!!!!!! this is start
+    - fullName: Event_Custom
+      uid: 73a65b23-b6f5-4a1d-b082-8fbd897b85c7
+      position: {x: 324, y: -552}
+      nodeUIDs:
+      - 
+      flowUIDs:
+      - eeeb40f6-0512-496c-83e4-d4ce4a71d45c
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|turn_on
+    - fullName: Get_Variable
+      uid: 669904d0-626c-4119-b889-201d1356c2b0
+      position: {x: 312, y: -480}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|21ce5ecd-c103-46dd-aacc-7287d4e24f25
+    - fullName: UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
+      uid: eeeb40f6-0512-496c-83e4-d4ce4a71d45c
+      position: {x: 612, y: -576}
+      nodeUIDs:
+      - 669904d0-626c-4119-b889-201d1356c2b0|0
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+    - fullName: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+      uid: 46d54225-bd45-42ef-9601-4c9172176725
+      position: {x: 240, y: -408}
+      nodeUIDs:
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|turn_on
+  showAssembly: 0

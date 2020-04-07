@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
+  m_Name: 3_RotateOtherCube
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 5babdec6666269f44b75763648e49f9b,
+    type: 2}
+  udonAssembly: ".data_start\n\n    .export cubeToRotate\n    \n    instance_0: %UnityEngineTransform,
+    this\n    axis_0: %UnityEngineVector3, null\n    angle_0: %SystemSingle, null\n
+    \   Single_0: %SystemSingle, null\n    Single_1: %SystemSingle, null\n    cubeToRotate:
+    %UnityEngineTransform, this\n\n.data_end\n\n.code_start\n\n    .export _update\n
+    \   \n    _update:\n    \n        PUSH, cubeToRotate\n        PUSH, instance_0\n
+    \       COPY\n        PUSH, Single_0\n        EXTERN, \"UnityEngineTime.__get_deltaTime__SystemSingle\"\n
+    \       PUSH, Single_0\n        PUSH, Single_1\n        PUSH, angle_0\n        EXTERN,
+    \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n
+    \       PUSH, instance_0\n        PUSH, axis_0\n        PUSH, angle_0\n        EXTERN,
+    \"UnityEngineTransform.__Rotate__UnityEngineVector3_SystemSingle__SystemVoid\"\n
+    \       JUMP, 0xFFFFFFFC\n    \n\n.code_end\n"
+  assemblyError: 
+  graphData:
+    name: 
+    description: 
+    nodes:
+    - fullName: Variable_UnityEngineTransform
+      uid: 42c46d26-ccbc-4d6c-b052-0d89eddcc678
+      position: {x: -636, y: -552}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|cubeToRotate
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Event_Update
+      uid: 8a4dd38d-2818-4f0a-8316-91ce2d56d50d
+      position: {x: -636, y: -408}
+      nodeUIDs: []
+      flowUIDs:
+      - b6d1301f-9ba2-43e1-8cc7-3551f292e8cf
+      nodeValues: []
+    - fullName: UnityEngineTransform.__Rotate__UnityEngineVector3_SystemSingle__SystemVoid
+      uid: b6d1301f-9ba2-43e1-8cc7-3551f292e8cf
+      position: {x: -132, y: -408}
+      nodeUIDs:
+      - 505b5ae3-7f9d-4fd0-bc2a-334112afcaf1|0
+      - 
+      - c45ee0e9-6a52-43be-9d8e-dd157530a38d|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null|{"x":0.0,"y":1.0,"z":0.0}
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineTime.__get_deltaTime__SystemSingle
+      uid: 610bcd2f-f2c4-4d73-bef1-e06607eb7dc9
+      position: {x: -636, y: -240}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
+    - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+      uid: c45ee0e9-6a52-43be-9d8e-dd157530a38d
+      position: {x: -480, y: -240}
+      nodeUIDs:
+      - 610bcd2f-f2c4-4d73-bef1-e06607eb7dc9|0
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|60
+    - fullName: Get_Variable
+      uid: 505b5ae3-7f9d-4fd0-bc2a-334112afcaf1
+      position: {x: -444, y: -312}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|42c46d26-ccbc-4d6c-b052-0d89eddcc678
+  showAssembly: 0

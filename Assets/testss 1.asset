@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
+  m_Name: testss 1
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 68578b288d3409e47adefba27d438862,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export newButtonVariable\r\n    .export newVRCMirrorReflectionVariable\r\n
+    \   \r\n    newButtonVariable: %UnityEngineUIButton, null\r\n    newVRCMirrorReflectionVariable:
+    %VRCSDK3ComponentsVRCMirrorReflection, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n\r\n.code_end\r\n"
+  assemblyError: Type referenced by 'VRCSDK3ComponentsVRCMirrorReflection' could not
+    be resolved.
+  graphData:
+    name: 
+    description: 
+    nodes:
+    - fullName: Event_Start
+      uid: 83e13b8e-b68c-42e7-950c-5fa88a057570
+      position: {x: -168, y: -192}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
+    - fullName: Variable_UnityEngineUIButton
+      uid: 8b6a75a5-4b50-4973-bb8c-85d635d1fb94
+      position: {x: -168, y: -360}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|newButtonVariable
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineUIButton.__get_onClick__UnityEngineUIButtonButtonClickedEvent
+      uid: ecee215e-f4d2-4f1a-a8c2-ba42e4819157
+      position: {x: -108, y: -60}
+      nodeUIDs:
+      - 69a81bcc-1b9b-4cfd-8b35-b01406ba1cfa|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Get_Variable
+      uid: 69a81bcc-1b9b-4cfd-8b35-b01406ba1cfa
+      position: {x: -396, y: -48}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|8b6a75a5-4b50-4973-bb8c-85d635d1fb94
+    - fullName: UnityEngineUIButton.__set_onClick__UnityEngineUIButtonButtonClickedEvent__SystemVoid
+      uid: 6b3e20e7-c7e8-4b83-857f-875d66ef2071
+      position: {x: -12, y: -192}
+      nodeUIDs:
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Event_Interact
+      uid: 8530b3c8-791c-4c17-8884-f24222f0d0ff
+      position: {x: -420, y: -276}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
+    - fullName: Const_SystemByte
+      uid: 702ffe4c-43e4-43fa-ae46-db84f4541651
+      position: {x: -24, y: -396}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Variable_VRCSDK3ComponentsVRCMirrorReflection
+      uid: 0b35d41e-2d6c-4471-bf9d-c31a7b5938bb
+      position: {x: 240, y: -348}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|newVRCMirrorReflectionVariable
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+  showAssembly: 1

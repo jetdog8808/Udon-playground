@@ -1,0 +1,680 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
+  m_Name: setting_gameobjects
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: d68b3a607ac08674e848d5b8fe09ad35,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export receivers\r\n    .export state\r\n\r\n
+    \   __refl_const_intnl_udonTypeID: %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName:
+    %SystemString, null\r\n    receivers: %UnityEngineGameObjectArray, null\r\n    state:
+    %SystemInt32, null\r\n    __0_i_Int32: %SystemInt32, null\r\n    __0_const_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __0_const_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __0_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __2_const_intnl_SystemInt32: %SystemInt32, null\r\n    __3_const_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __0_const_intnl_SystemObject: %SystemObject, null\r\n
+    \   __0_const_intnl_SystemString: %SystemString, null\r\n    __1_const_intnl_SystemString:
+    %SystemString, null\r\n    __2_const_intnl_SystemString: %SystemString, null\r\n
+    \   __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null\r\n    __0_const_intnl_SystemUInt32:
+    %SystemUInt32, null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __5_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_intnl_UnityEngineGameObject:
+    %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject: %UnityEngineGameObject,
+    null\r\n    __2_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n
+    \   __0_intnl_SystemInt32: %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32,
+    null\r\n    __2_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_oldReturnLoc_UInt32:
+    %SystemUInt32, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n
+    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
+    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
+    \       \r\n         # public class setting_gameobjects : UdonSharpBehaviour\r\n.code_start\r\n
+    \       \r\n         # public GameObject[] receivers;\r\n        \r\n         #
+    [Tooltip(\"1=True | 2=False | 3=Toggle\")]\r\n        \r\n         # public int
+    state;\r\n        \r\n         # void Interact()\r\n    .export _interact\r\n
+    \       \r\n    _interact:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # setobj();\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __0_const_intnl_exitJumpLoc_UInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000084\r\n
+    \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # Debug.Log(\"clicked object\");\r\n        PUSH,
+    __1_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void setobj()\r\n    .export setobj\r\n        \r\n    setobj:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # switch (state)\r\n
+    \       \r\n         # case 1: //will set all gameobjects to true\r\n        PUSH,
+    state\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __0_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000000BC\r\n
+    \       JUMP, 0x00000134\r\n        \r\n         # case 2: //will set all gameobjects
+    to false\r\n        PUSH, state\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000000F4\r\n
+    \       JUMP, 0x00000270\r\n        \r\n         # case 3: //will invert all gamobjects\r\n
+    \       PUSH, state\r\n        PUSH, __2_const_intnl_SystemInt32\r\n        PUSH,
+    __2_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000012C\r\n
+    \       JUMP, 0x000003AC\r\n        \r\n         # default: //if given invalid
+    value\r\n        JUMP, 0x00000538\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
+    __0_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemInt32\r\n        PUSH,
+    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000268\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000218\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
+    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x00000148\r\n        JUMP, 0x00000550\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
+    __0_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemInt32\r\n        PUSH,
+    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000003A4\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000354\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
+    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x00000284\r\n        JUMP, 0x00000550\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
+    __0_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemInt32\r\n        PUSH,
+    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000530\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000004E0\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __5_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_activeSelf__SystemBoolean\"\r\n
+    \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, __6_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __6_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
+    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x000003C0\r\n        JUMP, 0x00000550\r\n        \r\n         #
+    Debug.LogWarning(\"select 1-3 | 1=True | 2=False | 3=Toggle\");\r\n        PUSH,
+    __2_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
+    \       \r\n         # break;\r\n        JUMP, 0x00000550\r\n        JUMP_INDIRECT,
+    __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: cb1328796a9e8b34fb47c7219a53f679, type: 3}
+  behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
+  compileErrors: []
+  debugInfo:
+    serializedDebugSpans:
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 0
+      endSourceChar: 2
+      line: 0
+      lineChar: 0
+      spanCodeSection: "\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 2
+      line: 1
+      lineChar: 0
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 8
+      line: 1
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 8
+      endSourceChar: 20
+      line: 1
+      lineChar: 6
+      spanCodeSection: "UdonSharp;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 20
+      endSourceChar: 26
+      line: 2
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 26
+      endSourceChar: 40
+      line: 2
+      lineChar: 6
+      spanCodeSection: "UnityEngine;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 40
+      endSourceChar: 46
+      line: 3
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 46
+      line: 3
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 50
+      line: 3
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 50
+      endSourceChar: 60
+      line: 3
+      lineChar: 10
+      spanCodeSection: "SDKBase;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 60
+      endSourceChar: 66
+      line: 4
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 66
+      endSourceChar: 66
+      line: 4
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 66
+      endSourceChar: 70
+      line: 4
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 70
+      endSourceChar: 79
+      line: 4
+      lineChar: 10
+      spanCodeSection: "Udon;\r\n\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 79
+      endSourceChar: 112
+      line: 6
+      lineChar: 0
+      spanCodeSection: 'public class setting_gameobjects '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 112
+      endSourceChar: 114
+      line: 6
+      lineChar: 33
+      spanCodeSection: ': '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 114
+      endSourceChar: 114
+      line: 6
+      lineChar: 35
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 114
+      endSourceChar: 141
+      line: 6
+      lineChar: 35
+      spanCodeSection: "UdonSharpBehaviour\r\n{\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 141
+      endSourceChar: 148
+      line: 8
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 148
+      endSourceChar: 148
+      line: 8
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 148
+      endSourceChar: 148
+      line: 8
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 148
+      endSourceChar: 177
+      line: 8
+      lineChar: 11
+      spanCodeSection: "GameObject[] receivers;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 177
+      endSourceChar: 178
+      line: 9
+      lineChar: 4
+      spanCodeSection: '['
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 178
+      endSourceChar: 178
+      line: 9
+      lineChar: 5
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 178
+      endSourceChar: 186
+      line: 9
+      lineChar: 5
+      spanCodeSection: Tooltip(
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 186
+      endSourceChar: 186
+      line: 9
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 186
+      endSourceChar: 230
+      line: 9
+      lineChar: 13
+      spanCodeSection: "\"1=True | 2=False | 3=Toggle\")]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 230
+      endSourceChar: 230
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 230
+      endSourceChar: 248
+      line: 10
+      lineChar: 11
+      spanCodeSection: "int state;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: 19
+      startSourceChar: 248
+      endSourceChar: 269
+      line: 12
+      lineChar: 4
+      spanCodeSection: "void Interact()\r\n    "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 269
+      endSourceChar: 280
+      line: 13
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 280
+      endSourceChar: 280
+      line: 14
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 280
+      endSourceChar: 280
+      line: 14
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 87
+      startSourceChar: 280
+      endSourceChar: 299
+      line: 14
+      lineChar: 8
+      spanCodeSection: "setobj();\r\n        "
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 299
+      endSourceChar: 299
+      line: 15
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 299
+      endSourceChar: 309
+      line: 15
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 88
+      endInstruction: 111
+      startSourceChar: 309
+      endSourceChar: 342
+      line: 15
+      lineChar: 18
+      spanCodeSection: "\"clicked object\");\r\n    }\r\n\r\n    "
+    - startInstruction: 112
+      endInstruction: 131
+      startSourceChar: 342
+      endSourceChar: 368
+      line: 18
+      lineChar: 4
+      spanCodeSection: "public void setobj()\r\n    "
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 368
+      endSourceChar: 379
+      line: 19
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 379
+      endSourceChar: 387
+      line: 20
+      lineChar: 8
+      spanCodeSection: switch (
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 387
+      endSourceChar: 418
+      line: 20
+      lineChar: 16
+      spanCodeSection: "state)\r\n        {\r\n            "
+    - startInstruction: 132
+      endInstruction: 131
+      startSourceChar: 418
+      endSourceChar: 423
+      line: 22
+      lineChar: 12
+      spanCodeSection: 'case '
+    - startInstruction: 132
+      endInstruction: 187
+      startSourceChar: 423
+      endSourceChar: 744
+      line: 22
+      lineChar: 17
+      spanCodeSection: "1: //will set all gameobjects to true\r\n                for
+        (int i = 0; i < receivers.Length; i++)\r\n                {\r\n                    if
+        (receivers[i] != null)\r\n                    {\r\n                        receivers[i].SetActive(true);\r\n
+        \                   }\r\n                }\r\n                break;\r\n            "
+    - startInstruction: 188
+      endInstruction: 187
+      startSourceChar: 744
+      endSourceChar: 749
+      line: 31
+      lineChar: 12
+      spanCodeSection: 'case '
+    - startInstruction: 188
+      endInstruction: 243
+      startSourceChar: 749
+      endSourceChar: 1072
+      line: 31
+      lineChar: 17
+      spanCodeSection: "2: //will set all gameobjects to false\r\n                for
+        (int i = 0; i < receivers.Length; i++)\r\n                {\r\n                    if
+        (receivers[i] != null)\r\n                    {\r\n                        receivers[i].SetActive(false);\r\n
+        \                   }\r\n                }\r\n                break;\r\n            "
+    - startInstruction: 244
+      endInstruction: 243
+      startSourceChar: 1072
+      endSourceChar: 1077
+      line: 40
+      lineChar: 12
+      spanCodeSection: 'case '
+    - startInstruction: 244
+      endInstruction: 299
+      startSourceChar: 1077
+      endSourceChar: 1412
+      line: 40
+      lineChar: 17
+      spanCodeSection: "3: //will invert all gamobjects\r\n                for (int
+        i = 0; i < receivers.Length; i++)\r\n                {\r\n                    if
+        (receivers[i] != null)\r\n                    {\r\n                        receivers[i].SetActive(!receivers[i].activeSelf);\r\n
+        \                   }\r\n                }\r\n                break;\r\n            "
+    - startInstruction: 300
+      endInstruction: 1335
+      startSourceChar: 1412
+      endSourceChar: 1463
+      line: 49
+      lineChar: 12
+      spanCodeSection: "default: //if given invalid value\r\n                "
+    - startInstruction: 1336
+      endInstruction: 1335
+      startSourceChar: 1463
+      endSourceChar: 1463
+      line: 50
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1336
+      endInstruction: 1335
+      startSourceChar: 1463
+      endSourceChar: 1480
+      line: 50
+      lineChar: 16
+      spanCodeSection: Debug.LogWarning(
+    - startInstruction: 1336
+      endInstruction: 1351
+      startSourceChar: 1480
+      endSourceChar: 1542
+      line: 50
+      lineChar: 33
+      spanCodeSection: "\"select 1-3 | 1=True | 2=False | 3=Toggle\");\r\n                "
+    - startInstruction: 1352
+      endInstruction: 1352
+      startSourceChar: 1542
+      endSourceChar: 1542
+      line: 51
+      lineChar: 16
+      spanCodeSection: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: fieldDefinitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UdonSharp.FieldDefinition,
+        UdonSharp.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: receivers
+    - Name: $v
+      Entry: 7
+      Data: 2|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 3|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.GameObject[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineGameObjectArray
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: receivers
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: receivers
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: state
+    - Name: $v
+      Entry: 7
+      Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 7|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 8|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Int32, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemInt32
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: state
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: state
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 10|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+    - Name: tooltip
+      Entry: 1
+      Data: 1=True | 2=False | 3=Toggle
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

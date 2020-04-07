@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
+  m_Name: 2_RotateCubeMultiplication
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 00c4eebb731f2614f89815292ca0838e,
+    type: 2}
+  udonAssembly: ".data_start\n\n    \n    instance_0: %UnityEngineTransform, this\n
+    \   axis_0: %UnityEngineVector3, null\n    angle_0: %SystemSingle, null\n    Single_0:
+    %SystemSingle, null\n    Single_1: %SystemSingle, null\n\n.data_end\n\n.code_start\n\n
+    \   .export _update\n    \n    _update:\n    \n        PUSH, Single_0\n        EXTERN,
+    \"UnityEngineTime.__get_deltaTime__SystemSingle\"\n        PUSH, Single_0\n        PUSH,
+    Single_1\n        PUSH, angle_0\n        EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n
+    \       PUSH, instance_0\n        PUSH, axis_0\n        PUSH, angle_0\n        EXTERN,
+    \"UnityEngineTransform.__Rotate__UnityEngineVector3_SystemSingle__SystemVoid\"\n
+    \       JUMP, 0xFFFFFFFC\n    \n\n.code_end\n"
+  assemblyError: 
+  graphData:
+    name: 
+    description: 
+    nodes:
+    - fullName: Event_Update
+      uid: b6702f34-9826-4594-8696-dcd4371b0111
+      position: {x: -504, y: -408}
+      nodeUIDs: []
+      flowUIDs:
+      - deb50073-d58b-44bf-a257-45b28317c00a
+      nodeValues: []
+    - fullName: UnityEngineTransform.__Rotate__UnityEngineVector3_SystemSingle__SystemVoid
+      uid: deb50073-d58b-44bf-a257-45b28317c00a
+      position: {x: 12, y: -408}
+      nodeUIDs:
+      - 
+      - 
+      - c8b873df-9177-4841-98e2-22da31b0b2ae|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null|{"x":0.0,"y":1.0,"z":0.0}
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineTime.__get_deltaTime__SystemSingle
+      uid: fe0ef45e-1602-40d5-9651-446ba225c03b
+      position: {x: -504, y: -276}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
+    - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+      uid: c8b873df-9177-4841-98e2-22da31b0b2ae
+      position: {x: -348, y: -276}
+      nodeUIDs:
+      - fe0ef45e-1602-40d5-9651-446ba225c03b|0
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|60
+  showAssembly: 0

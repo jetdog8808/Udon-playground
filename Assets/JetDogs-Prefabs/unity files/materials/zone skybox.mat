@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: zone skybox
+  m_Shader: {fileID: 4800000, guid: 1bb0a63b353f67249a5a78ced6d0b4f9, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 0
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _skybox:
+        m_Texture: {fileID: 8900000, guid: 4094b36fc81ffef4ab0bc5e29caf6679, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Cutoff: 0.5
+    - _Invert: 0
+    - _SunIntensity: 0
+    - _SunRadiusA: 0
+    - _SunRadiusB: 0.1
+    - _node_4248: 2.76
+    - _sun: 0
+    m_Colors:
+    - _color: {r: 1, g: 1, b: 1, a: 1}

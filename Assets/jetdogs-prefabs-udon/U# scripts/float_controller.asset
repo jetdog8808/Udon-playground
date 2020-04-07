@@ -1,0 +1,1803 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
+  m_Name: float_controller
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 95f00b8cab088644e80c4c14eb4efdb1,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export udonBehaviour\r\n    .export variable_string\r\n
+    \   .export custom_num\r\n    .export display\r\n\r\n    __refl_const_intnl_udonTypeID:
+    %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
+    \   custom_num: %SystemSingle, null\r\n    variable_string: %SystemString, null\r\n
+    \   display: %UnityEngineUIText, null\r\n    udonBehaviour: %VRCUdonUdonBehaviour,
+    null\r\n    __0_variable_Object: %SystemObject, null\r\n    __1_variable_Object:
+    %SystemObject, null\r\n    __0_num_Single: %SystemSingle, null\r\n    __0_result_Single:
+    %SystemSingle, null\r\n    __1_num_Single: %SystemSingle, null\r\n    __0_vistext_String:
+    %SystemString, null\r\n    __0_const_intnl_SystemInt32: %SystemInt32, null\r\n
+    \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __0_const_intnl_SystemString: %SystemString, null\r\n
+    \   __1_const_intnl_SystemString: %SystemString, null\r\n    __2_const_intnl_SystemString:
+    %SystemString, null\r\n    __3_const_intnl_SystemString: %SystemString, null\r\n
+    \   __4_const_intnl_SystemString: %SystemString, null\r\n    __5_const_intnl_SystemString:
+    %SystemString, null\r\n    __0_const_intnl_UnityEngineUIText: %UnityEngineUIText,
+    null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n    __0_const_intnl_exitJumpLoc_UInt32:
+    %SystemUInt32, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n
+    \   __1_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null\r\n    __2_const_intnl_exitJumpLoc_UInt32:
+    %SystemUInt32, null\r\n    __3_const_intnl_exitJumpLoc_UInt32: %SystemUInt32,
+    null\r\n    __4_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null\r\n    __5_const_intnl_exitJumpLoc_UInt32:
+    %SystemUInt32, null\r\n    __6_const_intnl_exitJumpLoc_UInt32: %SystemUInt32,
+    null\r\n    __7_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null\r\n    __0_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __1_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __2_intnl_SystemBoolean: %SystemBoolean, null\r\n    __3_intnl_SystemBoolean:
+    %SystemBoolean, null\r\n    __4_intnl_SystemBoolean: %SystemBoolean, null\r\n
+    \   __0_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_SystemObject: %SystemObject,
+    null\r\n    __1_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __1_intnl_SystemSingle: %SystemSingle, null\r\n    __2_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __3_intnl_SystemSingle: %SystemSingle, null\r\n    __4_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __5_intnl_SystemSingle: %SystemSingle, null\r\n    __6_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __7_intnl_SystemSingle: %SystemSingle, null\r\n    __8_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __9_intnl_SystemSingle: %SystemSingle, null\r\n    __0_intnl_SystemString:
+    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __2_intnl_SystemString:
+    %SystemString, null\r\n    __0_intnl_SystemType: %SystemType, null\r\n    __1_intnl_SystemType:
+    %SystemType, null\r\n    __0_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
+    \   __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n    __1_intnl_oldReturnLoc_UInt32:
+    %SystemUInt32, null\r\n    __2_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
+    \   __3_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n    __4_intnl_oldReturnLoc_UInt32:
+    %SystemUInt32, null\r\n    __5_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
+    \   __6_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n    __7_intnl_oldReturnLoc_UInt32:
+    %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n
+    \       \r\n         # using UnityEngine;\r\n        \r\n         # using UnityEngine.UI;\r\n
+    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
+    \       \r\n         # public class float_controller : UdonSharpBehaviour\r\n.code_start\r\n
+    \       \r\n         # public UdonBehaviour udonBehaviour;\r\n        \r\n         #
+    public string variable_string;\r\n        \r\n         # public float custom_num
+    = 0;\r\n        \r\n         # [Tooltip(\"optional\")]\r\n        \r\n         #
+    public Text display;\r\n        \r\n         # private void Start()\r\n    .export
+    _start\r\n        \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # object variable = udonBehaviour.GetProgramVariable(variable_string);\r\n
+    \       PUSH, udonBehaviour\r\n        PUSH, variable_string\r\n        PUSH,
+    __0_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __0_intnl_SystemObject\r\n        PUSH, __0_variable_Object\r\n
+    \       COPY\r\n        \r\n         # if (variable != null)\r\n        PUSH,
+    __0_variable_Object\r\n        PUSH, __0_const_intnl_SystemObject\r\n        PUSH,
+    __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000198\r\n
+    \       \r\n         # {\r\n        \r\n         # if (variable.GetType() == typeof(float))\r\n
+    \       PUSH, __0_variable_Object\r\n        PUSH, __0_intnl_SystemType\r\n        EXTERN,
+    \"SystemObject.__GetType__SystemType\"\r\n        PUSH, __0_intnl_SystemType\r\n
+    \       PUSH, __0_const_intnl_SystemType\r\n        PUSH, __1_intnl_SystemBoolean\r\n
+    \       EXTERN, \"SystemType.__op_Equality__SystemType_SystemType__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000180\r\n
+    \       \r\n         # {\r\n        \r\n         # float num = (float)variable;\r\n
+    \       PUSH, __0_variable_Object\r\n        PUSH, __1_intnl_SystemSingle\r\n
+    \       EXTERN, \"SystemConvert.__ToSingle__SystemObject__SystemSingle\"\r\n        PUSH,
+    __1_intnl_SystemSingle\r\n        PUSH, __0_intnl_SystemSingle\r\n        COPY\r\n
+    \       PUSH, __0_intnl_SystemSingle\r\n        PUSH, __1_num_Single\r\n        COPY\r\n
+    \       \r\n         # updatevisual(num.ToString(\"0.00\"));\r\n        PUSH,
+    __1_num_Single\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
+    __0_intnl_SystemString\r\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\r\n
+    \       PUSH, __0_intnl_SystemString\r\n        PUSH, __0_vistext_String\r\n        COPY\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __0_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __0_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000055C\r\n
+    \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP, 0x00000190\r\n        \r\n         # else\r\n        \r\n
+    \        # {\r\n        \r\n         # Debug.LogWarning(\"float controller: variable
+    not of float type\");\r\n        PUSH, __2_const_intnl_SystemString\r\n        EXTERN,
+    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        JUMP, 0x000001A8\r\n
+    \       \r\n         # else\r\n        \r\n         # {\r\n        \r\n         #
+    Debug.LogWarning(\"float controller: get variable returned null\");\r\n        PUSH,
+    __3_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void variableadd() //add 1 to float\r\n    .export variableadd\r\n
+    \       \r\n    variableadd:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # Debug.Log(\"add executed\");\r\n        PUSH, __4_const_intnl_SystemString\r\n
+    \       EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n
+    \        # calculatefloat(1);\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
+    \       PUSH, __2_intnl_SystemSingle\r\n        EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\r\n
+    \       PUSH, __2_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        COPY\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __1_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __1_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    \       PUSH, __1_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void variablesub() //subtract 1 from float\r\n    .export
+    variablesub\r\n        \r\n    variablesub:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # Debug.Log(\"sub executed\");\r\n        PUSH, __5_const_intnl_SystemString\r\n
+    \       EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n
+    \        # calculatefloat(-1);\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_UnaryMinus__SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        PUSH, __3_intnl_SystemSingle\r\n
+    \       EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\r\n        PUSH,
+    __3_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        COPY\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        PUSH, __2_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __2_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    \       PUSH, __2_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void variablepartadd() //add .1 to float\r\n    .export
+    variablepartadd\r\n        \r\n    variablepartadd:\r\n        \r\n        PUSH,
+    __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # Debug.Log(\"add
+    executed\");\r\n        PUSH, __4_const_intnl_SystemString\r\n        EXTERN,
+    \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
+    calculatefloat(0.1f);\r\n        PUSH, __0_const_intnl_SystemSingle\r\n        PUSH,
+    __0_num_Single\r\n        COPY\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       PUSH, __3_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __3_const_intnl_exitJumpLoc_UInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    \       PUSH, __3_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void variablepartsub() //subtract .1 from float\r\n
+    \   .export variablepartsub\r\n        \r\n    variablepartsub:\r\n        \r\n
+    \       PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # Debug.Log(\"sub
+    executed\");\r\n        PUSH, __5_const_intnl_SystemString\r\n        EXTERN,
+    \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        \r\n         #
+    calculatefloat(-0.1f);\r\n        PUSH, __0_const_intnl_SystemSingle\r\n        PUSH,
+    __4_intnl_SystemSingle\r\n        EXTERN, \"SystemSingle.__op_UnaryMinus__SystemSingle__SystemSingle\"\r\n
+    \       PUSH, __4_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        COPY\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __4_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __4_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    \       PUSH, __4_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void variablecalcustom() //add a custom number to
+    float\r\n    .export variablecalcustom\r\n        \r\n    variablecalcustom:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # calculatefloat(custom_num);\r\n
+    \       PUSH, custom_num\r\n        PUSH, __0_num_Single\r\n        COPY\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        PUSH, __5_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __5_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    \       PUSH, __5_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void variableset() //set float to custom number\r\n
+    \   .export variableset\r\n        \r\n    variableset:\r\n        \r\n        PUSH,
+    __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # udonBehaviour.SetProgramVariable(variable_string,
+    custom_num);\r\n        PUSH, udonBehaviour\r\n        PUSH, variable_string\r\n
+    \       PUSH, custom_num\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
+    \       \r\n         # updatevisual(custom_num.ToString(\"0.00\"));\r\n        PUSH,
+    custom_num\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH, __1_intnl_SystemString\r\n
+    \       EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\r\n        PUSH,
+    __1_intnl_SystemString\r\n        PUSH, __0_vistext_String\r\n        COPY\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __6_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __6_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000055C\r\n
+    \       PUSH, __6_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void updatevisual(string vistext) //update text
+    display if added\r\n    .export updatevisual\r\n        \r\n    updatevisual:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # if (display
+    != null)\r\n        PUSH, display\r\n        PUSH, __0_const_intnl_UnityEngineUIText\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000005A4\r\n
+    \       \r\n         # {\r\n        \r\n         # display.text = vistext;\r\n
+    \       PUSH, display\r\n        PUSH, __0_vistext_String\r\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
+    \        # public void calculatefloat (float num) //calculates adding number to
+    variable\r\n    .export calculatefloat\r\n        \r\n    calculatefloat:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # object variable
+    = (float)udonBehaviour.GetProgramVariable(variable_string);\r\n        PUSH, udonBehaviour\r\n
+    \       PUSH, variable_string\r\n        PUSH, __1_intnl_SystemObject\r\n        EXTERN,
+    \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __6_intnl_SystemSingle\r\n
+    \       EXTERN, \"SystemConvert.__ToSingle__SystemObject__SystemSingle\"\r\n        PUSH,
+    __6_intnl_SystemSingle\r\n        PUSH, __5_intnl_SystemSingle\r\n        COPY\r\n
+    \       PUSH, __5_intnl_SystemSingle\r\n        PUSH, __1_variable_Object\r\n
+    \       COPY\r\n        \r\n         # if (variable != null) //checks if variable
+    is null\r\n        PUSH, __1_variable_Object\r\n        PUSH, __0_const_intnl_SystemObject\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000007B0\r\n
+    \       \r\n         # {\r\n        \r\n         # if (variable.GetType() == typeof(float))
+    //checks if variable is a floa type\r\n        PUSH, __1_variable_Object\r\n        PUSH,
+    __1_intnl_SystemType\r\n        EXTERN, \"SystemObject.__GetType__SystemType\"\r\n
+    \       PUSH, __1_intnl_SystemType\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"SystemType.__op_Equality__SystemType_SystemType__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000798\r\n
+    \       \r\n         # {\r\n        \r\n         # float result = ((float)variable
+    + num);\r\n        PUSH, __1_variable_Object\r\n        PUSH, __8_intnl_SystemSingle\r\n
+    \       EXTERN, \"SystemConvert.__ToSingle__SystemObject__SystemSingle\"\r\n        PUSH,
+    __8_intnl_SystemSingle\r\n        PUSH, __7_intnl_SystemSingle\r\n        COPY\r\n
+    \       PUSH, __7_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        PUSH,
+    __9_intnl_SystemSingle\r\n        EXTERN, \"SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle\"\r\n
+    \       PUSH, __9_intnl_SystemSingle\r\n        PUSH, __0_result_Single\r\n        COPY\r\n
+    \       \r\n         # udonBehaviour.SetProgramVariable(variable_string, result);\r\n
+    \       PUSH, udonBehaviour\r\n        PUSH, variable_string\r\n        PUSH,
+    __0_result_Single\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
+    \       \r\n         # updatevisual(result.ToString(\"0.00\"));\r\n        PUSH,
+    __0_result_Single\r\n        PUSH, __1_const_intnl_SystemString\r\n        PUSH,
+    __2_intnl_SystemString\r\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\r\n
+    \       PUSH, __2_intnl_SystemString\r\n        PUSH, __0_vistext_String\r\n        COPY\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __7_intnl_oldReturnLoc_UInt32\r\n
+    \       COPY\r\n        PUSH, __7_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000055C\r\n
+    \       PUSH, __7_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP, 0x000007A8\r\n        \r\n         # else\r\n        \r\n
+    \        # {\r\n        \r\n         # Debug.LogWarning(\"float controller: variable
+    not of float type\");\r\n        PUSH, __2_const_intnl_SystemString\r\n        EXTERN,
+    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        JUMP, 0x000007C0\r\n
+    \       \r\n         # else\r\n        \r\n         # {\r\n        \r\n         #
+    Debug.LogWarning(\"float controller: get variable returned null\");\r\n        PUSH,
+    __3_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: ecec8d71c946c39419fa480f91aa54a7, type: 3}
+  behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
+  compileErrors: []
+  debugInfo:
+    serializedDebugSpans:
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 0
+      endSourceChar: 2
+      line: 0
+      lineChar: 0
+      spanCodeSection: "\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 2
+      line: 1
+      lineChar: 0
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 8
+      line: 1
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 8
+      endSourceChar: 20
+      line: 1
+      lineChar: 6
+      spanCodeSection: "UdonSharp;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 20
+      endSourceChar: 26
+      line: 2
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 26
+      endSourceChar: 40
+      line: 2
+      lineChar: 6
+      spanCodeSection: "UnityEngine;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 40
+      endSourceChar: 46
+      line: 3
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 46
+      line: 3
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 58
+      line: 3
+      lineChar: 6
+      spanCodeSection: UnityEngine.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 58
+      endSourceChar: 63
+      line: 3
+      lineChar: 18
+      spanCodeSection: "UI;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 63
+      endSourceChar: 69
+      line: 4
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 69
+      endSourceChar: 69
+      line: 4
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 69
+      endSourceChar: 73
+      line: 4
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 73
+      endSourceChar: 83
+      line: 4
+      lineChar: 10
+      spanCodeSection: "SDKBase;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 83
+      endSourceChar: 89
+      line: 5
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 89
+      endSourceChar: 89
+      line: 5
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 89
+      endSourceChar: 93
+      line: 5
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 93
+      endSourceChar: 102
+      line: 5
+      lineChar: 10
+      spanCodeSection: "Udon;\r\n\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 102
+      endSourceChar: 132
+      line: 7
+      lineChar: 0
+      spanCodeSection: 'public class float_controller '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 132
+      endSourceChar: 134
+      line: 7
+      lineChar: 30
+      spanCodeSection: ': '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 134
+      endSourceChar: 134
+      line: 7
+      lineChar: 32
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 134
+      endSourceChar: 161
+      line: 7
+      lineChar: 32
+      spanCodeSection: "UdonSharpBehaviour\r\n{\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 161
+      endSourceChar: 168
+      line: 9
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 168
+      endSourceChar: 168
+      line: 9
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 168
+      endSourceChar: 202
+      line: 9
+      lineChar: 11
+      spanCodeSection: "UdonBehaviour udonBehaviour;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 202
+      endSourceChar: 209
+      line: 10
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 209
+      endSourceChar: 209
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 209
+      endSourceChar: 238
+      line: 10
+      lineChar: 11
+      spanCodeSection: "string variable_string;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 238
+      endSourceChar: 245
+      line: 11
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 245
+      endSourceChar: 245
+      line: 11
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 245
+      endSourceChar: 272
+      line: 11
+      lineChar: 11
+      spanCodeSection: "float custom_num = 0;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 272
+      endSourceChar: 273
+      line: 12
+      lineChar: 4
+      spanCodeSection: '['
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 273
+      endSourceChar: 273
+      line: 12
+      lineChar: 5
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 273
+      endSourceChar: 281
+      line: 12
+      lineChar: 5
+      spanCodeSection: Tooltip(
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 281
+      endSourceChar: 281
+      line: 12
+      lineChar: 13
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 281
+      endSourceChar: 306
+      line: 12
+      lineChar: 13
+      spanCodeSection: "\"optional\")]\r\n    public "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 306
+      endSourceChar: 306
+      line: 13
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 306
+      endSourceChar: 327
+      line: 13
+      lineChar: 11
+      spanCodeSection: "Text display;\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: 19
+      startSourceChar: 327
+      endSourceChar: 353
+      line: 15
+      lineChar: 4
+      spanCodeSection: "private void Start()\r\n    "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 353
+      endSourceChar: 427
+      line: 16
+      lineChar: 4
+      spanCodeSection: "{\r\n        //update display text to current float value
+        if added\r\n        "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 427
+      endSourceChar: 427
+      line: 18
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 427
+      endSourceChar: 427
+      line: 18
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 427
+      endSourceChar: 427
+      line: 18
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 427
+      endSourceChar: 443
+      line: 18
+      lineChar: 8
+      spanCodeSection: 'object variable '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 443
+      endSourceChar: 445
+      line: 18
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 445
+      endSourceChar: 478
+      line: 18
+      lineChar: 26
+      spanCodeSection: udonBehaviour.GetProgramVariable(
+    - startInstruction: 20
+      endInstruction: 71
+      startSourceChar: 478
+      endSourceChar: 505
+      line: 18
+      lineChar: 59
+      spanCodeSection: "variable_string);\r\n        "
+    - startInstruction: 72
+      endInstruction: 71
+      startSourceChar: 505
+      endSourceChar: 509
+      line: 19
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 72
+      endInstruction: 71
+      startSourceChar: 509
+      endSourceChar: 521
+      line: 19
+      lineChar: 12
+      spanCodeSection: 'variable != '
+    - startInstruction: 72
+      endInstruction: 119
+      startSourceChar: 521
+      endSourceChar: 536
+      line: 19
+      lineChar: 24
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 120
+      endInstruction: 119
+      startSourceChar: 536
+      endSourceChar: 551
+      line: 20
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 120
+      endInstruction: 119
+      startSourceChar: 551
+      endSourceChar: 555
+      line: 21
+      lineChar: 12
+      spanCodeSection: if (
+    - startInstruction: 120
+      endInstruction: 119
+      startSourceChar: 555
+      endSourceChar: 577
+      line: 21
+      lineChar: 16
+      spanCodeSection: 'variable.GetType() == '
+    - startInstruction: 120
+      endInstruction: 119
+      startSourceChar: 577
+      endSourceChar: 584
+      line: 21
+      lineChar: 38
+      spanCodeSection: typeof(
+    - startInstruction: 120
+      endInstruction: 191
+      startSourceChar: 584
+      endSourceChar: 605
+      line: 21
+      lineChar: 45
+      spanCodeSection: "float))\r\n            "
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 605
+      endSourceChar: 624
+      line: 22
+      lineChar: 12
+      spanCodeSection: "{\r\n                "
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 624
+      endSourceChar: 624
+      line: 23
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 624
+      endSourceChar: 624
+      line: 23
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 624
+      endSourceChar: 624
+      line: 23
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 624
+      endSourceChar: 634
+      line: 23
+      lineChar: 16
+      spanCodeSection: 'float num '
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 634
+      endSourceChar: 636
+      line: 23
+      lineChar: 26
+      spanCodeSection: '= '
+    - startInstruction: 192
+      endInstruction: 191
+      startSourceChar: 636
+      endSourceChar: 643
+      line: 23
+      lineChar: 28
+      spanCodeSection: (float)
+    - startInstruction: 192
+      endInstruction: 255
+      startSourceChar: 643
+      endSourceChar: 670
+      line: 23
+      lineChar: 35
+      spanCodeSection: "variable;\r\n                "
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 670
+      endSourceChar: 670
+      line: 24
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 670
+      endSourceChar: 683
+      line: 24
+      lineChar: 16
+      spanCodeSection: updatevisual(
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 683
+      endSourceChar: 696
+      line: 24
+      lineChar: 29
+      spanCodeSection: num.ToString(
+    - startInstruction: 256
+      endInstruction: 383
+      startSourceChar: 696
+      endSourceChar: 734
+      line: 24
+      lineChar: 42
+      spanCodeSection: "\"0.00\"));\r\n            }\r\n            "
+    - startInstruction: 384
+      endInstruction: 383
+      startSourceChar: 734
+      endSourceChar: 752
+      line: 26
+      lineChar: 12
+      spanCodeSection: "else\r\n            "
+    - startInstruction: 384
+      endInstruction: 383
+      startSourceChar: 752
+      endSourceChar: 771
+      line: 27
+      lineChar: 12
+      spanCodeSection: "{\r\n                "
+    - startInstruction: 384
+      endInstruction: 383
+      startSourceChar: 771
+      endSourceChar: 771
+      line: 28
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 384
+      endInstruction: 383
+      startSourceChar: 771
+      endSourceChar: 788
+      line: 28
+      lineChar: 16
+      spanCodeSection: Debug.LogWarning(
+    - startInstruction: 384
+      endInstruction: 407
+      startSourceChar: 788
+      endSourceChar: 872
+      line: 28
+      lineChar: 33
+      spanCodeSection: "\"float controller: variable not of float type\");\r\n            }\r\n
+        \       }\r\n        "
+    - startInstruction: 408
+      endInstruction: 407
+      startSourceChar: 872
+      endSourceChar: 886
+      line: 31
+      lineChar: 8
+      spanCodeSection: "else\r\n        "
+    - startInstruction: 408
+      endInstruction: 407
+      startSourceChar: 886
+      endSourceChar: 901
+      line: 32
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 408
+      endInstruction: 407
+      startSourceChar: 901
+      endSourceChar: 901
+      line: 33
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 408
+      endInstruction: 407
+      startSourceChar: 901
+      endSourceChar: 918
+      line: 33
+      lineChar: 12
+      spanCodeSection: Debug.LogWarning(
+    - startInstruction: 408
+      endInstruction: 431
+      startSourceChar: 918
+      endSourceChar: 994
+      line: 33
+      lineChar: 29
+      spanCodeSection: "\"float controller: get variable returned null\");\r\n        }\r\n\r\n
+        \   }\r\n\r\n    "
+    - startInstruction: 432
+      endInstruction: 451
+      startSourceChar: 994
+      endSourceChar: 1042
+      line: 38
+      lineChar: 4
+      spanCodeSection: "public void variableadd() //add 1 to float\r\n    "
+    - startInstruction: 452
+      endInstruction: 451
+      startSourceChar: 1042
+      endSourceChar: 1053
+      line: 39
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 452
+      endInstruction: 451
+      startSourceChar: 1053
+      endSourceChar: 1053
+      line: 40
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 452
+      endInstruction: 451
+      startSourceChar: 1053
+      endSourceChar: 1063
+      line: 40
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 452
+      endInstruction: 467
+      startSourceChar: 1063
+      endSourceChar: 1089
+      line: 40
+      lineChar: 18
+      spanCodeSection: "\"add executed\");\r\n        "
+    - startInstruction: 468
+      endInstruction: 467
+      startSourceChar: 1089
+      endSourceChar: 1089
+      line: 41
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 468
+      endInstruction: 467
+      startSourceChar: 1089
+      endSourceChar: 1104
+      line: 41
+      lineChar: 8
+      spanCodeSection: calculatefloat(
+    - startInstruction: 468
+      endInstruction: 587
+      startSourceChar: 1104
+      endSourceChar: 1122
+      line: 41
+      lineChar: 23
+      spanCodeSection: "1);\r\n    }\r\n\r\n    "
+    - startInstruction: 588
+      endInstruction: 607
+      startSourceChar: 1122
+      endSourceChar: 1177
+      line: 44
+      lineChar: 4
+      spanCodeSection: "public void variablesub() //subtract 1 from float\r\n    "
+    - startInstruction: 608
+      endInstruction: 607
+      startSourceChar: 1177
+      endSourceChar: 1188
+      line: 45
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 608
+      endInstruction: 607
+      startSourceChar: 1188
+      endSourceChar: 1188
+      line: 46
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 608
+      endInstruction: 607
+      startSourceChar: 1188
+      endSourceChar: 1198
+      line: 46
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 608
+      endInstruction: 623
+      startSourceChar: 1198
+      endSourceChar: 1224
+      line: 46
+      lineChar: 18
+      spanCodeSection: "\"sub executed\");\r\n        "
+    - startInstruction: 624
+      endInstruction: 623
+      startSourceChar: 1224
+      endSourceChar: 1224
+      line: 47
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 624
+      endInstruction: 623
+      startSourceChar: 1224
+      endSourceChar: 1239
+      line: 47
+      lineChar: 8
+      spanCodeSection: calculatefloat(
+    - startInstruction: 624
+      endInstruction: 623
+      startSourceChar: 1239
+      endSourceChar: 1240
+      line: 47
+      lineChar: 23
+      spanCodeSection: '-'
+    - startInstruction: 624
+      endInstruction: 767
+      startSourceChar: 1240
+      endSourceChar: 1258
+      line: 47
+      lineChar: 24
+      spanCodeSection: "1);\r\n    }\r\n\r\n    "
+    - startInstruction: 768
+      endInstruction: 787
+      startSourceChar: 1258
+      endSourceChar: 1311
+      line: 50
+      lineChar: 4
+      spanCodeSection: "public void variablepartadd() //add .1 to float\r\n    "
+    - startInstruction: 788
+      endInstruction: 787
+      startSourceChar: 1311
+      endSourceChar: 1322
+      line: 51
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 788
+      endInstruction: 787
+      startSourceChar: 1322
+      endSourceChar: 1322
+      line: 52
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 788
+      endInstruction: 787
+      startSourceChar: 1322
+      endSourceChar: 1332
+      line: 52
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 788
+      endInstruction: 803
+      startSourceChar: 1332
+      endSourceChar: 1358
+      line: 52
+      lineChar: 18
+      spanCodeSection: "\"add executed\");\r\n        "
+    - startInstruction: 804
+      endInstruction: 803
+      startSourceChar: 1358
+      endSourceChar: 1358
+      line: 53
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 804
+      endInstruction: 803
+      startSourceChar: 1358
+      endSourceChar: 1373
+      line: 53
+      lineChar: 8
+      spanCodeSection: calculatefloat(
+    - startInstruction: 804
+      endInstruction: 899
+      startSourceChar: 1373
+      endSourceChar: 1394
+      line: 53
+      lineChar: 23
+      spanCodeSection: "0.1f);\r\n    }\r\n\r\n    "
+    - startInstruction: 900
+      endInstruction: 919
+      startSourceChar: 1394
+      endSourceChar: 1454
+      line: 56
+      lineChar: 4
+      spanCodeSection: "public void variablepartsub() //subtract .1 from float\r\n
+        \   "
+    - startInstruction: 920
+      endInstruction: 919
+      startSourceChar: 1454
+      endSourceChar: 1465
+      line: 57
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 920
+      endInstruction: 919
+      startSourceChar: 1465
+      endSourceChar: 1465
+      line: 58
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 920
+      endInstruction: 919
+      startSourceChar: 1465
+      endSourceChar: 1475
+      line: 58
+      lineChar: 8
+      spanCodeSection: Debug.Log(
+    - startInstruction: 920
+      endInstruction: 935
+      startSourceChar: 1475
+      endSourceChar: 1501
+      line: 58
+      lineChar: 18
+      spanCodeSection: "\"sub executed\");\r\n        "
+    - startInstruction: 936
+      endInstruction: 935
+      startSourceChar: 1501
+      endSourceChar: 1501
+      line: 59
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 936
+      endInstruction: 935
+      startSourceChar: 1501
+      endSourceChar: 1516
+      line: 59
+      lineChar: 8
+      spanCodeSection: calculatefloat(
+    - startInstruction: 936
+      endInstruction: 935
+      startSourceChar: 1516
+      endSourceChar: 1517
+      line: 59
+      lineChar: 23
+      spanCodeSection: '-'
+    - startInstruction: 936
+      endInstruction: 1055
+      startSourceChar: 1517
+      endSourceChar: 1538
+      line: 59
+      lineChar: 24
+      spanCodeSection: "0.1f);\r\n    }\r\n\r\n    "
+    - startInstruction: 1056
+      endInstruction: 1075
+      startSourceChar: 1538
+      endSourceChar: 1606
+      line: 62
+      lineChar: 4
+      spanCodeSection: "public void variablecalcustom() //add a custom number to float\r\n
+        \   "
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1606
+      endSourceChar: 1617
+      line: 63
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1617
+      endSourceChar: 1617
+      line: 64
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1076
+      endInstruction: 1075
+      startSourceChar: 1617
+      endSourceChar: 1632
+      line: 64
+      lineChar: 8
+      spanCodeSection: calculatefloat(
+    - startInstruction: 1076
+      endInstruction: 1171
+      startSourceChar: 1632
+      endSourceChar: 1659
+      line: 64
+      lineChar: 23
+      spanCodeSection: "custom_num);\r\n    }\r\n\r\n    "
+    - startInstruction: 1172
+      endInstruction: 1191
+      startSourceChar: 1659
+      endSourceChar: 1719
+      line: 67
+      lineChar: 4
+      spanCodeSection: "public void variableset() //set float to custom number\r\n
+        \   "
+    - startInstruction: 1192
+      endInstruction: 1191
+      startSourceChar: 1719
+      endSourceChar: 1730
+      line: 68
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1192
+      endInstruction: 1191
+      startSourceChar: 1730
+      endSourceChar: 1730
+      line: 69
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1192
+      endInstruction: 1191
+      startSourceChar: 1730
+      endSourceChar: 1763
+      line: 69
+      lineChar: 8
+      spanCodeSection: udonBehaviour.SetProgramVariable(
+    - startInstruction: 1192
+      endInstruction: 1191
+      startSourceChar: 1763
+      endSourceChar: 1780
+      line: 69
+      lineChar: 41
+      spanCodeSection: 'variable_string, '
+    - startInstruction: 1192
+      endInstruction: 1223
+      startSourceChar: 1780
+      endSourceChar: 1802
+      line: 69
+      lineChar: 58
+      spanCodeSection: "custom_num);\r\n        "
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1802
+      endSourceChar: 1802
+      line: 70
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1802
+      endSourceChar: 1815
+      line: 70
+      lineChar: 8
+      spanCodeSection: updatevisual(
+    - startInstruction: 1224
+      endInstruction: 1223
+      startSourceChar: 1815
+      endSourceChar: 1835
+      line: 70
+      lineChar: 21
+      spanCodeSection: custom_num.ToString(
+    - startInstruction: 1224
+      endInstruction: 1351
+      startSourceChar: 1835
+      endSourceChar: 1859
+      line: 70
+      lineChar: 41
+      spanCodeSection: "\"0.00\"));\r\n    }\r\n\r\n    "
+    - startInstruction: 1352
+      endInstruction: 1371
+      startSourceChar: 1859
+      endSourceChar: 1936
+      line: 73
+      lineChar: 4
+      spanCodeSection: "public void updatevisual(string vistext) //update text display
+        if added\r\n    "
+    - startInstruction: 1372
+      endInstruction: 1371
+      startSourceChar: 1936
+      endSourceChar: 1947
+      line: 74
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1372
+      endInstruction: 1371
+      startSourceChar: 1947
+      endSourceChar: 1951
+      line: 75
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1372
+      endInstruction: 1371
+      startSourceChar: 1951
+      endSourceChar: 1962
+      line: 75
+      lineChar: 12
+      spanCodeSection: 'display != '
+    - startInstruction: 1372
+      endInstruction: 1419
+      startSourceChar: 1962
+      endSourceChar: 1977
+      line: 75
+      lineChar: 23
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 1420
+      endInstruction: 1419
+      startSourceChar: 1977
+      endSourceChar: 1992
+      line: 76
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1420
+      endInstruction: 1419
+      startSourceChar: 1992
+      endSourceChar: 1992
+      line: 77
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1420
+      endInstruction: 1419
+      startSourceChar: 1992
+      endSourceChar: 2007
+      line: 77
+      lineChar: 12
+      spanCodeSection: 'display.text = '
+    - startInstruction: 1420
+      endInstruction: 1451
+      startSourceChar: 2007
+      endSourceChar: 2041
+      line: 77
+      lineChar: 27
+      spanCodeSection: "vistext;\r\n        }\r\n    }\r\n\r\n    "
+    - startInstruction: 1452
+      endInstruction: 1471
+      startSourceChar: 2041
+      endSourceChar: 2124
+      line: 81
+      lineChar: 4
+      spanCodeSection: "public void calculatefloat (float num) //calculates adding
+        number to variable\r\n    "
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2124
+      endSourceChar: 2135
+      line: 82
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2135
+      endSourceChar: 2135
+      line: 83
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2135
+      endSourceChar: 2135
+      line: 83
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2135
+      endSourceChar: 2135
+      line: 83
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2135
+      endSourceChar: 2151
+      line: 83
+      lineChar: 8
+      spanCodeSection: 'object variable '
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2151
+      endSourceChar: 2153
+      line: 83
+      lineChar: 24
+      spanCodeSection: '= '
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2153
+      endSourceChar: 2160
+      line: 83
+      lineChar: 26
+      spanCodeSection: (float)
+    - startInstruction: 1472
+      endInstruction: 1471
+      startSourceChar: 2160
+      endSourceChar: 2193
+      line: 83
+      lineChar: 33
+      spanCodeSection: udonBehaviour.GetProgramVariable(
+    - startInstruction: 1472
+      endInstruction: 1567
+      startSourceChar: 2193
+      endSourceChar: 2220
+      line: 83
+      lineChar: 66
+      spanCodeSection: "variable_string);\r\n        "
+    - startInstruction: 1568
+      endInstruction: 1567
+      startSourceChar: 2220
+      endSourceChar: 2224
+      line: 84
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 1568
+      endInstruction: 1567
+      startSourceChar: 2224
+      endSourceChar: 2236
+      line: 84
+      lineChar: 12
+      spanCodeSection: 'variable != '
+    - startInstruction: 1568
+      endInstruction: 1615
+      startSourceChar: 2236
+      endSourceChar: 2280
+      line: 84
+      lineChar: 24
+      spanCodeSection: "null) //checks if variable is null\r\n        "
+    - startInstruction: 1616
+      endInstruction: 1615
+      startSourceChar: 2280
+      endSourceChar: 2295
+      line: 85
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1616
+      endInstruction: 1615
+      startSourceChar: 2295
+      endSourceChar: 2299
+      line: 86
+      lineChar: 12
+      spanCodeSection: if (
+    - startInstruction: 1616
+      endInstruction: 1615
+      startSourceChar: 2299
+      endSourceChar: 2321
+      line: 86
+      lineChar: 16
+      spanCodeSection: 'variable.GetType() == '
+    - startInstruction: 1616
+      endInstruction: 1615
+      startSourceChar: 2321
+      endSourceChar: 2328
+      line: 86
+      lineChar: 38
+      spanCodeSection: typeof(
+    - startInstruction: 1616
+      endInstruction: 1687
+      startSourceChar: 2328
+      endSourceChar: 2385
+      line: 86
+      lineChar: 45
+      spanCodeSection: "float)) //checks if variable is a floa type\r\n            "
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2385
+      endSourceChar: 2462
+      line: 87
+      lineChar: 12
+      spanCodeSection: "{\r\n                //does the math and updates text display\r\n
+        \               "
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2462
+      endSourceChar: 2462
+      line: 89
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2462
+      endSourceChar: 2462
+      line: 89
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2462
+      endSourceChar: 2462
+      line: 89
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2462
+      endSourceChar: 2475
+      line: 89
+      lineChar: 16
+      spanCodeSection: 'float result '
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2475
+      endSourceChar: 2477
+      line: 89
+      lineChar: 29
+      spanCodeSection: '= '
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2477
+      endSourceChar: 2478
+      line: 89
+      lineChar: 31
+      spanCodeSection: (
+    - startInstruction: 1688
+      endInstruction: 1687
+      startSourceChar: 2478
+      endSourceChar: 2496
+      line: 89
+      lineChar: 32
+      spanCodeSection: '(float)variable + '
+    - startInstruction: 1688
+      endInstruction: 1783
+      startSourceChar: 2496
+      endSourceChar: 2519
+      line: 89
+      lineChar: 50
+      spanCodeSection: "num);\r\n                "
+    - startInstruction: 1784
+      endInstruction: 1783
+      startSourceChar: 2519
+      endSourceChar: 2519
+      line: 90
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1784
+      endInstruction: 1783
+      startSourceChar: 2519
+      endSourceChar: 2552
+      line: 90
+      lineChar: 16
+      spanCodeSection: udonBehaviour.SetProgramVariable(
+    - startInstruction: 1784
+      endInstruction: 1783
+      startSourceChar: 2552
+      endSourceChar: 2569
+      line: 90
+      lineChar: 49
+      spanCodeSection: 'variable_string, '
+    - startInstruction: 1784
+      endInstruction: 1815
+      startSourceChar: 2569
+      endSourceChar: 2595
+      line: 90
+      lineChar: 66
+      spanCodeSection: "result);\r\n                "
+    - startInstruction: 1816
+      endInstruction: 1815
+      startSourceChar: 2595
+      endSourceChar: 2595
+      line: 91
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1816
+      endInstruction: 1815
+      startSourceChar: 2595
+      endSourceChar: 2608
+      line: 91
+      lineChar: 16
+      spanCodeSection: updatevisual(
+    - startInstruction: 1816
+      endInstruction: 1815
+      startSourceChar: 2608
+      endSourceChar: 2624
+      line: 91
+      lineChar: 29
+      spanCodeSection: result.ToString(
+    - startInstruction: 1816
+      endInstruction: 1943
+      startSourceChar: 2624
+      endSourceChar: 2662
+      line: 91
+      lineChar: 45
+      spanCodeSection: "\"0.00\"));\r\n            }\r\n            "
+    - startInstruction: 1944
+      endInstruction: 1943
+      startSourceChar: 2662
+      endSourceChar: 2680
+      line: 93
+      lineChar: 12
+      spanCodeSection: "else\r\n            "
+    - startInstruction: 1944
+      endInstruction: 1943
+      startSourceChar: 2680
+      endSourceChar: 2699
+      line: 94
+      lineChar: 12
+      spanCodeSection: "{\r\n                "
+    - startInstruction: 1944
+      endInstruction: 1943
+      startSourceChar: 2699
+      endSourceChar: 2699
+      line: 95
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1944
+      endInstruction: 1943
+      startSourceChar: 2699
+      endSourceChar: 2716
+      line: 95
+      lineChar: 16
+      spanCodeSection: Debug.LogWarning(
+    - startInstruction: 1944
+      endInstruction: 1967
+      startSourceChar: 2716
+      endSourceChar: 2800
+      line: 95
+      lineChar: 33
+      spanCodeSection: "\"float controller: variable not of float type\");\r\n            }\r\n
+        \       }\r\n        "
+    - startInstruction: 1968
+      endInstruction: 1967
+      startSourceChar: 2800
+      endSourceChar: 2814
+      line: 98
+      lineChar: 8
+      spanCodeSection: "else\r\n        "
+    - startInstruction: 1968
+      endInstruction: 1967
+      startSourceChar: 2814
+      endSourceChar: 2829
+      line: 99
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 1968
+      endInstruction: 1967
+      startSourceChar: 2829
+      endSourceChar: 2829
+      line: 100
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1968
+      endInstruction: 1967
+      startSourceChar: 2829
+      endSourceChar: 2846
+      line: 100
+      lineChar: 12
+      spanCodeSection: Debug.LogWarning(
+    - startInstruction: 1968
+      endInstruction: 1968
+      startSourceChar: 2846
+      endSourceChar: 2846
+      line: 100
+      lineChar: 29
+      spanCodeSection: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: fieldDefinitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UdonSharp.FieldDefinition,
+        UdonSharp.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: udonBehaviour
+    - Name: $v
+      Entry: 7
+      Data: 2|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 3|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VRC.Udon.UdonBehaviour, VRC.Udon
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCUdonUdonBehaviour
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: udonBehaviour
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: udonBehaviour
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: variable_string
+    - Name: $v
+      Entry: 7
+      Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 7|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 8|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.String, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemString
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: variable_string
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: variable_string
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: custom_num
+    - Name: $v
+      Entry: 7
+      Data: 10|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 11|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 12|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Single, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: SystemSingle
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: custom_num
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: custom_num
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: display
+    - Name: $v
+      Entry: 7
+      Data: 14|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 15|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 16|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.UI.Text, UnityEngine.UI
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUIText
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: display
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: display
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 18|UnityEngine.TooltipAttribute, UnityEngine.CoreModule
+    - Name: tooltip
+      Entry: 1
+      Data: optional
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
