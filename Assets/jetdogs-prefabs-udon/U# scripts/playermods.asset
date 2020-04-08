@@ -33,9 +33,11 @@ MonoBehaviour:
     null\r\n    __7_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null\r\n    __0_const_intnl_VRCSDKBaseVRCPlayerApi:
     %VRCSDKBaseVRCPlayerApi, null\r\n    __0_intnl_SystemBoolean: %SystemBoolean,
     null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
+    %SystemString, null\r\n    __10_intnl_SystemString: %SystemString, null\r\n    __11_intnl_SystemString:
     %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
     %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
     %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __7_intnl_SystemString:
+    %SystemString, null\r\n    __8_intnl_SystemString: %SystemString, null\r\n    __9_intnl_SystemString:
     %SystemString, null\r\n    __0_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
     \   __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n    __1_intnl_oldReturnLoc_UInt32:
     %SystemUInt32, null\r\n    __2_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
@@ -43,52 +45,53 @@ MonoBehaviour:
     %SystemUInt32, null\r\n    __5_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
     \   __6_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n    __7_intnl_oldReturnLoc_UInt32:
     %SystemUInt32, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
-    null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n        \r\n
-    \        # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
-    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
-    playermods : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         # public
-    float run_speed = 4;\r\n        \r\n         # public float walk_speed = 2;\r\n
-    \       \r\n         # public float jump_impulse = 3;\r\n        \r\n         #
-    public float gravity_strength = 1;\r\n        \r\n         # public bool legacy_locomotion
-    = false;\r\n        \r\n         # public VRCPlayerApi PlayerApiref;\r\n        \r\n
-    \        # void Start()\r\n    .export _start\r\n        \r\n    _start:\r\n        \r\n
-    \       PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        \r\n         # {\r\n        \r\n         # PlayerApiref
-    = Networking.LocalPlayer;\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
-    \       EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    null\r\n    __1_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n
+    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
+    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
+    \       \r\n         # public class playermods : UdonSharpBehaviour\r\n.code_start\r\n
+    \       \r\n         # public float run_speed = 4;\r\n        \r\n         # public
+    float walk_speed = 2;\r\n        \r\n         # public float jump_impulse = 3;\r\n
+    \       \r\n         # public float gravity_strength = 1;\r\n        \r\n         #
+    public bool legacy_locomotion = false;\r\n        \r\n         # public VRCPlayerApi
+    PlayerApiref;\r\n        \r\n         # void Start()\r\n    .export _start\r\n
+    \       \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
+    {\r\n        \r\n         # PlayerApiref = Networking.LocalPlayer;\r\n        PUSH,
+    __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, PlayerApiref\r\n
     \       COPY\r\n        \r\n         # if (PlayerApiref != null)\r\n        PUSH,
-    PlayerApiref\r\n        PUSH, __0_const_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH,
-    __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001C8\r\n
+    PlayerApiref\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        COPY\r\n
+    \       PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __0_const_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001DC\r\n
     \       \r\n         # {\r\n        \r\n         # if (legacy_locomotion)\r\n
-    \       PUSH, legacy_locomotion\r\n        JUMP_IF_FALSE, 0x000000A0\r\n        \r\n
+    \       PUSH, legacy_locomotion\r\n        JUMP_IF_FALSE, 0x000000B4\r\n        \r\n
     \        # {\r\n        \r\n         # PlayerApiref.UseLegacyLocomotion();\r\n
     \       PUSH, PlayerApiref\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__UseLegacyLocomotion__SystemVoid\"\r\n
     \       \r\n         # Debug.Log(\"Playermods, using legacy locomotion\");\r\n
     \       PUSH, __0_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
-    \       JUMP, 0x000000B0\r\n        \r\n         # else\r\n        \r\n         #
+    \       JUMP, 0x000000C4\r\n        \r\n         # else\r\n        \r\n         #
     {\r\n        \r\n         # Debug.Log(\"Playermods, not using legacy locomotion\");\r\n
     \       PUSH, __1_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       \r\n         # Update_run_speed();\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __0_const_intnl_exitJumpLoc_UInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000320\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000334\r\n
     \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # Update_walk_speed();\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       PUSH, __1_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __1_const_intnl_exitJumpLoc_UInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000039C\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000003C4\r\n
     \       PUSH, __1_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # Update_jump_Impulse();\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        PUSH, __2_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __2_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000418\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000454\r\n
     \       PUSH, __2_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # Update_gravity_strength();\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        PUSH, __3_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __3_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000494\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000004E4\r\n
     \       PUSH, __3_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        JUMP, 0x000001D8\r\n        \r\n         # else\r\n        \r\n
+    \       COPY\r\n        JUMP, 0x000001EC\r\n        \r\n         # else\r\n        \r\n
     \        # {\r\n        \r\n         # Debug.LogWarning(\"Playermods, playerapi
     is Null\");\r\n        PUSH, __2_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
@@ -97,21 +100,21 @@ MonoBehaviour:
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
     {\r\n        \r\n         # Update_run_speed();\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       PUSH, __4_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __4_const_intnl_exitJumpLoc_UInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000320\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000334\r\n
     \       PUSH, __4_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # Update_walk_speed();\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       PUSH, __5_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __5_const_intnl_exitJumpLoc_UInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000039C\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000003C4\r\n
     \       PUSH, __5_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # Update_jump_Impulse();\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        PUSH, __6_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __6_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000418\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000454\r\n
     \       PUSH, __6_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # Update_gravity_strength();\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        PUSH, __7_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __7_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000494\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000004E4\r\n
     \       PUSH, __7_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void Update_run_speed()\r\n    .export Update_run_speed\r\n
@@ -120,11 +123,12 @@ MonoBehaviour:
     {\r\n        \r\n         # PlayerApiref.SetRunSpeed(run_speed);\r\n        PUSH,
     PlayerApiref\r\n        PUSH, run_speed\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetRunSpeed__SystemSingle__SystemVoid\"\r\n
     \       \r\n         # Debug.Log(\"player run speed set to: \" + run_speed);\r\n
-    \       PUSH, run_speed\r\n        PUSH, __0_intnl_SystemString\r\n        EXTERN,
-    \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __3_const_intnl_SystemString\r\n
-    \       PUSH, __0_intnl_SystemString\r\n        PUSH, __1_intnl_SystemString\r\n
+    \       PUSH, __3_const_intnl_SystemString\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, run_speed\r\n        PUSH, __1_intnl_SystemString\r\n
+    \       EXTERN, \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        PUSH, __2_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, __1_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       PUSH, __2_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
     \        # public void Update_walk_speed()\r\n    .export Update_walk_speed\r\n
     \       \r\n    Update_walk_speed:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
@@ -132,11 +136,12 @@ MonoBehaviour:
     {\r\n        \r\n         # PlayerApiref.SetWalkSpeed(walk_speed);\r\n        PUSH,
     PlayerApiref\r\n        PUSH, walk_speed\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetWalkSpeed__SystemSingle__SystemVoid\"\r\n
     \       \r\n         # Debug.Log(\"player walk speed set to: \" + walk_speed);\r\n
-    \       PUSH, walk_speed\r\n        PUSH, __2_intnl_SystemString\r\n        EXTERN,
-    \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __4_const_intnl_SystemString\r\n
-    \       PUSH, __2_intnl_SystemString\r\n        PUSH, __3_intnl_SystemString\r\n
+    \       PUSH, __4_const_intnl_SystemString\r\n        PUSH, __3_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, walk_speed\r\n        PUSH, __4_intnl_SystemString\r\n
+    \       EXTERN, \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __3_intnl_SystemString\r\n
+    \       PUSH, __4_intnl_SystemString\r\n        PUSH, __5_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, __3_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       PUSH, __5_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
     \        # public void Update_jump_Impulse()\r\n    .export Update_jump_Impulse\r\n
     \       \r\n    Update_jump_Impulse:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
@@ -144,11 +149,12 @@ MonoBehaviour:
     {\r\n        \r\n         # PlayerApiref.SetJumpImpulse(jump_impulse);\r\n        PUSH,
     PlayerApiref\r\n        PUSH, jump_impulse\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetJumpImpulse__SystemSingle__SystemVoid\"\r\n
     \       \r\n         # Debug.Log(\"player walk speed set to: \" + jump_impulse);\r\n
-    \       PUSH, jump_impulse\r\n        PUSH, __4_intnl_SystemString\r\n        EXTERN,
-    \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __4_const_intnl_SystemString\r\n
-    \       PUSH, __4_intnl_SystemString\r\n        PUSH, __5_intnl_SystemString\r\n
+    \       PUSH, __4_const_intnl_SystemString\r\n        PUSH, __6_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, jump_impulse\r\n        PUSH, __7_intnl_SystemString\r\n
+    \       EXTERN, \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __6_intnl_SystemString\r\n
+    \       PUSH, __7_intnl_SystemString\r\n        PUSH, __8_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, __5_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       PUSH, __8_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
     \        # public void Update_gravity_strength()\r\n    .export Update_gravity_strength\r\n
     \       \r\n    Update_gravity_strength:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
@@ -157,11 +163,12 @@ MonoBehaviour:
     \       PUSH, PlayerApiref\r\n        PUSH, gravity_strength\r\n        EXTERN,
     \"VRCSDKBaseVRCPlayerApi.__SetGravityStrength__SystemSingle__SystemVoid\"\r\n
     \       \r\n         # Debug.Log(\"player walk speed set to: \" + gravity_strength);\r\n
-    \       PUSH, gravity_strength\r\n        PUSH, __6_intnl_SystemString\r\n        EXTERN,
-    \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __4_const_intnl_SystemString\r\n
-    \       PUSH, __6_intnl_SystemString\r\n        PUSH, __7_intnl_SystemString\r\n
+    \       PUSH, __4_const_intnl_SystemString\r\n        PUSH, __9_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, gravity_strength\r\n        PUSH, __10_intnl_SystemString\r\n
+    \       EXTERN, \"SystemSingle.__ToString__SystemString\"\r\n        PUSH, __9_intnl_SystemString\r\n
+    \       PUSH, __10_intnl_SystemString\r\n        PUSH, __11_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, __7_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
+    \       PUSH, __11_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 80f2a7d3f3f406847891c7e96814167a, type: 3}
@@ -480,603 +487,638 @@ MonoBehaviour:
     - startInstruction: 56
       endInstruction: 55
       startSourceChar: 441
+      endSourceChar: 441
+      line: 18
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 56
+      endInstruction: 75
+      startSourceChar: 441
       endSourceChar: 457
       line: 18
       lineChar: 12
       spanCodeSection: 'PlayerApiref != '
-    - startInstruction: 56
-      endInstruction: 103
+    - startInstruction: 76
+      endInstruction: 123
       startSourceChar: 457
       endSourceChar: 472
       line: 18
       lineChar: 28
       spanCodeSection: "null)\r\n        "
-    - startInstruction: 104
-      endInstruction: 103
+    - startInstruction: 124
+      endInstruction: 123
       startSourceChar: 472
       endSourceChar: 487
       line: 19
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 104
-      endInstruction: 103
+    - startInstruction: 124
+      endInstruction: 123
       startSourceChar: 487
       endSourceChar: 491
       line: 20
       lineChar: 12
       spanCodeSection: if (
-    - startInstruction: 104
-      endInstruction: 119
+    - startInstruction: 124
+      endInstruction: 139
       startSourceChar: 491
       endSourceChar: 523
       line: 20
       lineChar: 16
       spanCodeSection: "legacy_locomotion)\r\n            "
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 523
       endSourceChar: 542
       line: 21
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 542
       endSourceChar: 542
       line: 22
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 542
       endSourceChar: 542
       line: 22
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 542
       endSourceChar: 542
       line: 22
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 542
       endSourceChar: 555
       line: 22
       lineChar: 16
       spanCodeSection: PlayerApiref.
-    - startInstruction: 120
-      endInstruction: 135
+    - startInstruction: 140
+      endInstruction: 155
       startSourceChar: 555
       endSourceChar: 595
       line: 22
       lineChar: 29
       spanCodeSection: "UseLegacyLocomotion();\r\n                "
-    - startInstruction: 136
-      endInstruction: 135
+    - startInstruction: 156
+      endInstruction: 155
       startSourceChar: 595
       endSourceChar: 595
       line: 23
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 136
-      endInstruction: 135
+    - startInstruction: 156
+      endInstruction: 155
       startSourceChar: 595
       endSourceChar: 605
       line: 23
       lineChar: 16
       spanCodeSection: Debug.Log(
-    - startInstruction: 136
-      endInstruction: 159
+    - startInstruction: 156
+      endInstruction: 179
       startSourceChar: 605
       endSourceChar: 673
       line: 23
       lineChar: 26
       spanCodeSection: "\"Playermods, using legacy locomotion\");\r\n            }\r\n
         \           "
-    - startInstruction: 160
-      endInstruction: 159
+    - startInstruction: 180
+      endInstruction: 179
       startSourceChar: 673
       endSourceChar: 691
       line: 25
       lineChar: 12
       spanCodeSection: "else\r\n            "
-    - startInstruction: 160
-      endInstruction: 159
+    - startInstruction: 180
+      endInstruction: 179
       startSourceChar: 691
       endSourceChar: 710
       line: 26
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 160
-      endInstruction: 159
+    - startInstruction: 180
+      endInstruction: 179
       startSourceChar: 710
       endSourceChar: 710
       line: 27
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 160
-      endInstruction: 159
+    - startInstruction: 180
+      endInstruction: 179
       startSourceChar: 710
       endSourceChar: 720
       line: 27
       lineChar: 16
       spanCodeSection: Debug.Log(
-    - startInstruction: 160
-      endInstruction: 175
+    - startInstruction: 180
+      endInstruction: 195
       startSourceChar: 720
       endSourceChar: 794
       line: 27
       lineChar: 26
       spanCodeSection: "\"Playermods, not using legacy locomotion\");\r\n            }\r\n\r\n
         \           "
-    - startInstruction: 176
-      endInstruction: 175
+    - startInstruction: 196
+      endInstruction: 195
       startSourceChar: 794
       endSourceChar: 794
       line: 30
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 176
-      endInstruction: 175
+    - startInstruction: 196
+      endInstruction: 195
       startSourceChar: 794
       endSourceChar: 794
       line: 30
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 176
-      endInstruction: 243
+    - startInstruction: 196
+      endInstruction: 263
       startSourceChar: 794
       endSourceChar: 827
       line: 30
       lineChar: 12
       spanCodeSection: "Update_run_speed();\r\n            "
-    - startInstruction: 244
-      endInstruction: 243
+    - startInstruction: 264
+      endInstruction: 263
       startSourceChar: 827
       endSourceChar: 827
       line: 31
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 244
-      endInstruction: 243
+    - startInstruction: 264
+      endInstruction: 263
       startSourceChar: 827
       endSourceChar: 827
       line: 31
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 244
-      endInstruction: 311
+    - startInstruction: 264
+      endInstruction: 331
       startSourceChar: 827
       endSourceChar: 861
       line: 31
       lineChar: 12
       spanCodeSection: "Update_walk_speed();\r\n            "
-    - startInstruction: 312
-      endInstruction: 311
+    - startInstruction: 332
+      endInstruction: 331
       startSourceChar: 861
       endSourceChar: 861
       line: 32
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 311
+    - startInstruction: 332
+      endInstruction: 331
       startSourceChar: 861
       endSourceChar: 861
       line: 32
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 379
+    - startInstruction: 332
+      endInstruction: 399
       startSourceChar: 861
       endSourceChar: 897
       line: 32
       lineChar: 12
       spanCodeSection: "Update_jump_Impulse();\r\n            "
-    - startInstruction: 380
-      endInstruction: 379
+    - startInstruction: 400
+      endInstruction: 399
       startSourceChar: 897
       endSourceChar: 897
       line: 33
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 380
-      endInstruction: 379
+    - startInstruction: 400
+      endInstruction: 399
       startSourceChar: 897
       endSourceChar: 897
       line: 33
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 380
-      endInstruction: 455
+    - startInstruction: 400
+      endInstruction: 475
       startSourceChar: 897
       endSourceChar: 946
       line: 33
       lineChar: 12
       spanCodeSection: "Update_gravity_strength();\r\n\r\n        }\r\n        "
-    - startInstruction: 456
-      endInstruction: 455
+    - startInstruction: 476
+      endInstruction: 475
       startSourceChar: 946
       endSourceChar: 960
       line: 36
       lineChar: 8
       spanCodeSection: "else\r\n        "
-    - startInstruction: 456
-      endInstruction: 455
+    - startInstruction: 476
+      endInstruction: 475
       startSourceChar: 960
       endSourceChar: 975
       line: 37
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 456
-      endInstruction: 455
+    - startInstruction: 476
+      endInstruction: 475
       startSourceChar: 975
       endSourceChar: 975
       line: 38
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 456
-      endInstruction: 455
+    - startInstruction: 476
+      endInstruction: 475
       startSourceChar: 975
       endSourceChar: 992
       line: 38
       lineChar: 12
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 456
-      endInstruction: 479
+    - startInstruction: 476
+      endInstruction: 499
       startSourceChar: 992
       endSourceChar: 1053
       line: 38
       lineChar: 29
       spanCodeSection: "\"Playermods, playerapi is Null\");\r\n        }\r\n\r\n    }\r\n\r\n
         \   "
-    - startInstruction: 480
-      endInstruction: 499
+    - startInstruction: 500
+      endInstruction: 519
       startSourceChar: 1053
       endSourceChar: 1083
       line: 43
       lineChar: 4
       spanCodeSection: "public void update_all()\r\n    "
-    - startInstruction: 500
-      endInstruction: 499
+    - startInstruction: 520
+      endInstruction: 519
       startSourceChar: 1083
       endSourceChar: 1094
       line: 44
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 500
-      endInstruction: 499
+    - startInstruction: 520
+      endInstruction: 519
       startSourceChar: 1094
       endSourceChar: 1094
       line: 45
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 500
-      endInstruction: 499
+    - startInstruction: 520
+      endInstruction: 519
       startSourceChar: 1094
       endSourceChar: 1094
       line: 45
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 500
-      endInstruction: 567
+    - startInstruction: 520
+      endInstruction: 587
       startSourceChar: 1094
       endSourceChar: 1123
       line: 45
       lineChar: 8
       spanCodeSection: "Update_run_speed();\r\n        "
-    - startInstruction: 568
-      endInstruction: 567
+    - startInstruction: 588
+      endInstruction: 587
       startSourceChar: 1123
       endSourceChar: 1123
       line: 46
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 568
-      endInstruction: 567
+    - startInstruction: 588
+      endInstruction: 587
       startSourceChar: 1123
       endSourceChar: 1123
       line: 46
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 568
-      endInstruction: 635
+    - startInstruction: 588
+      endInstruction: 655
       startSourceChar: 1123
       endSourceChar: 1153
       line: 46
       lineChar: 8
       spanCodeSection: "Update_walk_speed();\r\n        "
-    - startInstruction: 636
-      endInstruction: 635
+    - startInstruction: 656
+      endInstruction: 655
       startSourceChar: 1153
       endSourceChar: 1153
       line: 47
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 636
-      endInstruction: 635
+    - startInstruction: 656
+      endInstruction: 655
       startSourceChar: 1153
       endSourceChar: 1153
       line: 47
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 636
-      endInstruction: 703
+    - startInstruction: 656
+      endInstruction: 723
       startSourceChar: 1153
       endSourceChar: 1185
       line: 47
       lineChar: 8
       spanCodeSection: "Update_jump_Impulse();\r\n        "
-    - startInstruction: 704
-      endInstruction: 703
+    - startInstruction: 724
+      endInstruction: 723
       startSourceChar: 1185
       endSourceChar: 1185
       line: 48
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 704
-      endInstruction: 703
+    - startInstruction: 724
+      endInstruction: 723
       startSourceChar: 1185
       endSourceChar: 1185
       line: 48
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 704
-      endInstruction: 779
+    - startInstruction: 724
+      endInstruction: 799
       startSourceChar: 1185
       endSourceChar: 1226
       line: 48
       lineChar: 8
       spanCodeSection: "Update_gravity_strength();\r\n    }\r\n\r\n    "
-    - startInstruction: 780
-      endInstruction: 799
+    - startInstruction: 800
+      endInstruction: 819
       startSourceChar: 1226
       endSourceChar: 1262
       line: 51
       lineChar: 4
       spanCodeSection: "public void Update_run_speed()\r\n    "
-    - startInstruction: 800
-      endInstruction: 799
+    - startInstruction: 820
+      endInstruction: 819
       startSourceChar: 1262
       endSourceChar: 1273
       line: 52
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 800
-      endInstruction: 799
+    - startInstruction: 820
+      endInstruction: 819
       startSourceChar: 1273
       endSourceChar: 1273
       line: 53
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 800
-      endInstruction: 799
+    - startInstruction: 820
+      endInstruction: 819
       startSourceChar: 1273
       endSourceChar: 1298
       line: 53
       lineChar: 8
       spanCodeSection: PlayerApiref.SetRunSpeed(
-    - startInstruction: 800
-      endInstruction: 823
+    - startInstruction: 820
+      endInstruction: 843
       startSourceChar: 1298
       endSourceChar: 1319
       line: 53
       lineChar: 33
       spanCodeSection: "run_speed);\r\n        "
-    - startInstruction: 824
-      endInstruction: 823
+    - startInstruction: 844
+      endInstruction: 843
       startSourceChar: 1319
       endSourceChar: 1319
       line: 54
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 824
-      endInstruction: 823
+    - startInstruction: 844
+      endInstruction: 843
       startSourceChar: 1319
       endSourceChar: 1329
       line: 54
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 824
-      endInstruction: 823
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1329
+      endSourceChar: 1329
+      line: 54
+      lineChar: 18
+      spanCodeSection: 
+    - startInstruction: 844
+      endInstruction: 863
       startSourceChar: 1329
       endSourceChar: 1359
       line: 54
       lineChar: 18
       spanCodeSection: '"player run speed set to: " + '
-    - startInstruction: 824
-      endInstruction: 903
+    - startInstruction: 864
+      endInstruction: 943
       startSourceChar: 1359
       endSourceChar: 1385
       line: 54
       lineChar: 48
       spanCodeSection: "run_speed);\r\n    }\r\n\r\n    "
-    - startInstruction: 904
-      endInstruction: 923
+    - startInstruction: 944
+      endInstruction: 963
       startSourceChar: 1385
       endSourceChar: 1422
       line: 57
       lineChar: 4
       spanCodeSection: "public void Update_walk_speed()\r\n    "
-    - startInstruction: 924
-      endInstruction: 923
+    - startInstruction: 964
+      endInstruction: 963
       startSourceChar: 1422
       endSourceChar: 1433
       line: 58
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 924
-      endInstruction: 923
+    - startInstruction: 964
+      endInstruction: 963
       startSourceChar: 1433
       endSourceChar: 1433
       line: 59
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 924
-      endInstruction: 923
+    - startInstruction: 964
+      endInstruction: 963
       startSourceChar: 1433
       endSourceChar: 1459
       line: 59
       lineChar: 8
       spanCodeSection: PlayerApiref.SetWalkSpeed(
-    - startInstruction: 924
-      endInstruction: 947
+    - startInstruction: 964
+      endInstruction: 987
       startSourceChar: 1459
       endSourceChar: 1481
       line: 59
       lineChar: 34
       spanCodeSection: "walk_speed);\r\n        "
-    - startInstruction: 948
-      endInstruction: 947
+    - startInstruction: 988
+      endInstruction: 987
       startSourceChar: 1481
       endSourceChar: 1481
       line: 60
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 948
-      endInstruction: 947
+    - startInstruction: 988
+      endInstruction: 987
       startSourceChar: 1481
       endSourceChar: 1491
       line: 60
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 948
-      endInstruction: 947
+    - startInstruction: 988
+      endInstruction: 987
+      startSourceChar: 1491
+      endSourceChar: 1491
+      line: 60
+      lineChar: 18
+      spanCodeSection: 
+    - startInstruction: 988
+      endInstruction: 1007
       startSourceChar: 1491
       endSourceChar: 1522
       line: 60
       lineChar: 18
       spanCodeSection: '"player walk speed set to: " + '
-    - startInstruction: 948
-      endInstruction: 1027
+    - startInstruction: 1008
+      endInstruction: 1087
       startSourceChar: 1522
       endSourceChar: 1549
       line: 60
       lineChar: 49
       spanCodeSection: "walk_speed);\r\n    }\r\n\r\n    "
-    - startInstruction: 1028
-      endInstruction: 1047
+    - startInstruction: 1088
+      endInstruction: 1107
       startSourceChar: 1549
       endSourceChar: 1588
       line: 63
       lineChar: 4
       spanCodeSection: "public void Update_jump_Impulse()\r\n    "
-    - startInstruction: 1048
-      endInstruction: 1047
+    - startInstruction: 1108
+      endInstruction: 1107
       startSourceChar: 1588
       endSourceChar: 1599
       line: 64
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1048
-      endInstruction: 1047
+    - startInstruction: 1108
+      endInstruction: 1107
       startSourceChar: 1599
       endSourceChar: 1599
       line: 65
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1048
-      endInstruction: 1047
+    - startInstruction: 1108
+      endInstruction: 1107
       startSourceChar: 1599
       endSourceChar: 1627
       line: 65
       lineChar: 8
       spanCodeSection: PlayerApiref.SetJumpImpulse(
-    - startInstruction: 1048
-      endInstruction: 1071
+    - startInstruction: 1108
+      endInstruction: 1131
       startSourceChar: 1627
       endSourceChar: 1651
       line: 65
       lineChar: 36
       spanCodeSection: "jump_impulse);\r\n        "
-    - startInstruction: 1072
-      endInstruction: 1071
+    - startInstruction: 1132
+      endInstruction: 1131
       startSourceChar: 1651
       endSourceChar: 1651
       line: 66
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1072
-      endInstruction: 1071
+    - startInstruction: 1132
+      endInstruction: 1131
       startSourceChar: 1651
       endSourceChar: 1661
       line: 66
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 1072
-      endInstruction: 1071
+    - startInstruction: 1132
+      endInstruction: 1131
+      startSourceChar: 1661
+      endSourceChar: 1661
+      line: 66
+      lineChar: 18
+      spanCodeSection: 
+    - startInstruction: 1132
+      endInstruction: 1151
       startSourceChar: 1661
       endSourceChar: 1692
       line: 66
       lineChar: 18
       spanCodeSection: '"player walk speed set to: " + '
-    - startInstruction: 1072
-      endInstruction: 1151
+    - startInstruction: 1152
+      endInstruction: 1231
       startSourceChar: 1692
       endSourceChar: 1721
       line: 66
       lineChar: 49
       spanCodeSection: "jump_impulse);\r\n    }\r\n\r\n    "
-    - startInstruction: 1152
-      endInstruction: 1171
+    - startInstruction: 1232
+      endInstruction: 1251
       startSourceChar: 1721
       endSourceChar: 1764
       line: 69
       lineChar: 4
       spanCodeSection: "public void Update_gravity_strength()\r\n    "
-    - startInstruction: 1172
-      endInstruction: 1171
+    - startInstruction: 1252
+      endInstruction: 1251
       startSourceChar: 1764
       endSourceChar: 1775
       line: 70
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1172
-      endInstruction: 1171
+    - startInstruction: 1252
+      endInstruction: 1251
       startSourceChar: 1775
       endSourceChar: 1775
       line: 71
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1172
-      endInstruction: 1171
+    - startInstruction: 1252
+      endInstruction: 1251
       startSourceChar: 1775
       endSourceChar: 1807
       line: 71
       lineChar: 8
       spanCodeSection: PlayerApiref.SetGravityStrength(
-    - startInstruction: 1172
-      endInstruction: 1195
+    - startInstruction: 1252
+      endInstruction: 1275
       startSourceChar: 1807
       endSourceChar: 1835
       line: 71
       lineChar: 40
       spanCodeSection: "gravity_strength);\r\n        "
-    - startInstruction: 1196
-      endInstruction: 1195
+    - startInstruction: 1276
+      endInstruction: 1275
       startSourceChar: 1835
       endSourceChar: 1835
       line: 72
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1196
-      endInstruction: 1195
+    - startInstruction: 1276
+      endInstruction: 1275
       startSourceChar: 1835
       endSourceChar: 1845
       line: 72
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 1196
-      endInstruction: 1195
+    - startInstruction: 1276
+      endInstruction: 1275
+      startSourceChar: 1845
+      endSourceChar: 1845
+      line: 72
+      lineChar: 18
+      spanCodeSection: 
+    - startInstruction: 1276
+      endInstruction: 1295
       startSourceChar: 1845
       endSourceChar: 1876
       line: 72
       lineChar: 18
       spanCodeSection: '"player walk speed set to: " + '
-    - startInstruction: 1196
-      endInstruction: 1196
+    - startInstruction: 1296
+      endInstruction: 1296
       startSourceChar: 1876
       endSourceChar: 1876
       line: 72

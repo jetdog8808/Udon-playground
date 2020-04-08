@@ -40,14 +40,17 @@ MonoBehaviour:
     \   __2_intnl_SystemBoolean: %SystemBoolean, null\r\n    __3_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __4_intnl_SystemBoolean: %SystemBoolean, null\r\n
     \   __0_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_SystemObject: %SystemObject,
-    null\r\n    __1_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __1_intnl_SystemSingle: %SystemSingle, null\r\n    __2_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __3_intnl_SystemSingle: %SystemSingle, null\r\n    __4_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __5_intnl_SystemSingle: %SystemSingle, null\r\n    __6_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __7_intnl_SystemSingle: %SystemSingle, null\r\n    __8_intnl_SystemSingle:
-    %SystemSingle, null\r\n    __9_intnl_SystemSingle: %SystemSingle, null\r\n    __0_intnl_SystemString:
-    %SystemString, null\r\n    __1_intnl_SystemString: %SystemString, null\r\n    __2_intnl_SystemString:
-    %SystemString, null\r\n    __0_intnl_SystemType: %SystemType, null\r\n    __1_intnl_SystemType:
+    null\r\n    __1_intnl_SystemObject: %SystemObject, null\r\n    __2_intnl_SystemObject:
+    %SystemObject, null\r\n    __3_intnl_SystemObject: %SystemObject, null\r\n    __0_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __1_intnl_SystemSingle: %SystemSingle, null\r\n    __10_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __2_intnl_SystemSingle: %SystemSingle, null\r\n    __3_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __4_intnl_SystemSingle: %SystemSingle, null\r\n    __5_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __6_intnl_SystemSingle: %SystemSingle, null\r\n    __7_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __8_intnl_SystemSingle: %SystemSingle, null\r\n    __9_intnl_SystemSingle:
+    %SystemSingle, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
+    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __0_intnl_UnityEngineUIText:
+    %UnityEngineUIText, null\r\n    __0_intnl_SystemType: %SystemType, null\r\n    __1_intnl_SystemType:
+    %SystemType, null\r\n    __2_intnl_SystemType: %SystemType, null\r\n    __3_intnl_SystemType:
     %SystemType, null\r\n    __0_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
     \   __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n    __1_intnl_oldReturnLoc_UInt32:
     %SystemUInt32, null\r\n    __2_intnl_oldReturnLoc_UInt32: %SystemUInt32, null\r\n
@@ -69,15 +72,17 @@ MonoBehaviour:
     __0_intnl_SystemObject\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
     \       PUSH, __0_intnl_SystemObject\r\n        PUSH, __0_variable_Object\r\n
     \       COPY\r\n        \r\n         # if (variable != null)\r\n        PUSH,
-    __0_variable_Object\r\n        PUSH, __0_const_intnl_SystemObject\r\n        PUSH,
-    __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000198\r\n
+    __0_variable_Object\r\n        PUSH, __1_intnl_SystemObject\r\n        COPY\r\n
+    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __0_const_intnl_SystemObject\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001C0\r\n
     \       \r\n         # {\r\n        \r\n         # if (variable.GetType() == typeof(float))\r\n
     \       PUSH, __0_variable_Object\r\n        PUSH, __0_intnl_SystemType\r\n        EXTERN,
     \"SystemObject.__GetType__SystemType\"\r\n        PUSH, __0_intnl_SystemType\r\n
+    \       PUSH, __1_intnl_SystemType\r\n        COPY\r\n        PUSH, __1_intnl_SystemType\r\n
     \       PUSH, __0_const_intnl_SystemType\r\n        PUSH, __1_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemType.__op_Equality__SystemType_SystemType__SystemBoolean\"\r\n
-    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000180\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001A8\r\n
     \       \r\n         # {\r\n        \r\n         # float num = (float)variable;\r\n
     \       PUSH, __0_variable_Object\r\n        PUSH, __1_intnl_SystemSingle\r\n
     \       EXTERN, \"SystemConvert.__ToSingle__SystemObject__SystemSingle\"\r\n        PUSH,
@@ -89,12 +94,12 @@ MonoBehaviour:
     \       PUSH, __0_intnl_SystemString\r\n        PUSH, __0_vistext_String\r\n        COPY\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __0_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __0_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000055C\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000584\r\n
     \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        JUMP, 0x00000190\r\n        \r\n         # else\r\n        \r\n
+    \       COPY\r\n        JUMP, 0x000001B8\r\n        \r\n         # else\r\n        \r\n
     \        # {\r\n        \r\n         # Debug.LogWarning(\"float controller: variable
     not of float type\");\r\n        PUSH, __2_const_intnl_SystemString\r\n        EXTERN,
-    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        JUMP, 0x000001A8\r\n
+    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        JUMP, 0x000001D0\r\n
     \       \r\n         # else\r\n        \r\n         # {\r\n        \r\n         #
     Debug.LogWarning(\"float controller: get variable returned null\");\r\n        PUSH,
     __3_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
@@ -109,7 +114,7 @@ MonoBehaviour:
     \       PUSH, __2_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        COPY\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __1_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __1_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005FC\r\n
     \       PUSH, __1_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void variablesub() //subtract 1 from float\r\n    .export
@@ -124,7 +129,7 @@ MonoBehaviour:
     __3_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        COPY\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        PUSH, __2_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __2_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005FC\r\n
     \       PUSH, __2_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void variablepartadd() //add .1 to float\r\n    .export
@@ -136,7 +141,7 @@ MonoBehaviour:
     calculatefloat(0.1f);\r\n        PUSH, __0_const_intnl_SystemSingle\r\n        PUSH,
     __0_num_Single\r\n        COPY\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       PUSH, __3_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __3_const_intnl_exitJumpLoc_UInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005FC\r\n
     \       PUSH, __3_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void variablepartsub() //subtract .1 from float\r\n
@@ -150,7 +155,7 @@ MonoBehaviour:
     \       PUSH, __4_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        COPY\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __4_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __4_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005FC\r\n
     \       PUSH, __4_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void variablecalcustom() //add a custom number to
@@ -160,7 +165,7 @@ MonoBehaviour:
     \       PUSH, custom_num\r\n        PUSH, __0_num_Single\r\n        COPY\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        PUSH, __5_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __5_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005C0\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x000005FC\r\n
     \       PUSH, __5_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void variableset() //set float to custom number\r\n
@@ -175,16 +180,17 @@ MonoBehaviour:
     __1_intnl_SystemString\r\n        PUSH, __0_vistext_String\r\n        COPY\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __6_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __6_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000055C\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000584\r\n
     \       PUSH, __6_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
     \       \r\n         # public void updatevisual(string vistext) //update text
     display if added\r\n    .export updatevisual\r\n        \r\n    updatevisual:\r\n
     \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # {\r\n        \r\n         # if (display
-    != null)\r\n        PUSH, display\r\n        PUSH, __0_const_intnl_UnityEngineUIText\r\n
+    != null)\r\n        PUSH, display\r\n        PUSH, __0_intnl_UnityEngineUIText\r\n
+    \       COPY\r\n        PUSH, __0_intnl_UnityEngineUIText\r\n        PUSH, __0_const_intnl_UnityEngineUIText\r\n
     \       PUSH, __2_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000005A4\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000005E0\r\n
     \       \r\n         # {\r\n        \r\n         # display.text = vistext;\r\n
     \       PUSH, display\r\n        PUSH, __0_vistext_String\r\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n
     \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n        \r\n
@@ -193,29 +199,32 @@ MonoBehaviour:
     \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        \r\n         # {\r\n        \r\n         # object variable
     = (float)udonBehaviour.GetProgramVariable(variable_string);\r\n        PUSH, udonBehaviour\r\n
-    \       PUSH, variable_string\r\n        PUSH, __1_intnl_SystemObject\r\n        EXTERN,
+    \       PUSH, variable_string\r\n        PUSH, __2_intnl_SystemObject\r\n        EXTERN,
     \"VRCUdonCommonInterfacesIUdonEventReceiver.__GetProgramVariable__SystemString__SystemObject\"\r\n
-    \       PUSH, __1_intnl_SystemObject\r\n        PUSH, __6_intnl_SystemSingle\r\n
+    \       PUSH, __2_intnl_SystemObject\r\n        PUSH, __6_intnl_SystemSingle\r\n
     \       EXTERN, \"SystemConvert.__ToSingle__SystemObject__SystemSingle\"\r\n        PUSH,
     __6_intnl_SystemSingle\r\n        PUSH, __5_intnl_SystemSingle\r\n        COPY\r\n
     \       PUSH, __5_intnl_SystemSingle\r\n        PUSH, __1_variable_Object\r\n
     \       COPY\r\n        \r\n         # if (variable != null) //checks if variable
-    is null\r\n        PUSH, __1_variable_Object\r\n        PUSH, __0_const_intnl_SystemObject\r\n
+    is null\r\n        PUSH, __1_variable_Object\r\n        PUSH, __3_intnl_SystemObject\r\n
+    \       COPY\r\n        PUSH, __3_intnl_SystemObject\r\n        PUSH, __0_const_intnl_SystemObject\r\n
     \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemObject.__op_Inequality__SystemObject_SystemObject__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000007B0\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000828\r\n
     \       \r\n         # {\r\n        \r\n         # if (variable.GetType() == typeof(float))
     //checks if variable is a floa type\r\n        PUSH, __1_variable_Object\r\n        PUSH,
-    __1_intnl_SystemType\r\n        EXTERN, \"SystemObject.__GetType__SystemType\"\r\n
-    \       PUSH, __1_intnl_SystemType\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    __2_intnl_SystemType\r\n        EXTERN, \"SystemObject.__GetType__SystemType\"\r\n
+    \       PUSH, __2_intnl_SystemType\r\n        PUSH, __3_intnl_SystemType\r\n        COPY\r\n
+    \       PUSH, __3_intnl_SystemType\r\n        PUSH, __0_const_intnl_SystemType\r\n
     \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"SystemType.__op_Equality__SystemType_SystemType__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000798\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000810\r\n
     \       \r\n         # {\r\n        \r\n         # float result = ((float)variable
     + num);\r\n        PUSH, __1_variable_Object\r\n        PUSH, __8_intnl_SystemSingle\r\n
     \       EXTERN, \"SystemConvert.__ToSingle__SystemObject__SystemSingle\"\r\n        PUSH,
     __8_intnl_SystemSingle\r\n        PUSH, __7_intnl_SystemSingle\r\n        COPY\r\n
-    \       PUSH, __7_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n        PUSH,
-    __9_intnl_SystemSingle\r\n        EXTERN, \"SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle\"\r\n
-    \       PUSH, __9_intnl_SystemSingle\r\n        PUSH, __0_result_Single\r\n        COPY\r\n
+    \       PUSH, __7_intnl_SystemSingle\r\n        PUSH, __9_intnl_SystemSingle\r\n
+    \       COPY\r\n        PUSH, __9_intnl_SystemSingle\r\n        PUSH, __0_num_Single\r\n
+    \       PUSH, __10_intnl_SystemSingle\r\n        EXTERN, \"SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle\"\r\n
+    \       PUSH, __10_intnl_SystemSingle\r\n        PUSH, __0_result_Single\r\n        COPY\r\n
     \       \r\n         # udonBehaviour.SetProgramVariable(variable_string, result);\r\n
     \       PUSH, udonBehaviour\r\n        PUSH, variable_string\r\n        PUSH,
     __0_result_Single\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SetProgramVariable__SystemString_SystemObject__SystemVoid\"\r\n
@@ -225,12 +234,12 @@ MonoBehaviour:
     \       PUSH, __2_intnl_SystemString\r\n        PUSH, __0_vistext_String\r\n        COPY\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        PUSH, __7_intnl_oldReturnLoc_UInt32\r\n
     \       COPY\r\n        PUSH, __7_const_intnl_exitJumpLoc_UInt32\r\n        PUSH,
-    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x0000055C\r\n
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000584\r\n
     \       PUSH, __7_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
-    \       COPY\r\n        JUMP, 0x000007A8\r\n        \r\n         # else\r\n        \r\n
+    \       COPY\r\n        JUMP, 0x00000820\r\n        \r\n         # else\r\n        \r\n
     \        # {\r\n        \r\n         # Debug.LogWarning(\"float controller: variable
     not of float type\");\r\n        PUSH, __2_const_intnl_SystemString\r\n        EXTERN,
-    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        JUMP, 0x000007C0\r\n
+    \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n        JUMP, 0x00000838\r\n
     \       \r\n         # else\r\n        \r\n         # {\r\n        \r\n         #
     Debug.LogWarning(\"float controller: get variable returned null\");\r\n        PUSH,
     __3_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
@@ -581,931 +590,1022 @@ MonoBehaviour:
     - startInstruction: 72
       endInstruction: 71
       startSourceChar: 509
+      endSourceChar: 509
+      line: 19
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 72
+      endInstruction: 91
+      startSourceChar: 509
       endSourceChar: 521
       line: 19
       lineChar: 12
       spanCodeSection: 'variable != '
-    - startInstruction: 72
-      endInstruction: 119
+    - startInstruction: 92
+      endInstruction: 139
       startSourceChar: 521
       endSourceChar: 536
       line: 19
       lineChar: 24
       spanCodeSection: "null)\r\n        "
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 536
       endSourceChar: 551
       line: 20
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 551
       endSourceChar: 555
       line: 21
       lineChar: 12
       spanCodeSection: if (
-    - startInstruction: 120
-      endInstruction: 119
+    - startInstruction: 140
+      endInstruction: 139
       startSourceChar: 555
-      endSourceChar: 577
+      endSourceChar: 555
       line: 21
       lineChar: 16
-      spanCodeSection: 'variable.GetType() == '
-    - startInstruction: 120
-      endInstruction: 119
+      spanCodeSection: 
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 555
+      endSourceChar: 555
+      line: 21
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 555
+      endSourceChar: 555
+      line: 21
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 555
+      endSourceChar: 564
+      line: 21
+      lineChar: 16
+      spanCodeSection: variable.
+    - startInstruction: 140
+      endInstruction: 183
+      startSourceChar: 564
+      endSourceChar: 577
+      line: 21
+      lineChar: 25
+      spanCodeSection: 'GetType() == '
+    - startInstruction: 184
+      endInstruction: 183
       startSourceChar: 577
       endSourceChar: 584
       line: 21
       lineChar: 38
       spanCodeSection: typeof(
-    - startInstruction: 120
-      endInstruction: 191
+    - startInstruction: 184
+      endInstruction: 231
       startSourceChar: 584
       endSourceChar: 605
       line: 21
       lineChar: 45
       spanCodeSection: "float))\r\n            "
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 605
       endSourceChar: 624
       line: 22
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 624
       endSourceChar: 624
       line: 23
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 624
       endSourceChar: 624
       line: 23
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 624
       endSourceChar: 624
       line: 23
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 624
       endSourceChar: 634
       line: 23
       lineChar: 16
       spanCodeSection: 'float num '
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 634
       endSourceChar: 636
       line: 23
       lineChar: 26
       spanCodeSection: '= '
-    - startInstruction: 192
-      endInstruction: 191
+    - startInstruction: 232
+      endInstruction: 231
       startSourceChar: 636
       endSourceChar: 643
       line: 23
       lineChar: 28
       spanCodeSection: (float)
-    - startInstruction: 192
-      endInstruction: 255
+    - startInstruction: 232
+      endInstruction: 295
       startSourceChar: 643
       endSourceChar: 670
       line: 23
       lineChar: 35
       spanCodeSection: "variable;\r\n                "
-    - startInstruction: 256
-      endInstruction: 255
+    - startInstruction: 296
+      endInstruction: 295
       startSourceChar: 670
       endSourceChar: 670
       line: 24
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 256
-      endInstruction: 255
+    - startInstruction: 296
+      endInstruction: 295
       startSourceChar: 670
       endSourceChar: 683
       line: 24
       lineChar: 16
       spanCodeSection: updatevisual(
-    - startInstruction: 256
-      endInstruction: 255
+    - startInstruction: 296
+      endInstruction: 295
       startSourceChar: 683
       endSourceChar: 696
       line: 24
       lineChar: 29
       spanCodeSection: num.ToString(
-    - startInstruction: 256
-      endInstruction: 383
+    - startInstruction: 296
+      endInstruction: 423
       startSourceChar: 696
       endSourceChar: 734
       line: 24
       lineChar: 42
       spanCodeSection: "\"0.00\"));\r\n            }\r\n            "
-    - startInstruction: 384
-      endInstruction: 383
+    - startInstruction: 424
+      endInstruction: 423
       startSourceChar: 734
       endSourceChar: 752
       line: 26
       lineChar: 12
       spanCodeSection: "else\r\n            "
-    - startInstruction: 384
-      endInstruction: 383
+    - startInstruction: 424
+      endInstruction: 423
       startSourceChar: 752
       endSourceChar: 771
       line: 27
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 384
-      endInstruction: 383
+    - startInstruction: 424
+      endInstruction: 423
       startSourceChar: 771
       endSourceChar: 771
       line: 28
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 384
-      endInstruction: 383
+    - startInstruction: 424
+      endInstruction: 423
       startSourceChar: 771
       endSourceChar: 788
       line: 28
       lineChar: 16
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 384
-      endInstruction: 407
+    - startInstruction: 424
+      endInstruction: 447
       startSourceChar: 788
       endSourceChar: 872
       line: 28
       lineChar: 33
       spanCodeSection: "\"float controller: variable not of float type\");\r\n            }\r\n
         \       }\r\n        "
-    - startInstruction: 408
-      endInstruction: 407
+    - startInstruction: 448
+      endInstruction: 447
       startSourceChar: 872
       endSourceChar: 886
       line: 31
       lineChar: 8
       spanCodeSection: "else\r\n        "
-    - startInstruction: 408
-      endInstruction: 407
+    - startInstruction: 448
+      endInstruction: 447
       startSourceChar: 886
       endSourceChar: 901
       line: 32
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 408
-      endInstruction: 407
+    - startInstruction: 448
+      endInstruction: 447
       startSourceChar: 901
       endSourceChar: 901
       line: 33
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 408
-      endInstruction: 407
+    - startInstruction: 448
+      endInstruction: 447
       startSourceChar: 901
       endSourceChar: 918
       line: 33
       lineChar: 12
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 408
-      endInstruction: 431
+    - startInstruction: 448
+      endInstruction: 471
       startSourceChar: 918
       endSourceChar: 994
       line: 33
       lineChar: 29
       spanCodeSection: "\"float controller: get variable returned null\");\r\n        }\r\n\r\n
         \   }\r\n\r\n    "
-    - startInstruction: 432
-      endInstruction: 451
+    - startInstruction: 472
+      endInstruction: 491
       startSourceChar: 994
       endSourceChar: 1042
       line: 38
       lineChar: 4
       spanCodeSection: "public void variableadd() //add 1 to float\r\n    "
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 492
+      endInstruction: 491
       startSourceChar: 1042
       endSourceChar: 1053
       line: 39
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 492
+      endInstruction: 491
       startSourceChar: 1053
       endSourceChar: 1053
       line: 40
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 492
+      endInstruction: 491
       startSourceChar: 1053
       endSourceChar: 1063
       line: 40
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 452
-      endInstruction: 467
+    - startInstruction: 492
+      endInstruction: 507
       startSourceChar: 1063
       endSourceChar: 1089
       line: 40
       lineChar: 18
       spanCodeSection: "\"add executed\");\r\n        "
-    - startInstruction: 468
-      endInstruction: 467
+    - startInstruction: 508
+      endInstruction: 507
       startSourceChar: 1089
       endSourceChar: 1089
       line: 41
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 468
-      endInstruction: 467
+    - startInstruction: 508
+      endInstruction: 507
       startSourceChar: 1089
       endSourceChar: 1104
       line: 41
       lineChar: 8
       spanCodeSection: calculatefloat(
-    - startInstruction: 468
-      endInstruction: 587
+    - startInstruction: 508
+      endInstruction: 627
       startSourceChar: 1104
       endSourceChar: 1122
       line: 41
       lineChar: 23
       spanCodeSection: "1);\r\n    }\r\n\r\n    "
-    - startInstruction: 588
-      endInstruction: 607
+    - startInstruction: 628
+      endInstruction: 647
       startSourceChar: 1122
       endSourceChar: 1177
       line: 44
       lineChar: 4
       spanCodeSection: "public void variablesub() //subtract 1 from float\r\n    "
-    - startInstruction: 608
-      endInstruction: 607
+    - startInstruction: 648
+      endInstruction: 647
       startSourceChar: 1177
       endSourceChar: 1188
       line: 45
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 608
-      endInstruction: 607
+    - startInstruction: 648
+      endInstruction: 647
       startSourceChar: 1188
       endSourceChar: 1188
       line: 46
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 608
-      endInstruction: 607
+    - startInstruction: 648
+      endInstruction: 647
       startSourceChar: 1188
       endSourceChar: 1198
       line: 46
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 608
-      endInstruction: 623
+    - startInstruction: 648
+      endInstruction: 663
       startSourceChar: 1198
       endSourceChar: 1224
       line: 46
       lineChar: 18
       spanCodeSection: "\"sub executed\");\r\n        "
-    - startInstruction: 624
-      endInstruction: 623
+    - startInstruction: 664
+      endInstruction: 663
       startSourceChar: 1224
       endSourceChar: 1224
       line: 47
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 624
-      endInstruction: 623
+    - startInstruction: 664
+      endInstruction: 663
       startSourceChar: 1224
       endSourceChar: 1239
       line: 47
       lineChar: 8
       spanCodeSection: calculatefloat(
-    - startInstruction: 624
-      endInstruction: 623
+    - startInstruction: 664
+      endInstruction: 663
       startSourceChar: 1239
       endSourceChar: 1240
       line: 47
       lineChar: 23
       spanCodeSection: '-'
-    - startInstruction: 624
-      endInstruction: 767
+    - startInstruction: 664
+      endInstruction: 807
       startSourceChar: 1240
       endSourceChar: 1258
       line: 47
       lineChar: 24
       spanCodeSection: "1);\r\n    }\r\n\r\n    "
-    - startInstruction: 768
-      endInstruction: 787
+    - startInstruction: 808
+      endInstruction: 827
       startSourceChar: 1258
       endSourceChar: 1311
       line: 50
       lineChar: 4
       spanCodeSection: "public void variablepartadd() //add .1 to float\r\n    "
-    - startInstruction: 788
-      endInstruction: 787
+    - startInstruction: 828
+      endInstruction: 827
       startSourceChar: 1311
       endSourceChar: 1322
       line: 51
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 788
-      endInstruction: 787
+    - startInstruction: 828
+      endInstruction: 827
       startSourceChar: 1322
       endSourceChar: 1322
       line: 52
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 788
-      endInstruction: 787
+    - startInstruction: 828
+      endInstruction: 827
       startSourceChar: 1322
       endSourceChar: 1332
       line: 52
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 788
-      endInstruction: 803
+    - startInstruction: 828
+      endInstruction: 843
       startSourceChar: 1332
       endSourceChar: 1358
       line: 52
       lineChar: 18
       spanCodeSection: "\"add executed\");\r\n        "
-    - startInstruction: 804
-      endInstruction: 803
+    - startInstruction: 844
+      endInstruction: 843
       startSourceChar: 1358
       endSourceChar: 1358
       line: 53
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 804
-      endInstruction: 803
+    - startInstruction: 844
+      endInstruction: 843
       startSourceChar: 1358
       endSourceChar: 1373
       line: 53
       lineChar: 8
       spanCodeSection: calculatefloat(
-    - startInstruction: 804
-      endInstruction: 899
+    - startInstruction: 844
+      endInstruction: 939
       startSourceChar: 1373
       endSourceChar: 1394
       line: 53
       lineChar: 23
       spanCodeSection: "0.1f);\r\n    }\r\n\r\n    "
-    - startInstruction: 900
-      endInstruction: 919
+    - startInstruction: 940
+      endInstruction: 959
       startSourceChar: 1394
       endSourceChar: 1454
       line: 56
       lineChar: 4
       spanCodeSection: "public void variablepartsub() //subtract .1 from float\r\n
         \   "
-    - startInstruction: 920
-      endInstruction: 919
+    - startInstruction: 960
+      endInstruction: 959
       startSourceChar: 1454
       endSourceChar: 1465
       line: 57
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 920
-      endInstruction: 919
+    - startInstruction: 960
+      endInstruction: 959
       startSourceChar: 1465
       endSourceChar: 1465
       line: 58
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 920
-      endInstruction: 919
+    - startInstruction: 960
+      endInstruction: 959
       startSourceChar: 1465
       endSourceChar: 1475
       line: 58
       lineChar: 8
       spanCodeSection: Debug.Log(
-    - startInstruction: 920
-      endInstruction: 935
+    - startInstruction: 960
+      endInstruction: 975
       startSourceChar: 1475
       endSourceChar: 1501
       line: 58
       lineChar: 18
       spanCodeSection: "\"sub executed\");\r\n        "
-    - startInstruction: 936
-      endInstruction: 935
+    - startInstruction: 976
+      endInstruction: 975
       startSourceChar: 1501
       endSourceChar: 1501
       line: 59
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 936
-      endInstruction: 935
+    - startInstruction: 976
+      endInstruction: 975
       startSourceChar: 1501
       endSourceChar: 1516
       line: 59
       lineChar: 8
       spanCodeSection: calculatefloat(
-    - startInstruction: 936
-      endInstruction: 935
+    - startInstruction: 976
+      endInstruction: 975
       startSourceChar: 1516
       endSourceChar: 1517
       line: 59
       lineChar: 23
       spanCodeSection: '-'
-    - startInstruction: 936
-      endInstruction: 1055
+    - startInstruction: 976
+      endInstruction: 1095
       startSourceChar: 1517
       endSourceChar: 1538
       line: 59
       lineChar: 24
       spanCodeSection: "0.1f);\r\n    }\r\n\r\n    "
-    - startInstruction: 1056
-      endInstruction: 1075
+    - startInstruction: 1096
+      endInstruction: 1115
       startSourceChar: 1538
       endSourceChar: 1606
       line: 62
       lineChar: 4
       spanCodeSection: "public void variablecalcustom() //add a custom number to float\r\n
         \   "
-    - startInstruction: 1076
-      endInstruction: 1075
+    - startInstruction: 1116
+      endInstruction: 1115
       startSourceChar: 1606
       endSourceChar: 1617
       line: 63
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1076
-      endInstruction: 1075
+    - startInstruction: 1116
+      endInstruction: 1115
       startSourceChar: 1617
       endSourceChar: 1617
       line: 64
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1076
-      endInstruction: 1075
+    - startInstruction: 1116
+      endInstruction: 1115
       startSourceChar: 1617
       endSourceChar: 1632
       line: 64
       lineChar: 8
       spanCodeSection: calculatefloat(
-    - startInstruction: 1076
-      endInstruction: 1171
+    - startInstruction: 1116
+      endInstruction: 1211
       startSourceChar: 1632
       endSourceChar: 1659
       line: 64
       lineChar: 23
       spanCodeSection: "custom_num);\r\n    }\r\n\r\n    "
-    - startInstruction: 1172
-      endInstruction: 1191
+    - startInstruction: 1212
+      endInstruction: 1231
       startSourceChar: 1659
       endSourceChar: 1719
       line: 67
       lineChar: 4
       spanCodeSection: "public void variableset() //set float to custom number\r\n
         \   "
-    - startInstruction: 1192
-      endInstruction: 1191
+    - startInstruction: 1232
+      endInstruction: 1231
       startSourceChar: 1719
       endSourceChar: 1730
       line: 68
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1192
-      endInstruction: 1191
+    - startInstruction: 1232
+      endInstruction: 1231
       startSourceChar: 1730
       endSourceChar: 1730
       line: 69
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1192
-      endInstruction: 1191
+    - startInstruction: 1232
+      endInstruction: 1231
       startSourceChar: 1730
       endSourceChar: 1763
       line: 69
       lineChar: 8
       spanCodeSection: udonBehaviour.SetProgramVariable(
-    - startInstruction: 1192
-      endInstruction: 1191
+    - startInstruction: 1232
+      endInstruction: 1231
       startSourceChar: 1763
       endSourceChar: 1780
       line: 69
       lineChar: 41
       spanCodeSection: 'variable_string, '
-    - startInstruction: 1192
-      endInstruction: 1223
+    - startInstruction: 1232
+      endInstruction: 1263
       startSourceChar: 1780
       endSourceChar: 1802
       line: 69
       lineChar: 58
       spanCodeSection: "custom_num);\r\n        "
-    - startInstruction: 1224
-      endInstruction: 1223
+    - startInstruction: 1264
+      endInstruction: 1263
       startSourceChar: 1802
       endSourceChar: 1802
       line: 70
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1224
-      endInstruction: 1223
+    - startInstruction: 1264
+      endInstruction: 1263
       startSourceChar: 1802
       endSourceChar: 1815
       line: 70
       lineChar: 8
       spanCodeSection: updatevisual(
-    - startInstruction: 1224
-      endInstruction: 1223
+    - startInstruction: 1264
+      endInstruction: 1263
       startSourceChar: 1815
       endSourceChar: 1835
       line: 70
       lineChar: 21
       spanCodeSection: custom_num.ToString(
-    - startInstruction: 1224
-      endInstruction: 1351
+    - startInstruction: 1264
+      endInstruction: 1391
       startSourceChar: 1835
       endSourceChar: 1859
       line: 70
       lineChar: 41
       spanCodeSection: "\"0.00\"));\r\n    }\r\n\r\n    "
-    - startInstruction: 1352
-      endInstruction: 1371
+    - startInstruction: 1392
+      endInstruction: 1411
       startSourceChar: 1859
       endSourceChar: 1936
       line: 73
       lineChar: 4
       spanCodeSection: "public void updatevisual(string vistext) //update text display
         if added\r\n    "
-    - startInstruction: 1372
-      endInstruction: 1371
+    - startInstruction: 1412
+      endInstruction: 1411
       startSourceChar: 1936
       endSourceChar: 1947
       line: 74
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1372
-      endInstruction: 1371
+    - startInstruction: 1412
+      endInstruction: 1411
       startSourceChar: 1947
       endSourceChar: 1951
       line: 75
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 1372
-      endInstruction: 1371
+    - startInstruction: 1412
+      endInstruction: 1411
+      startSourceChar: 1951
+      endSourceChar: 1951
+      line: 75
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1412
+      endInstruction: 1431
       startSourceChar: 1951
       endSourceChar: 1962
       line: 75
       lineChar: 12
       spanCodeSection: 'display != '
-    - startInstruction: 1372
-      endInstruction: 1419
+    - startInstruction: 1432
+      endInstruction: 1479
       startSourceChar: 1962
       endSourceChar: 1977
       line: 75
       lineChar: 23
       spanCodeSection: "null)\r\n        "
-    - startInstruction: 1420
-      endInstruction: 1419
+    - startInstruction: 1480
+      endInstruction: 1479
       startSourceChar: 1977
       endSourceChar: 1992
       line: 76
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1420
-      endInstruction: 1419
+    - startInstruction: 1480
+      endInstruction: 1479
       startSourceChar: 1992
       endSourceChar: 1992
       line: 77
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1420
-      endInstruction: 1419
+    - startInstruction: 1480
+      endInstruction: 1479
       startSourceChar: 1992
       endSourceChar: 2007
       line: 77
       lineChar: 12
       spanCodeSection: 'display.text = '
-    - startInstruction: 1420
-      endInstruction: 1451
+    - startInstruction: 1480
+      endInstruction: 1511
       startSourceChar: 2007
       endSourceChar: 2041
       line: 77
       lineChar: 27
       spanCodeSection: "vistext;\r\n        }\r\n    }\r\n\r\n    "
-    - startInstruction: 1452
-      endInstruction: 1471
+    - startInstruction: 1512
+      endInstruction: 1531
       startSourceChar: 2041
       endSourceChar: 2124
       line: 81
       lineChar: 4
       spanCodeSection: "public void calculatefloat (float num) //calculates adding
         number to variable\r\n    "
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2124
       endSourceChar: 2135
       line: 82
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2135
       endSourceChar: 2135
       line: 83
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2135
       endSourceChar: 2135
       line: 83
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2135
       endSourceChar: 2135
       line: 83
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2135
       endSourceChar: 2151
       line: 83
       lineChar: 8
       spanCodeSection: 'object variable '
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2151
       endSourceChar: 2153
       line: 83
       lineChar: 24
       spanCodeSection: '= '
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2153
       endSourceChar: 2160
       line: 83
       lineChar: 26
       spanCodeSection: (float)
-    - startInstruction: 1472
-      endInstruction: 1471
+    - startInstruction: 1532
+      endInstruction: 1531
       startSourceChar: 2160
       endSourceChar: 2193
       line: 83
       lineChar: 33
       spanCodeSection: udonBehaviour.GetProgramVariable(
-    - startInstruction: 1472
-      endInstruction: 1567
+    - startInstruction: 1532
+      endInstruction: 1627
       startSourceChar: 2193
       endSourceChar: 2220
       line: 83
       lineChar: 66
       spanCodeSection: "variable_string);\r\n        "
-    - startInstruction: 1568
-      endInstruction: 1567
+    - startInstruction: 1628
+      endInstruction: 1627
       startSourceChar: 2220
       endSourceChar: 2224
       line: 84
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 1568
-      endInstruction: 1567
+    - startInstruction: 1628
+      endInstruction: 1627
+      startSourceChar: 2224
+      endSourceChar: 2224
+      line: 84
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 1628
+      endInstruction: 1647
       startSourceChar: 2224
       endSourceChar: 2236
       line: 84
       lineChar: 12
       spanCodeSection: 'variable != '
-    - startInstruction: 1568
-      endInstruction: 1615
+    - startInstruction: 1648
+      endInstruction: 1695
       startSourceChar: 2236
       endSourceChar: 2280
       line: 84
       lineChar: 24
       spanCodeSection: "null) //checks if variable is null\r\n        "
-    - startInstruction: 1616
-      endInstruction: 1615
+    - startInstruction: 1696
+      endInstruction: 1695
       startSourceChar: 2280
       endSourceChar: 2295
       line: 85
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1616
-      endInstruction: 1615
+    - startInstruction: 1696
+      endInstruction: 1695
       startSourceChar: 2295
       endSourceChar: 2299
       line: 86
       lineChar: 12
       spanCodeSection: if (
-    - startInstruction: 1616
-      endInstruction: 1615
+    - startInstruction: 1696
+      endInstruction: 1695
       startSourceChar: 2299
-      endSourceChar: 2321
+      endSourceChar: 2299
       line: 86
       lineChar: 16
-      spanCodeSection: 'variable.GetType() == '
-    - startInstruction: 1616
-      endInstruction: 1615
+      spanCodeSection: 
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2299
+      endSourceChar: 2299
+      line: 86
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2299
+      endSourceChar: 2299
+      line: 86
+      lineChar: 16
+      spanCodeSection: 
+    - startInstruction: 1696
+      endInstruction: 1695
+      startSourceChar: 2299
+      endSourceChar: 2308
+      line: 86
+      lineChar: 16
+      spanCodeSection: variable.
+    - startInstruction: 1696
+      endInstruction: 1739
+      startSourceChar: 2308
+      endSourceChar: 2321
+      line: 86
+      lineChar: 25
+      spanCodeSection: 'GetType() == '
+    - startInstruction: 1740
+      endInstruction: 1739
       startSourceChar: 2321
       endSourceChar: 2328
       line: 86
       lineChar: 38
       spanCodeSection: typeof(
-    - startInstruction: 1616
-      endInstruction: 1687
+    - startInstruction: 1740
+      endInstruction: 1787
       startSourceChar: 2328
       endSourceChar: 2385
       line: 86
       lineChar: 45
       spanCodeSection: "float)) //checks if variable is a floa type\r\n            "
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2385
       endSourceChar: 2462
       line: 87
       lineChar: 12
       spanCodeSection: "{\r\n                //does the math and updates text display\r\n
         \               "
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2462
       endSourceChar: 2462
       line: 89
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2462
       endSourceChar: 2462
       line: 89
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2462
       endSourceChar: 2462
       line: 89
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2462
       endSourceChar: 2475
       line: 89
       lineChar: 16
       spanCodeSection: 'float result '
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2475
       endSourceChar: 2477
       line: 89
       lineChar: 29
       spanCodeSection: '= '
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2477
       endSourceChar: 2478
       line: 89
       lineChar: 31
       spanCodeSection: (
-    - startInstruction: 1688
-      endInstruction: 1687
+    - startInstruction: 1788
+      endInstruction: 1787
       startSourceChar: 2478
-      endSourceChar: 2496
+      endSourceChar: 2478
       line: 89
       lineChar: 32
-      spanCodeSection: '(float)variable + '
-    - startInstruction: 1688
-      endInstruction: 1783
+      spanCodeSection: 
+    - startInstruction: 1788
+      endInstruction: 1787
+      startSourceChar: 2478
+      endSourceChar: 2485
+      line: 89
+      lineChar: 32
+      spanCodeSection: (float)
+    - startInstruction: 1788
+      endInstruction: 1851
+      startSourceChar: 2485
+      endSourceChar: 2496
+      line: 89
+      lineChar: 39
+      spanCodeSection: 'variable + '
+    - startInstruction: 1852
+      endInstruction: 1903
       startSourceChar: 2496
       endSourceChar: 2519
       line: 89
       lineChar: 50
       spanCodeSection: "num);\r\n                "
-    - startInstruction: 1784
-      endInstruction: 1783
+    - startInstruction: 1904
+      endInstruction: 1903
       startSourceChar: 2519
       endSourceChar: 2519
       line: 90
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1784
-      endInstruction: 1783
+    - startInstruction: 1904
+      endInstruction: 1903
       startSourceChar: 2519
       endSourceChar: 2552
       line: 90
       lineChar: 16
       spanCodeSection: udonBehaviour.SetProgramVariable(
-    - startInstruction: 1784
-      endInstruction: 1783
+    - startInstruction: 1904
+      endInstruction: 1903
       startSourceChar: 2552
       endSourceChar: 2569
       line: 90
       lineChar: 49
       spanCodeSection: 'variable_string, '
-    - startInstruction: 1784
-      endInstruction: 1815
+    - startInstruction: 1904
+      endInstruction: 1935
       startSourceChar: 2569
       endSourceChar: 2595
       line: 90
       lineChar: 66
       spanCodeSection: "result);\r\n                "
-    - startInstruction: 1816
-      endInstruction: 1815
+    - startInstruction: 1936
+      endInstruction: 1935
       startSourceChar: 2595
       endSourceChar: 2595
       line: 91
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1816
-      endInstruction: 1815
+    - startInstruction: 1936
+      endInstruction: 1935
       startSourceChar: 2595
       endSourceChar: 2608
       line: 91
       lineChar: 16
       spanCodeSection: updatevisual(
-    - startInstruction: 1816
-      endInstruction: 1815
+    - startInstruction: 1936
+      endInstruction: 1935
       startSourceChar: 2608
       endSourceChar: 2624
       line: 91
       lineChar: 29
       spanCodeSection: result.ToString(
-    - startInstruction: 1816
-      endInstruction: 1943
+    - startInstruction: 1936
+      endInstruction: 2063
       startSourceChar: 2624
       endSourceChar: 2662
       line: 91
       lineChar: 45
       spanCodeSection: "\"0.00\"));\r\n            }\r\n            "
-    - startInstruction: 1944
-      endInstruction: 1943
+    - startInstruction: 2064
+      endInstruction: 2063
       startSourceChar: 2662
       endSourceChar: 2680
       line: 93
       lineChar: 12
       spanCodeSection: "else\r\n            "
-    - startInstruction: 1944
-      endInstruction: 1943
+    - startInstruction: 2064
+      endInstruction: 2063
       startSourceChar: 2680
       endSourceChar: 2699
       line: 94
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 1944
-      endInstruction: 1943
+    - startInstruction: 2064
+      endInstruction: 2063
       startSourceChar: 2699
       endSourceChar: 2699
       line: 95
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1944
-      endInstruction: 1943
+    - startInstruction: 2064
+      endInstruction: 2063
       startSourceChar: 2699
       endSourceChar: 2716
       line: 95
       lineChar: 16
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 1944
-      endInstruction: 1967
+    - startInstruction: 2064
+      endInstruction: 2087
       startSourceChar: 2716
       endSourceChar: 2800
       line: 95
       lineChar: 33
       spanCodeSection: "\"float controller: variable not of float type\");\r\n            }\r\n
         \       }\r\n        "
-    - startInstruction: 1968
-      endInstruction: 1967
+    - startInstruction: 2088
+      endInstruction: 2087
       startSourceChar: 2800
       endSourceChar: 2814
       line: 98
       lineChar: 8
       spanCodeSection: "else\r\n        "
-    - startInstruction: 1968
-      endInstruction: 1967
+    - startInstruction: 2088
+      endInstruction: 2087
       startSourceChar: 2814
       endSourceChar: 2829
       line: 99
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 1968
-      endInstruction: 1967
+    - startInstruction: 2088
+      endInstruction: 2087
       startSourceChar: 2829
       endSourceChar: 2829
       line: 100
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1968
-      endInstruction: 1967
+    - startInstruction: 2088
+      endInstruction: 2087
       startSourceChar: 2829
       endSourceChar: 2846
       line: 100
       lineChar: 12
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 1968
-      endInstruction: 1968
+    - startInstruction: 2088
+      endInstruction: 2088
       startSourceChar: 2846
       endSourceChar: 2846
       line: 100

@@ -14,39 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: e0b69a922f0a6964ba4a6dcf5b73217c,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export PlayerApiref\r\n    .export networksettled\r\n
-    \   .export ismaster\r\n    .export netdatatime\r\n    .export prevtime\r\n    .export
-    servertimesec\r\n    .export serverdeltatime\r\n    .export ownername\r\n    .export
-    isowner\r\n    .export objready\r\n    .export uniquename\r\n\r\n    __refl_const_intnl_udonTypeID:
+  udonAssembly: ".data_start\r\n\r\n    .export networksettled\r\n    .export ismaster\r\n
+    \   .export netdatatime\r\n    .export prevtime\r\n    .export servertimesec\r\n
+    \   .export serverdeltatime\r\n    .export ownername\r\n    .export isowner\r\n
+    \   .export objready\r\n    .export uniquename\r\n\r\n    __refl_const_intnl_udonTypeID:
     %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName: %SystemString, null\r\n
     \   prevtime: %SystemDouble, null\r\n    ismaster: %UnityEngineUIText, null\r\n
     \   isowner: %UnityEngineUIText, null\r\n    netdatatime: %UnityEngineUIText,
     null\r\n    networksettled: %UnityEngineUIText, null\r\n    objready: %UnityEngineUIText,
     null\r\n    ownername: %UnityEngineUIText, null\r\n    serverdeltatime: %UnityEngineUIText,
     null\r\n    servertimesec: %UnityEngineUIText, null\r\n    uniquename: %UnityEngineUIText,
-    null\r\n    PlayerApiref: %VRCSDKBaseVRCPlayerApi, null\r\n    onTriggerEnterOther:
-    %UnityEngineCollider, null\r\n    __0_other_Collider: %UnityEngineCollider, null\r\n
-    \   __0_secs_Double: %SystemDouble, null\r\n    __0_objselected_GameObject: %UnityEngineGameObject,
-    null\r\n    __0_const_intnl_UnityEngineCollider: %UnityEngineCollider, null\r\n
-    \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
+    null\r\n    onTriggerEnterOther: %UnityEngineCollider, null\r\n    PlayerApiref:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    __0_other_Collider: %UnityEngineCollider,
+    null\r\n    __0_secs_Double: %SystemDouble, null\r\n    __0_objselected_GameObject:
+    %UnityEngineGameObject, null\r\n    __0_const_intnl_UnityEngineCollider: %UnityEngineCollider,
+    null\r\n    __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemString:
     %SystemString, null\r\n    __1_const_intnl_SystemString: %SystemString, null\r\n
     \   __2_const_intnl_SystemString: %SystemString, null\r\n    __3_const_intnl_SystemString:
     %SystemString, null\r\n    __4_const_intnl_SystemString: %SystemString, null\r\n
     \   __5_const_intnl_SystemString: %SystemString, null\r\n    __6_const_intnl_SystemString:
     %SystemString, null\r\n    __7_const_intnl_SystemString: %SystemString, null\r\n
-    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __0_const_intnl_SystemUInt32:
-    %SystemUInt32, null\r\n    __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
+    \   __8_const_intnl_SystemString: %SystemString, null\r\n    __9_const_intnl_SystemString:
+    %SystemString, null\r\n    __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n
+    \   __0_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __2_intnl_SystemBoolean: %SystemBoolean, null\r\n
     \   __3_intnl_SystemBoolean: %SystemBoolean, null\r\n    __4_intnl_SystemBoolean:
-    %SystemBoolean, null\r\n    __0_intnl_SystemDateTime: %SystemDateTime, null\r\n
-    \   __0_intnl_SystemDouble: %SystemDouble, null\r\n    __1_intnl_SystemDouble:
-    %SystemDouble, null\r\n    __0_intnl_UnityEngineGameObject: %UnityEngineGameObject,
-    null\r\n    __0_intnl_SystemString: %SystemString, null\r\n    __1_intnl_SystemString:
-    %SystemString, null\r\n    __10_intnl_SystemString: %SystemString, null\r\n    __11_intnl_SystemString:
-    %SystemString, null\r\n    __12_intnl_SystemString: %SystemString, null\r\n    __13_intnl_SystemString:
-    %SystemString, null\r\n    __14_intnl_SystemString: %SystemString, null\r\n    __15_intnl_SystemString:
-    %SystemString, null\r\n    __16_intnl_SystemString: %SystemString, null\r\n    __17_intnl_SystemString:
-    %SystemString, null\r\n    __2_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
+    %SystemBoolean, null\r\n    __0_intnl_UnityEngineCollider: %UnityEngineCollider,
+    null\r\n    __0_intnl_SystemDateTime: %SystemDateTime, null\r\n    __0_intnl_SystemDouble:
+    %SystemDouble, null\r\n    __1_intnl_SystemDouble: %SystemDouble, null\r\n    __0_intnl_UnityEngineGameObject:
+    %UnityEngineGameObject, null\r\n    __0_intnl_SystemString: %SystemString, null\r\n
+    \   __1_intnl_SystemString: %SystemString, null\r\n    __10_intnl_SystemString:
+    %SystemString, null\r\n    __11_intnl_SystemString: %SystemString, null\r\n    __12_intnl_SystemString:
+    %SystemString, null\r\n    __13_intnl_SystemString: %SystemString, null\r\n    __14_intnl_SystemString:
+    %SystemString, null\r\n    __15_intnl_SystemString: %SystemString, null\r\n    __16_intnl_SystemString:
+    %SystemString, null\r\n    __17_intnl_SystemString: %SystemString, null\r\n    __18_intnl_SystemString:
+    %SystemString, null\r\n    __19_intnl_SystemString: %SystemString, null\r\n    __2_intnl_SystemString:
+    %SystemString, null\r\n    __20_intnl_SystemString: %SystemString, null\r\n    __21_intnl_SystemString:
+    %SystemString, null\r\n    __22_intnl_SystemString: %SystemString, null\r\n    __23_intnl_SystemString:
+    %SystemString, null\r\n    __24_intnl_SystemString: %SystemString, null\r\n    __25_intnl_SystemString:
+    %SystemString, null\r\n    __26_intnl_SystemString: %SystemString, null\r\n    __3_intnl_SystemString:
     %SystemString, null\r\n    __4_intnl_SystemString: %SystemString, null\r\n    __5_intnl_SystemString:
     %SystemString, null\r\n    __6_intnl_SystemString: %SystemString, null\r\n    __7_intnl_SystemString:
     %SystemString, null\r\n    __8_intnl_SystemString: %SystemString, null\r\n    __9_intnl_SystemString:
@@ -56,7 +62,7 @@ MonoBehaviour:
     UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n        \r\n         #
     using UnityEngine.UI;\r\n        \r\n         # using VRC.SDKBase;\r\n        \r\n
     \        # using VRC.Udon;\r\n        \r\n         # public class networking_visualizer
-    : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         # public VRCPlayerApi
+    : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         # private VRCPlayerApi
     PlayerApiref;\r\n        \r\n         # public Text networksettled;\r\n        \r\n
     \        # public Text ismaster;\r\n        \r\n         # public Text netdatatime;\r\n
     \       \r\n         # public double prevtime = 0.0;\r\n        \r\n         #
@@ -77,43 +83,50 @@ MonoBehaviour:
     \       EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\r\n
     \       PUSH, __0_intnl_SystemDouble\r\n        PUSH, __0_secs_Double\r\n        COPY\r\n
     \       \r\n         # networksettled.text = \"isnetworksettled: \" + Networking.IsNetworkSettled.ToString();\r\n
-    \       PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_IsNetworkSettled__SystemBoolean\"\r\n
-    \       PUSH, __0_intnl_SystemBoolean\r\n        PUSH, __0_intnl_SystemString\r\n
-    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __0_const_intnl_SystemString\r\n
-    \       PUSH, __0_intnl_SystemString\r\n        PUSH, __1_intnl_SystemString\r\n
+    \       PUSH, __0_const_intnl_SystemString\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_IsNetworkSettled__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        PUSH, __1_intnl_SystemString\r\n
+    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __0_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_SystemString\r\n        PUSH, __2_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, networksettled\r\n        PUSH, __1_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, networksettled\r\n        PUSH, __2_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     ismaster.text = \"ismaster: \" + Networking.IsMaster.ToString();\r\n        PUSH,
-    __1_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean\"\r\n
-    \       PUSH, __1_intnl_SystemBoolean\r\n        PUSH, __2_intnl_SystemString\r\n
-    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __1_const_intnl_SystemString\r\n
-    \       PUSH, __2_intnl_SystemString\r\n        PUSH, __3_intnl_SystemString\r\n
-    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, ismaster\r\n        PUSH, __3_intnl_SystemString\r\n        EXTERN,
-    \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
-    netdatatime.text = \"networkdatatime: \" + Networking.GetNetworkDateTime().ToString();\r\n
-    \       PUSH, __0_intnl_SystemDateTime\r\n        EXTERN, \"VRCSDKBaseNetworking.__GetNetworkDateTime__SystemDateTime\"\r\n
-    \       PUSH, __0_intnl_SystemDateTime\r\n        PUSH, __4_intnl_SystemString\r\n
-    \       EXTERN, \"SystemDateTime.__ToString__SystemString\"\r\n        PUSH, __2_const_intnl_SystemString\r\n
+    __1_const_intnl_SystemString\r\n        PUSH, __3_intnl_SystemString\r\n        COPY\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        PUSH, __4_intnl_SystemString\r\n
+    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __3_intnl_SystemString\r\n
     \       PUSH, __4_intnl_SystemString\r\n        PUSH, __5_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, netdatatime\r\n        PUSH, __5_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, ismaster\r\n        PUSH, __5_intnl_SystemString\r\n        EXTERN,
+    \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
+    netdatatime.text = \"networkdatatime: \" + Networking.GetNetworkDateTime().ToString();\r\n
+    \       PUSH, __2_const_intnl_SystemString\r\n        PUSH, __6_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, __0_intnl_SystemDateTime\r\n        EXTERN, \"VRCSDKBaseNetworking.__GetNetworkDateTime__SystemDateTime\"\r\n
+    \       PUSH, __0_intnl_SystemDateTime\r\n        PUSH, __7_intnl_SystemString\r\n
+    \       EXTERN, \"SystemDateTime.__ToString__SystemString\"\r\n        PUSH, __6_intnl_SystemString\r\n
+    \       PUSH, __7_intnl_SystemString\r\n        PUSH, __8_intnl_SystemString\r\n
+    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, netdatatime\r\n        PUSH, __8_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     servertimesec.text = \"servertimeinseconds: \" + secs.ToString();\r\n        PUSH,
-    __0_secs_Double\r\n        PUSH, __6_intnl_SystemString\r\n        EXTERN, \"SystemDouble.__ToString__SystemString\"\r\n
-    \       PUSH, __3_const_intnl_SystemString\r\n        PUSH, __6_intnl_SystemString\r\n
-    \       PUSH, __7_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, servertimesec\r\n        PUSH, __7_intnl_SystemString\r\n        EXTERN,
+    __3_const_intnl_SystemString\r\n        PUSH, __9_intnl_SystemString\r\n        COPY\r\n
+    \       PUSH, __0_secs_Double\r\n        PUSH, __10_intnl_SystemString\r\n        EXTERN,
+    \"SystemDouble.__ToString__SystemString\"\r\n        PUSH, __9_intnl_SystemString\r\n
+    \       PUSH, __10_intnl_SystemString\r\n        PUSH, __11_intnl_SystemString\r\n
+    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, servertimesec\r\n        PUSH, __11_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     serverdeltatime.text = \"serverdeltatime: \" + Networking.CalculateServerDeltaTime(secs,
-    prevtime).ToString();\r\n        PUSH, __0_secs_Double\r\n        PUSH, prevtime\r\n
-    \       PUSH, __1_intnl_SystemDouble\r\n        EXTERN, \"VRCSDKBaseNetworking.__CalculateServerDeltaTime__SystemDouble_SystemDouble__SystemDouble\"\r\n
-    \       PUSH, __1_intnl_SystemDouble\r\n        PUSH, __8_intnl_SystemString\r\n
-    \       EXTERN, \"SystemDouble.__ToString__SystemString\"\r\n        PUSH, __4_const_intnl_SystemString\r\n
-    \       PUSH, __8_intnl_SystemString\r\n        PUSH, __9_intnl_SystemString\r\n
-    \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, serverdeltatime\r\n        PUSH, __9_intnl_SystemString\r\n        EXTERN,
+    prevtime).ToString(\"0.0000\");\r\n        PUSH, __4_const_intnl_SystemString\r\n
+    \       PUSH, __12_intnl_SystemString\r\n        COPY\r\n        PUSH, __0_secs_Double\r\n
+    \       PUSH, prevtime\r\n        PUSH, __1_intnl_SystemDouble\r\n        EXTERN,
+    \"VRCSDKBaseNetworking.__CalculateServerDeltaTime__SystemDouble_SystemDouble__SystemDouble\"\r\n
+    \       PUSH, __1_intnl_SystemDouble\r\n        PUSH, __5_const_intnl_SystemString\r\n
+    \       PUSH, __13_intnl_SystemString\r\n        EXTERN, \"SystemDouble.__ToString__SystemString__SystemString\"\r\n
+    \       PUSH, __12_intnl_SystemString\r\n        PUSH, __13_intnl_SystemString\r\n
+    \       PUSH, __14_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, serverdeltatime\r\n        PUSH, __14_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     prevtime = secs;\r\n        PUSH, __0_secs_Double\r\n        PUSH, prevtime\r\n
     \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
@@ -122,46 +135,51 @@ MonoBehaviour:
     __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
     \       COPY\r\n        PUSH, onTriggerEnterOther\r\n        PUSH, __0_other_Collider\r\n
     \       COPY\r\n        \r\n         # {\r\n        \r\n         # if (other !=
-    null)\r\n        PUSH, __0_other_Collider\r\n        PUSH, __0_const_intnl_UnityEngineCollider\r\n
+    null)\r\n        PUSH, __0_other_Collider\r\n        PUSH, __0_intnl_UnityEngineCollider\r\n
+    \       COPY\r\n        PUSH, __0_intnl_UnityEngineCollider\r\n        PUSH, __0_const_intnl_UnityEngineCollider\r\n
     \       PUSH, __2_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000488\r\n
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000558\r\n
     \       \r\n         # {\r\n        \r\n         # GameObject objselected = other.gameObject;\r\n
     \       PUSH, __0_other_Collider\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineCollider.__get_gameObject__UnityEngineGameObject\"\r\n
     \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_objselected_GameObject\r\n
     \       COPY\r\n        \r\n         # ownername.text = \"ownername: \" + Networking.GetOwner(objselected).displayName;\r\n
-    \       PUSH, __0_objselected_GameObject\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       PUSH, __6_const_intnl_SystemString\r\n        PUSH, __15_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, __0_objselected_GameObject\r\n        PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n
     \       EXTERN, \"VRCSDKBaseNetworking.__GetOwner__UnityEngineGameObject__VRCSDKBaseVRCPlayerApi\"\r\n
-    \       PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __10_intnl_SystemString\r\n
+    \       PUSH, __1_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, __16_intnl_SystemString\r\n
     \       EXTERN, \"VRCSDKBaseVRCPlayerApi.__get_displayName__SystemString\"\r\n
-    \       PUSH, __5_const_intnl_SystemString\r\n        PUSH, __10_intnl_SystemString\r\n
-    \       PUSH, __11_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, ownername\r\n        PUSH, __11_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, __15_intnl_SystemString\r\n        PUSH, __16_intnl_SystemString\r\n
+    \       PUSH, __17_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, ownername\r\n        PUSH, __17_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     isowner.text = \"isowner: \" + Networking.IsOwner(PlayerApiref, objselected).ToString();\r\n
-    \       PUSH, PlayerApiref\r\n        PUSH, __0_objselected_GameObject\r\n        PUSH,
-    __3_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__IsOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        PUSH, __12_intnl_SystemString\r\n
-    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __6_const_intnl_SystemString\r\n
-    \       PUSH, __12_intnl_SystemString\r\n        PUSH, __13_intnl_SystemString\r\n
+    \       PUSH, __7_const_intnl_SystemString\r\n        PUSH, __18_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, PlayerApiref\r\n        PUSH, __0_objselected_GameObject\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"VRCSDKBaseNetworking.__IsOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        PUSH, __19_intnl_SystemString\r\n
+    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __18_intnl_SystemString\r\n
+    \       PUSH, __19_intnl_SystemString\r\n        PUSH, __20_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, isowner\r\n        PUSH, __13_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, isowner\r\n        PUSH, __20_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     objready.text = \"isobjectready: \" + Networking.IsObjectReady(objselected).ToString();\r\n
-    \       PUSH, __0_objselected_GameObject\r\n        PUSH, __4_intnl_SystemBoolean\r\n
+    \       PUSH, __8_const_intnl_SystemString\r\n        PUSH, __21_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, __0_objselected_GameObject\r\n        PUSH, __4_intnl_SystemBoolean\r\n
     \       EXTERN, \"VRCSDKBaseNetworking.__IsObjectReady__UnityEngineGameObject__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        PUSH, __14_intnl_SystemString\r\n
-    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __7_const_intnl_SystemString\r\n
-    \       PUSH, __14_intnl_SystemString\r\n        PUSH, __15_intnl_SystemString\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        PUSH, __22_intnl_SystemString\r\n
+    \       EXTERN, \"SystemBoolean.__ToString__SystemString\"\r\n        PUSH, __21_intnl_SystemString\r\n
+    \       PUSH, __22_intnl_SystemString\r\n        PUSH, __23_intnl_SystemString\r\n
     \       EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, objready\r\n        PUSH, __15_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, objready\r\n        PUSH, __23_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        \r\n         #
     uniquename.text = \"uniquename: \" + Networking.GetUniqueName(objselected);\r\n
-    \       PUSH, __0_objselected_GameObject\r\n        PUSH, __16_intnl_SystemString\r\n
+    \       PUSH, __9_const_intnl_SystemString\r\n        PUSH, __24_intnl_SystemString\r\n
+    \       COPY\r\n        PUSH, __0_objselected_GameObject\r\n        PUSH, __25_intnl_SystemString\r\n
     \       EXTERN, \"VRCSDKBaseNetworking.__GetUniqueName__UnityEngineGameObject__SystemString\"\r\n
-    \       PUSH, __8_const_intnl_SystemString\r\n        PUSH, __16_intnl_SystemString\r\n
-    \       PUSH, __17_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
-    \       PUSH, uniquename\r\n        PUSH, __17_intnl_SystemString\r\n        EXTERN,
+    \       PUSH, __24_intnl_SystemString\r\n        PUSH, __25_intnl_SystemString\r\n
+    \       PUSH, __26_intnl_SystemString\r\n        EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\r\n
+    \       PUSH, uniquename\r\n        PUSH, __26_intnl_SystemString\r\n        EXTERN,
     \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n        JUMP_INDIRECT,
     __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
   assemblyError: 
@@ -327,987 +345,1029 @@ MonoBehaviour:
     - startInstruction: 0
       endInstruction: -1
       startSourceChar: 166
-      endSourceChar: 173
+      endSourceChar: 174
       line: 9
       lineChar: 4
-      spanCodeSection: 'public '
+      spanCodeSection: 'private '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 173
-      endSourceChar: 173
+      startSourceChar: 174
+      endSourceChar: 174
       line: 9
-      lineChar: 11
+      lineChar: 12
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 173
-      endSourceChar: 207
+      startSourceChar: 174
+      endSourceChar: 208
       line: 9
-      lineChar: 11
+      lineChar: 12
       spanCodeSection: "VRCPlayerApi PlayerApiref;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 207
-      endSourceChar: 214
+      startSourceChar: 208
+      endSourceChar: 215
       line: 11
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 214
-      endSourceChar: 214
+      startSourceChar: 215
+      endSourceChar: 215
       line: 11
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 214
-      endSourceChar: 240
+      startSourceChar: 215
+      endSourceChar: 241
       line: 11
       lineChar: 11
       spanCodeSection: "Text networksettled;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 240
-      endSourceChar: 247
+      startSourceChar: 241
+      endSourceChar: 248
       line: 12
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 247
-      endSourceChar: 247
+      startSourceChar: 248
+      endSourceChar: 248
       line: 12
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 247
-      endSourceChar: 267
+      startSourceChar: 248
+      endSourceChar: 268
       line: 12
       lineChar: 11
       spanCodeSection: "Text ismaster;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 267
-      endSourceChar: 274
+      startSourceChar: 268
+      endSourceChar: 275
       line: 13
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 274
-      endSourceChar: 274
+      startSourceChar: 275
+      endSourceChar: 275
       line: 13
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 274
-      endSourceChar: 297
+      startSourceChar: 275
+      endSourceChar: 298
       line: 13
       lineChar: 11
       spanCodeSection: "Text netdatatime;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 297
-      endSourceChar: 304
+      startSourceChar: 298
+      endSourceChar: 305
       line: 14
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 304
-      endSourceChar: 304
+      startSourceChar: 305
+      endSourceChar: 305
       line: 14
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 304
-      endSourceChar: 332
+      startSourceChar: 305
+      endSourceChar: 333
       line: 14
       lineChar: 11
       spanCodeSection: "double prevtime = 0.0;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 332
-      endSourceChar: 339
+      startSourceChar: 333
+      endSourceChar: 340
       line: 15
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 339
-      endSourceChar: 339
+      startSourceChar: 340
+      endSourceChar: 340
       line: 15
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 339
-      endSourceChar: 364
+      startSourceChar: 340
+      endSourceChar: 365
       line: 15
       lineChar: 11
       spanCodeSection: "Text servertimesec;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 364
-      endSourceChar: 371
+      startSourceChar: 365
+      endSourceChar: 372
       line: 16
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 371
-      endSourceChar: 371
+      startSourceChar: 372
+      endSourceChar: 372
       line: 16
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 371
-      endSourceChar: 400
+      startSourceChar: 372
+      endSourceChar: 401
       line: 16
       lineChar: 11
       spanCodeSection: "Text serverdeltatime;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 400
-      endSourceChar: 407
+      startSourceChar: 401
+      endSourceChar: 408
       line: 18
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 407
-      endSourceChar: 407
+      startSourceChar: 408
+      endSourceChar: 408
       line: 18
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 407
-      endSourceChar: 428
+      startSourceChar: 408
+      endSourceChar: 429
       line: 18
       lineChar: 11
       spanCodeSection: "Text ownername;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 428
-      endSourceChar: 435
+      startSourceChar: 429
+      endSourceChar: 436
       line: 19
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 435
-      endSourceChar: 435
+      startSourceChar: 436
+      endSourceChar: 436
       line: 19
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 435
-      endSourceChar: 454
+      startSourceChar: 436
+      endSourceChar: 455
       line: 19
       lineChar: 11
       spanCodeSection: "Text isowner;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 454
-      endSourceChar: 461
+      startSourceChar: 455
+      endSourceChar: 462
       line: 20
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 461
-      endSourceChar: 461
+      startSourceChar: 462
+      endSourceChar: 462
       line: 20
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 461
-      endSourceChar: 481
+      startSourceChar: 462
+      endSourceChar: 482
       line: 20
       lineChar: 11
       spanCodeSection: "Text objready;\r\n    "
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 481
-      endSourceChar: 488
+      startSourceChar: 482
+      endSourceChar: 489
       line: 21
       lineChar: 4
       spanCodeSection: 'public '
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 488
-      endSourceChar: 488
+      startSourceChar: 489
+      endSourceChar: 489
       line: 21
       lineChar: 11
       spanCodeSection: 
     - startInstruction: 0
       endInstruction: -1
-      startSourceChar: 488
-      endSourceChar: 512
+      startSourceChar: 489
+      endSourceChar: 513
       line: 21
       lineChar: 11
       spanCodeSection: "Text uniquename;\r\n\r\n    "
     - startInstruction: 0
       endInstruction: 19
-      startSourceChar: 512
-      endSourceChar: 538
+      startSourceChar: 513
+      endSourceChar: 539
       line: 23
       lineChar: 4
       spanCodeSection: "private void Start()\r\n    "
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 538
-      endSourceChar: 549
+      startSourceChar: 539
+      endSourceChar: 550
       line: 24
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 549
-      endSourceChar: 549
+      startSourceChar: 550
+      endSourceChar: 550
       line: 25
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 549
-      endSourceChar: 564
+      startSourceChar: 550
+      endSourceChar: 565
       line: 25
       lineChar: 8
       spanCodeSection: 'PlayerApiref = '
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 564
-      endSourceChar: 564
+      startSourceChar: 565
+      endSourceChar: 565
       line: 25
       lineChar: 23
       spanCodeSection: 
     - startInstruction: 20
       endInstruction: 19
-      startSourceChar: 564
-      endSourceChar: 575
+      startSourceChar: 565
+      endSourceChar: 576
       line: 25
       lineChar: 23
       spanCodeSection: Networking.
     - startInstruction: 20
       endInstruction: 63
-      startSourceChar: 575
-      endSourceChar: 602
+      startSourceChar: 576
+      endSourceChar: 603
       line: 25
       lineChar: 34
       spanCodeSection: "LocalPlayer;\r\n    }\r\n\r\n    "
     - startInstruction: 64
       endInstruction: 83
-      startSourceChar: 602
-      endSourceChar: 621
+      startSourceChar: 603
+      endSourceChar: 622
       line: 28
       lineChar: 4
       spanCodeSection: "void Update()\r\n    "
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 621
-      endSourceChar: 632
+      startSourceChar: 622
+      endSourceChar: 633
       line: 29
       lineChar: 4
       spanCodeSection: "{\r\n        "
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 632
-      endSourceChar: 632
+      startSourceChar: 633
+      endSourceChar: 633
       line: 30
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 632
-      endSourceChar: 632
+      startSourceChar: 633
+      endSourceChar: 633
       line: 30
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 632
-      endSourceChar: 632
+      startSourceChar: 633
+      endSourceChar: 633
       line: 30
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 632
-      endSourceChar: 644
+      startSourceChar: 633
+      endSourceChar: 645
       line: 30
       lineChar: 8
       spanCodeSection: 'double secs '
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 644
-      endSourceChar: 646
+      startSourceChar: 645
+      endSourceChar: 647
       line: 30
       lineChar: 20
       spanCodeSection: '= '
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 646
-      endSourceChar: 646
+      startSourceChar: 647
+      endSourceChar: 647
       line: 30
       lineChar: 22
       spanCodeSection: 
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 646
-      endSourceChar: 646
+      startSourceChar: 647
+      endSourceChar: 647
       line: 30
       lineChar: 22
       spanCodeSection: 
     - startInstruction: 84
       endInstruction: 83
-      startSourceChar: 646
-      endSourceChar: 657
+      startSourceChar: 647
+      endSourceChar: 658
       line: 30
       lineChar: 22
       spanCodeSection: Networking.
     - startInstruction: 84
       endInstruction: 119
-      startSourceChar: 657
-      endSourceChar: 692
+      startSourceChar: 658
+      endSourceChar: 693
       line: 30
       lineChar: 33
       spanCodeSection: "GetServerTimeInSeconds();\r\n        "
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 692
-      endSourceChar: 692
+      startSourceChar: 693
+      endSourceChar: 693
       line: 31
       lineChar: 8
       spanCodeSection: 
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 692
-      endSourceChar: 714
+      startSourceChar: 693
+      endSourceChar: 715
       line: 31
       lineChar: 8
       spanCodeSection: 'networksettled.text = '
     - startInstruction: 120
       endInstruction: 119
-      startSourceChar: 714
-      endSourceChar: 737
+      startSourceChar: 715
+      endSourceChar: 715
+      line: 31
+      lineChar: 30
+      spanCodeSection: 
+    - startInstruction: 120
+      endInstruction: 139
+      startSourceChar: 715
+      endSourceChar: 738
       line: 31
       lineChar: 30
       spanCodeSection: '"isnetworksettled: " + '
-    - startInstruction: 120
-      endInstruction: 119
-      startSourceChar: 737
-      endSourceChar: 737
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 738
+      endSourceChar: 738
       line: 31
       lineChar: 53
       spanCodeSection: 
-    - startInstruction: 120
-      endInstruction: 119
-      startSourceChar: 737
-      endSourceChar: 737
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 738
+      endSourceChar: 738
       line: 31
       lineChar: 53
       spanCodeSection: 
-    - startInstruction: 120
-      endInstruction: 119
-      startSourceChar: 737
-      endSourceChar: 737
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 738
+      endSourceChar: 738
       line: 31
       lineChar: 53
       spanCodeSection: 
-    - startInstruction: 120
-      endInstruction: 119
-      startSourceChar: 737
-      endSourceChar: 748
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 738
+      endSourceChar: 749
       line: 31
       lineChar: 53
       spanCodeSection: Networking.
-    - startInstruction: 120
-      endInstruction: 119
-      startSourceChar: 748
-      endSourceChar: 765
+    - startInstruction: 140
+      endInstruction: 139
+      startSourceChar: 749
+      endSourceChar: 766
       line: 31
       lineChar: 64
       spanCodeSection: IsNetworkSettled.
-    - startInstruction: 120
-      endInstruction: 215
-      startSourceChar: 765
-      endSourceChar: 786
+    - startInstruction: 140
+      endInstruction: 235
+      startSourceChar: 766
+      endSourceChar: 787
       line: 31
       lineChar: 81
       spanCodeSection: "ToString();\r\n        "
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 786
-      endSourceChar: 786
+    - startInstruction: 236
+      endInstruction: 235
+      startSourceChar: 787
+      endSourceChar: 787
       line: 32
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 786
-      endSourceChar: 802
+    - startInstruction: 236
+      endInstruction: 235
+      startSourceChar: 787
+      endSourceChar: 803
       line: 32
       lineChar: 8
       spanCodeSection: 'ismaster.text = '
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 802
-      endSourceChar: 817
+    - startInstruction: 236
+      endInstruction: 235
+      startSourceChar: 803
+      endSourceChar: 803
+      line: 32
+      lineChar: 24
+      spanCodeSection: 
+    - startInstruction: 236
+      endInstruction: 255
+      startSourceChar: 803
+      endSourceChar: 818
       line: 32
       lineChar: 24
       spanCodeSection: '"ismaster: " + '
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 817
-      endSourceChar: 817
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 818
+      endSourceChar: 818
       line: 32
       lineChar: 39
       spanCodeSection: 
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 817
-      endSourceChar: 817
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 818
+      endSourceChar: 818
       line: 32
       lineChar: 39
       spanCodeSection: 
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 817
-      endSourceChar: 817
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 818
+      endSourceChar: 818
       line: 32
       lineChar: 39
       spanCodeSection: 
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 817
-      endSourceChar: 828
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 818
+      endSourceChar: 829
       line: 32
       lineChar: 39
       spanCodeSection: Networking.
-    - startInstruction: 216
-      endInstruction: 215
-      startSourceChar: 828
-      endSourceChar: 837
+    - startInstruction: 256
+      endInstruction: 255
+      startSourceChar: 829
+      endSourceChar: 838
       line: 32
       lineChar: 50
       spanCodeSection: IsMaster.
-    - startInstruction: 216
-      endInstruction: 311
-      startSourceChar: 837
-      endSourceChar: 858
+    - startInstruction: 256
+      endInstruction: 351
+      startSourceChar: 838
+      endSourceChar: 859
       line: 32
       lineChar: 59
       spanCodeSection: "ToString();\r\n        "
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 858
-      endSourceChar: 858
+    - startInstruction: 352
+      endInstruction: 351
+      startSourceChar: 859
+      endSourceChar: 859
       line: 33
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 858
-      endSourceChar: 877
+    - startInstruction: 352
+      endInstruction: 351
+      startSourceChar: 859
+      endSourceChar: 878
       line: 33
       lineChar: 8
       spanCodeSection: 'netdatatime.text = '
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 877
-      endSourceChar: 899
+    - startInstruction: 352
+      endInstruction: 351
+      startSourceChar: 878
+      endSourceChar: 878
+      line: 33
+      lineChar: 27
+      spanCodeSection: 
+    - startInstruction: 352
+      endInstruction: 371
+      startSourceChar: 878
+      endSourceChar: 900
       line: 33
       lineChar: 27
       spanCodeSection: '"networkdatatime: " + '
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 899
-      endSourceChar: 899
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 900
+      endSourceChar: 900
       line: 33
       lineChar: 49
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 899
-      endSourceChar: 899
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 900
+      endSourceChar: 900
       line: 33
       lineChar: 49
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 899
-      endSourceChar: 899
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 900
+      endSourceChar: 900
       line: 33
       lineChar: 49
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 899
-      endSourceChar: 899
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 900
+      endSourceChar: 900
       line: 33
       lineChar: 49
       spanCodeSection: 
-    - startInstruction: 312
-      endInstruction: 311
-      startSourceChar: 899
-      endSourceChar: 910
+    - startInstruction: 372
+      endInstruction: 371
+      startSourceChar: 900
+      endSourceChar: 911
       line: 33
       lineChar: 49
       spanCodeSection: Networking.
-    - startInstruction: 312
-      endInstruction: 327
-      startSourceChar: 910
-      endSourceChar: 931
+    - startInstruction: 372
+      endInstruction: 387
+      startSourceChar: 911
+      endSourceChar: 932
       line: 33
       lineChar: 60
       spanCodeSection: GetNetworkDateTime().
-    - startInstruction: 328
-      endInstruction: 407
-      startSourceChar: 931
-      endSourceChar: 952
+    - startInstruction: 388
+      endInstruction: 467
+      startSourceChar: 932
+      endSourceChar: 953
       line: 33
       lineChar: 81
       spanCodeSection: "ToString();\r\n        "
-    - startInstruction: 408
-      endInstruction: 407
-      startSourceChar: 952
-      endSourceChar: 952
+    - startInstruction: 468
+      endInstruction: 467
+      startSourceChar: 953
+      endSourceChar: 953
       line: 34
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 408
-      endInstruction: 407
-      startSourceChar: 952
-      endSourceChar: 973
+    - startInstruction: 468
+      endInstruction: 467
+      startSourceChar: 953
+      endSourceChar: 974
       line: 34
       lineChar: 8
       spanCodeSection: 'servertimesec.text = '
-    - startInstruction: 408
-      endInstruction: 407
-      startSourceChar: 973
-      endSourceChar: 999
+    - startInstruction: 468
+      endInstruction: 467
+      startSourceChar: 974
+      endSourceChar: 974
+      line: 34
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 468
+      endInstruction: 487
+      startSourceChar: 974
+      endSourceChar: 1000
       line: 34
       lineChar: 29
       spanCodeSection: '"servertimeinseconds: " + '
-    - startInstruction: 408
-      endInstruction: 407
-      startSourceChar: 999
-      endSourceChar: 999
+    - startInstruction: 488
+      endInstruction: 487
+      startSourceChar: 1000
+      endSourceChar: 1000
       line: 34
       lineChar: 55
       spanCodeSection: 
-    - startInstruction: 408
-      endInstruction: 407
-      startSourceChar: 999
-      endSourceChar: 999
+    - startInstruction: 488
+      endInstruction: 487
+      startSourceChar: 1000
+      endSourceChar: 1000
       line: 34
       lineChar: 55
       spanCodeSection: 
-    - startInstruction: 408
-      endInstruction: 407
-      startSourceChar: 999
-      endSourceChar: 1004
+    - startInstruction: 488
+      endInstruction: 487
+      startSourceChar: 1000
+      endSourceChar: 1005
       line: 34
       lineChar: 55
       spanCodeSection: secs.
-    - startInstruction: 408
-      endInstruction: 487
-      startSourceChar: 1004
-      endSourceChar: 1025
+    - startInstruction: 488
+      endInstruction: 567
+      startSourceChar: 1005
+      endSourceChar: 1026
       line: 34
       lineChar: 60
       spanCodeSection: "ToString();\r\n        "
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1025
-      endSourceChar: 1025
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1026
+      endSourceChar: 1026
       line: 35
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1025
-      endSourceChar: 1048
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1026
+      endSourceChar: 1049
       line: 35
       lineChar: 8
       spanCodeSection: 'serverdeltatime.text = '
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1048
-      endSourceChar: 1070
+    - startInstruction: 568
+      endInstruction: 567
+      startSourceChar: 1049
+      endSourceChar: 1049
+      line: 35
+      lineChar: 31
+      spanCodeSection: 
+    - startInstruction: 568
+      endInstruction: 587
+      startSourceChar: 1049
+      endSourceChar: 1071
       line: 35
       lineChar: 31
       spanCodeSection: '"serverdeltatime: " + '
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1070
-      endSourceChar: 1070
+    - startInstruction: 588
+      endInstruction: 587
+      startSourceChar: 1071
+      endSourceChar: 1132
       line: 35
       lineChar: 53
-      spanCodeSection: 
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1070
-      endSourceChar: 1070
+      spanCodeSection: Networking.CalculateServerDeltaTime(secs, prevtime).ToString(
+    - startInstruction: 588
+      endInstruction: 707
+      startSourceChar: 1132
+      endSourceChar: 1152
       line: 35
-      lineChar: 53
-      spanCodeSection: 
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1070
-      endSourceChar: 1106
-      line: 35
-      lineChar: 53
-      spanCodeSection: Networking.CalculateServerDeltaTime(
-    - startInstruction: 488
-      endInstruction: 487
-      startSourceChar: 1106
-      endSourceChar: 1112
-      line: 35
-      lineChar: 89
-      spanCodeSection: 'secs, '
-    - startInstruction: 488
-      endInstruction: 519
-      startSourceChar: 1112
-      endSourceChar: 1122
-      line: 35
-      lineChar: 95
-      spanCodeSection: prevtime).
-    - startInstruction: 520
-      endInstruction: 599
-      startSourceChar: 1122
-      endSourceChar: 1143
-      line: 35
-      lineChar: 105
-      spanCodeSection: "ToString();\r\n        "
-    - startInstruction: 600
-      endInstruction: 599
-      startSourceChar: 1143
-      endSourceChar: 1143
+      lineChar: 114
+      spanCodeSection: "\"0.0000\");\r\n        "
+    - startInstruction: 708
+      endInstruction: 707
+      startSourceChar: 1152
+      endSourceChar: 1152
       line: 36
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 600
-      endInstruction: 599
-      startSourceChar: 1143
-      endSourceChar: 1154
+    - startInstruction: 708
+      endInstruction: 707
+      startSourceChar: 1152
+      endSourceChar: 1163
       line: 36
       lineChar: 8
       spanCodeSection: 'prevtime = '
-    - startInstruction: 600
-      endInstruction: 627
-      startSourceChar: 1154
-      endSourceChar: 1178
+    - startInstruction: 708
+      endInstruction: 735
+      startSourceChar: 1163
+      endSourceChar: 1187
       line: 36
       lineChar: 19
       spanCodeSection: "secs;\r\n\r\n\r\n    }\r\n\r\n    "
-    - startInstruction: 628
-      endInstruction: 667
-      startSourceChar: 1178
-      endSourceChar: 1227
+    - startInstruction: 736
+      endInstruction: 775
+      startSourceChar: 1187
+      endSourceChar: 1236
       line: 41
       lineChar: 4
       spanCodeSection: "private void OnTriggerEnter(Collider other)\r\n    "
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 1227
-      endSourceChar: 1238
+    - startInstruction: 776
+      endInstruction: 775
+      startSourceChar: 1236
+      endSourceChar: 1247
       line: 42
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 1238
-      endSourceChar: 1242
+    - startInstruction: 776
+      endInstruction: 775
+      startSourceChar: 1247
+      endSourceChar: 1251
       line: 43
       lineChar: 8
       spanCodeSection: if (
-    - startInstruction: 668
-      endInstruction: 667
-      startSourceChar: 1242
+    - startInstruction: 776
+      endInstruction: 775
+      startSourceChar: 1251
       endSourceChar: 1251
       line: 43
       lineChar: 12
-      spanCodeSection: 'other != '
-    - startInstruction: 668
-      endInstruction: 715
+      spanCodeSection: 
+    - startInstruction: 776
+      endInstruction: 795
       startSourceChar: 1251
-      endSourceChar: 1266
+      endSourceChar: 1260
+      line: 43
+      lineChar: 12
+      spanCodeSection: 'other != '
+    - startInstruction: 796
+      endInstruction: 843
+      startSourceChar: 1260
+      endSourceChar: 1275
       line: 43
       lineChar: 21
       spanCodeSection: "null)\r\n        "
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1266
-      endSourceChar: 1281
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1275
+      endSourceChar: 1290
       line: 44
       lineChar: 8
       spanCodeSection: "{\r\n            "
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1281
-      endSourceChar: 1281
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1290
+      endSourceChar: 1290
       line: 45
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1281
-      endSourceChar: 1281
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1290
+      endSourceChar: 1290
       line: 45
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1281
-      endSourceChar: 1281
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1290
+      endSourceChar: 1290
       line: 45
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1281
-      endSourceChar: 1304
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1290
+      endSourceChar: 1313
       line: 45
       lineChar: 12
       spanCodeSection: 'GameObject objselected '
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1304
-      endSourceChar: 1306
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1313
+      endSourceChar: 1315
       line: 45
       lineChar: 35
       spanCodeSection: '= '
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1306
-      endSourceChar: 1306
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1315
+      endSourceChar: 1315
       line: 45
       lineChar: 37
       spanCodeSection: 
-    - startInstruction: 716
-      endInstruction: 715
-      startSourceChar: 1306
-      endSourceChar: 1312
+    - startInstruction: 844
+      endInstruction: 843
+      startSourceChar: 1315
+      endSourceChar: 1321
       line: 45
       lineChar: 37
       spanCodeSection: other.
-    - startInstruction: 716
-      endInstruction: 759
-      startSourceChar: 1312
-      endSourceChar: 1339
+    - startInstruction: 844
+      endInstruction: 887
+      startSourceChar: 1321
+      endSourceChar: 1348
       line: 45
       lineChar: 43
       spanCodeSection: "gameObject;\r\n\r\n            "
-    - startInstruction: 760
-      endInstruction: 759
-      startSourceChar: 1339
-      endSourceChar: 1339
+    - startInstruction: 888
+      endInstruction: 887
+      startSourceChar: 1348
+      endSourceChar: 1348
       line: 47
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 760
-      endInstruction: 759
-      startSourceChar: 1339
-      endSourceChar: 1356
+    - startInstruction: 888
+      endInstruction: 887
+      startSourceChar: 1348
+      endSourceChar: 1365
       line: 47
       lineChar: 12
       spanCodeSection: 'ownername.text = '
-    - startInstruction: 760
-      endInstruction: 759
-      startSourceChar: 1356
-      endSourceChar: 1372
+    - startInstruction: 888
+      endInstruction: 887
+      startSourceChar: 1365
+      endSourceChar: 1365
+      line: 47
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 888
+      endInstruction: 907
+      startSourceChar: 1365
+      endSourceChar: 1381
       line: 47
       lineChar: 29
       spanCodeSection: '"ownername: " + '
-    - startInstruction: 760
-      endInstruction: 759
-      startSourceChar: 1372
-      endSourceChar: 1372
+    - startInstruction: 908
+      endInstruction: 907
+      startSourceChar: 1381
+      endSourceChar: 1381
       line: 47
       lineChar: 45
       spanCodeSection: 
-    - startInstruction: 760
-      endInstruction: 759
-      startSourceChar: 1372
-      endSourceChar: 1392
+    - startInstruction: 908
+      endInstruction: 907
+      startSourceChar: 1381
+      endSourceChar: 1401
       line: 47
       lineChar: 45
       spanCodeSection: Networking.GetOwner(
-    - startInstruction: 760
-      endInstruction: 783
-      startSourceChar: 1392
-      endSourceChar: 1405
+    - startInstruction: 908
+      endInstruction: 931
+      startSourceChar: 1401
+      endSourceChar: 1414
       line: 47
       lineChar: 65
       spanCodeSection: objselected).
-    - startInstruction: 784
-      endInstruction: 863
-      startSourceChar: 1405
-      endSourceChar: 1431
+    - startInstruction: 932
+      endInstruction: 1011
+      startSourceChar: 1414
+      endSourceChar: 1440
       line: 47
       lineChar: 78
       spanCodeSection: "displayName;\r\n            "
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1431
-      endSourceChar: 1431
+    - startInstruction: 1012
+      endInstruction: 1011
+      startSourceChar: 1440
+      endSourceChar: 1440
       line: 48
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1431
-      endSourceChar: 1446
+    - startInstruction: 1012
+      endInstruction: 1011
+      startSourceChar: 1440
+      endSourceChar: 1455
       line: 48
       lineChar: 12
       spanCodeSection: 'isowner.text = '
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1446
-      endSourceChar: 1460
+    - startInstruction: 1012
+      endInstruction: 1011
+      startSourceChar: 1455
+      endSourceChar: 1455
+      line: 48
+      lineChar: 27
+      spanCodeSection: 
+    - startInstruction: 1012
+      endInstruction: 1031
+      startSourceChar: 1455
+      endSourceChar: 1469
       line: 48
       lineChar: 27
       spanCodeSection: '"isowner: " + '
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1460
-      endSourceChar: 1460
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1469
+      endSourceChar: 1469
       line: 48
       lineChar: 41
       spanCodeSection: 
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1460
-      endSourceChar: 1460
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1469
+      endSourceChar: 1469
       line: 48
       lineChar: 41
       spanCodeSection: 
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1460
-      endSourceChar: 1479
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1469
+      endSourceChar: 1488
       line: 48
       lineChar: 41
       spanCodeSection: Networking.IsOwner(
-    - startInstruction: 864
-      endInstruction: 863
-      startSourceChar: 1479
-      endSourceChar: 1493
+    - startInstruction: 1032
+      endInstruction: 1031
+      startSourceChar: 1488
+      endSourceChar: 1502
       line: 48
       lineChar: 60
       spanCodeSection: 'PlayerApiref, '
-    - startInstruction: 864
-      endInstruction: 895
-      startSourceChar: 1493
-      endSourceChar: 1506
+    - startInstruction: 1032
+      endInstruction: 1063
+      startSourceChar: 1502
+      endSourceChar: 1515
       line: 48
       lineChar: 74
       spanCodeSection: objselected).
-    - startInstruction: 896
-      endInstruction: 975
-      startSourceChar: 1506
-      endSourceChar: 1531
+    - startInstruction: 1064
+      endInstruction: 1143
+      startSourceChar: 1515
+      endSourceChar: 1540
       line: 48
       lineChar: 87
       spanCodeSection: "ToString();\r\n            "
-    - startInstruction: 976
-      endInstruction: 975
-      startSourceChar: 1531
-      endSourceChar: 1531
+    - startInstruction: 1144
+      endInstruction: 1143
+      startSourceChar: 1540
+      endSourceChar: 1540
       line: 49
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 976
-      endInstruction: 975
-      startSourceChar: 1531
-      endSourceChar: 1547
+    - startInstruction: 1144
+      endInstruction: 1143
+      startSourceChar: 1540
+      endSourceChar: 1556
       line: 49
       lineChar: 12
       spanCodeSection: 'objready.text = '
-    - startInstruction: 976
-      endInstruction: 975
-      startSourceChar: 1547
-      endSourceChar: 1567
+    - startInstruction: 1144
+      endInstruction: 1143
+      startSourceChar: 1556
+      endSourceChar: 1556
+      line: 49
+      lineChar: 28
+      spanCodeSection: 
+    - startInstruction: 1144
+      endInstruction: 1163
+      startSourceChar: 1556
+      endSourceChar: 1576
       line: 49
       lineChar: 28
       spanCodeSection: '"isobjectready: " + '
-    - startInstruction: 976
-      endInstruction: 975
-      startSourceChar: 1567
-      endSourceChar: 1567
+    - startInstruction: 1164
+      endInstruction: 1163
+      startSourceChar: 1576
+      endSourceChar: 1576
       line: 49
       lineChar: 48
       spanCodeSection: 
-    - startInstruction: 976
-      endInstruction: 975
-      startSourceChar: 1567
-      endSourceChar: 1567
+    - startInstruction: 1164
+      endInstruction: 1163
+      startSourceChar: 1576
+      endSourceChar: 1576
       line: 49
       lineChar: 48
       spanCodeSection: 
-    - startInstruction: 976
-      endInstruction: 975
-      startSourceChar: 1567
-      endSourceChar: 1592
+    - startInstruction: 1164
+      endInstruction: 1163
+      startSourceChar: 1576
+      endSourceChar: 1601
       line: 49
       lineChar: 48
       spanCodeSection: Networking.IsObjectReady(
-    - startInstruction: 976
-      endInstruction: 999
-      startSourceChar: 1592
-      endSourceChar: 1605
+    - startInstruction: 1164
+      endInstruction: 1187
+      startSourceChar: 1601
+      endSourceChar: 1614
       line: 49
       lineChar: 73
       spanCodeSection: objselected).
-    - startInstruction: 1000
-      endInstruction: 1079
-      startSourceChar: 1605
-      endSourceChar: 1630
+    - startInstruction: 1188
+      endInstruction: 1267
+      startSourceChar: 1614
+      endSourceChar: 1639
       line: 49
       lineChar: 86
       spanCodeSection: "ToString();\r\n            "
-    - startInstruction: 1080
-      endInstruction: 1079
-      startSourceChar: 1630
-      endSourceChar: 1630
+    - startInstruction: 1268
+      endInstruction: 1267
+      startSourceChar: 1639
+      endSourceChar: 1639
       line: 50
       lineChar: 12
       spanCodeSection: 
-    - startInstruction: 1080
-      endInstruction: 1079
-      startSourceChar: 1630
-      endSourceChar: 1648
+    - startInstruction: 1268
+      endInstruction: 1267
+      startSourceChar: 1639
+      endSourceChar: 1657
       line: 50
       lineChar: 12
       spanCodeSection: 'uniquename.text = '
-    - startInstruction: 1080
-      endInstruction: 1079
-      startSourceChar: 1648
-      endSourceChar: 1665
+    - startInstruction: 1268
+      endInstruction: 1267
+      startSourceChar: 1657
+      endSourceChar: 1657
+      line: 50
+      lineChar: 30
+      spanCodeSection: 
+    - startInstruction: 1268
+      endInstruction: 1287
+      startSourceChar: 1657
+      endSourceChar: 1674
       line: 50
       lineChar: 30
       spanCodeSection: '"uniquename: " + '
-    - startInstruction: 1080
-      endInstruction: 1079
-      startSourceChar: 1665
-      endSourceChar: 1690
+    - startInstruction: 1288
+      endInstruction: 1287
+      startSourceChar: 1674
+      endSourceChar: 1699
       line: 50
       lineChar: 47
       spanCodeSection: Networking.GetUniqueName(
-    - startInstruction: 1080
-      endInstruction: 1080
-      startSourceChar: 1690
-      endSourceChar: 1690
+    - startInstruction: 1288
+      endInstruction: 1288
+      startSourceChar: 1699
+      endSourceChar: 1699
       line: 50
       lineChar: 72
       spanCodeSection: 
@@ -1358,7 +1418,7 @@ MonoBehaviour:
       Data: 
     - Name: declarationType
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: syncMode
       Entry: 3
       Data: 0

@@ -1,0 +1,720 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
+  m_Name: udon_pedastal
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: acc5bbda54f42c94dbfc0e4f72dd48d5,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export pedestal\r\n    .export input\r\n\r\n
+    \   __refl_const_intnl_udonTypeID: %SystemInt64, null\r\n    __refl_const_intnl_udonTypeName:
+    %SystemString, null\r\n    input: %UnityEngineUIInputField, null\r\n    pedestal:
+    %VRCSDK3ComponentsVRCAvatarPedestal, null\r\n    PlayerApiref: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __0_this_intnl_UnityEngineGameObject: %UnityEngineGameObject, this\r\n
+    \   __0_const_intnl_SystemObject: %SystemObject, null\r\n    __0_const_intnl_SystemType:
+    %SystemType, null\r\n    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null\r\n
+    \   __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n    __0_const_intnl_VRCSDK3ComponentsVRCAvatarPedestal:
+    %VRCSDK3ComponentsVRCAvatarPedestal, null\r\n    __0_intnl_SystemBoolean: %SystemBoolean,
+    null\r\n    __0_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __0_intnl_oldReturnLoc_UInt32:
+    %SystemUInt32, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n
+    \   __0_intnl_VRCSDK3ComponentsVRCAvatarPedestal: %VRCSDK3ComponentsVRCAvatarPedestal,
+    null\r\n    __1_intnl_VRCSDK3ComponentsVRCAvatarPedestal: %VRCSDK3ComponentsVRCAvatarPedestal,
+    null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n
+    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
+    \       \r\n         # using UnityEngine.UI;\r\n        \r\n         # using VRC.SDKBase;\r\n
+    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
+    udon_pedastal : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         # public
+    VRC_AvatarPedestal pedestal;\r\n        \r\n         # public InputField input;\r\n
+    \       \r\n         # private VRCPlayerApi PlayerApiref;\r\n        \r\n         #
+    void Start()\r\n    .export _start\r\n        \r\n    _start:\r\n        \r\n
+    \       PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # if (pedestal
+    == null)\r\n        PUSH, pedestal\r\n        PUSH, __0_intnl_VRCSDK3ComponentsVRCAvatarPedestal\r\n
+    \       COPY\r\n        PUSH, __0_intnl_VRCSDK3ComponentsVRCAvatarPedestal\r\n
+    \       PUSH, __0_const_intnl_VRCSDK3ComponentsVRCAvatarPedestal\r\n        PUSH,
+    __0_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000000A4\r\n
+    \       \r\n         # {\r\n        \r\n         # pedestal = gameObject.GetComponent<VRC_AvatarPedestal>();\r\n
+    \       PUSH, __0_this_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_UnityEngineTransform\r\n
+    \       EXTERN, \"UnityEngineGameObject.__get_transform__UnityEngineTransform\"\r\n
+    \       PUSH, __0_intnl_UnityEngineTransform\r\n        PUSH, __0_const_intnl_SystemType\r\n
+    \       PUSH, __1_intnl_VRCSDK3ComponentsVRCAvatarPedestal\r\n        EXTERN,
+    \"VRCSDK3ComponentsVRCAvatarPedestal.__GetComponent__T\"\r\n        PUSH, __1_intnl_VRCSDK3ComponentsVRCAvatarPedestal\r\n
+    \       PUSH, pedestal\r\n        COPY\r\n        \r\n         # PlayerApiref
+    = Networking.LocalPlayer;\r\n        PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n
+    \       EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, __0_intnl_VRCSDKBaseVRCPlayerApi\r\n        PUSH, PlayerApiref\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # void Interact()\r\n    .export _interact\r\n        \r\n
+    \   _interact:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
+    \       \r\n         # use();\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        COPY\r\n        PUSH, __0_const_intnl_exitJumpLoc_UInt32\r\n
+    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        JUMP, 0x00000144\r\n
+    \       PUSH, __0_intnl_oldReturnLoc_UInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n
+    \       \r\n         # public void use()\r\n    .export use\r\n        \r\n    use:\r\n
+    \       \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH, __0_intnl_returnTarget_UInt32\r\n
+    \       COPY\r\n        \r\n         # {\r\n        \r\n         # pedestal.SetAvatarUse(PlayerApiref);\r\n
+    \       PUSH, pedestal\r\n        PUSH, PlayerApiref\r\n        EXTERN, \"VRCSDK3ComponentsVRCAvatarPedestal.__SetAvatarUse__VRCSDKBaseVRCPlayerApi__SystemVoid\"\r\n
+    \       JUMP_INDIRECT, __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: 6d4d7addc3f5a3a47ac65fcbfced1be4, type: 3}
+  behaviourIDHeapVarName: __refl_const_intnl_udonTypeID
+  compileErrors: []
+  debugInfo:
+    serializedDebugSpans:
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 0
+      endSourceChar: 2
+      line: 0
+      lineChar: 0
+      spanCodeSection: "\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 2
+      line: 1
+      lineChar: 0
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 2
+      endSourceChar: 8
+      line: 1
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 8
+      endSourceChar: 20
+      line: 1
+      lineChar: 6
+      spanCodeSection: "UdonSharp;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 20
+      endSourceChar: 26
+      line: 2
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 26
+      endSourceChar: 40
+      line: 2
+      lineChar: 6
+      spanCodeSection: "UnityEngine;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 40
+      endSourceChar: 46
+      line: 3
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 46
+      line: 3
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 46
+      endSourceChar: 58
+      line: 3
+      lineChar: 6
+      spanCodeSection: UnityEngine.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 58
+      endSourceChar: 63
+      line: 3
+      lineChar: 18
+      spanCodeSection: "UI;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 63
+      endSourceChar: 69
+      line: 4
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 69
+      endSourceChar: 69
+      line: 4
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 69
+      endSourceChar: 73
+      line: 4
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 73
+      endSourceChar: 83
+      line: 4
+      lineChar: 10
+      spanCodeSection: "SDKBase;\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 83
+      endSourceChar: 89
+      line: 5
+      lineChar: 0
+      spanCodeSection: 'using '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 89
+      endSourceChar: 89
+      line: 5
+      lineChar: 6
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 89
+      endSourceChar: 93
+      line: 5
+      lineChar: 6
+      spanCodeSection: VRC.
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 93
+      endSourceChar: 102
+      line: 5
+      lineChar: 10
+      spanCodeSection: "Udon;\r\n\r\n"
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 102
+      endSourceChar: 129
+      line: 7
+      lineChar: 0
+      spanCodeSection: 'public class udon_pedastal '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 129
+      endSourceChar: 131
+      line: 7
+      lineChar: 27
+      spanCodeSection: ': '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 131
+      endSourceChar: 131
+      line: 7
+      lineChar: 29
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 131
+      endSourceChar: 158
+      line: 7
+      lineChar: 29
+      spanCodeSection: "UdonSharpBehaviour\r\n{\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 158
+      endSourceChar: 165
+      line: 9
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 165
+      endSourceChar: 165
+      line: 9
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 165
+      endSourceChar: 199
+      line: 9
+      lineChar: 11
+      spanCodeSection: "VRC_AvatarPedestal pedestal;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 199
+      endSourceChar: 206
+      line: 10
+      lineChar: 4
+      spanCodeSection: 'public '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 206
+      endSourceChar: 206
+      line: 10
+      lineChar: 11
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 206
+      endSourceChar: 229
+      line: 10
+      lineChar: 11
+      spanCodeSection: "InputField input;\r\n    "
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 229
+      endSourceChar: 237
+      line: 11
+      lineChar: 4
+      spanCodeSection: 'private '
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 237
+      endSourceChar: 237
+      line: 11
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 0
+      endInstruction: -1
+      startSourceChar: 237
+      endSourceChar: 273
+      line: 11
+      lineChar: 12
+      spanCodeSection: "VRCPlayerApi PlayerApiref;\r\n\r\n\r\n    "
+    - startInstruction: 0
+      endInstruction: 19
+      startSourceChar: 273
+      endSourceChar: 291
+      line: 14
+      lineChar: 4
+      spanCodeSection: "void Start()\r\n    "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 291
+      endSourceChar: 302
+      line: 15
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 302
+      endSourceChar: 306
+      line: 16
+      lineChar: 8
+      spanCodeSection: if (
+    - startInstruction: 20
+      endInstruction: 19
+      startSourceChar: 306
+      endSourceChar: 306
+      line: 16
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 20
+      endInstruction: 39
+      startSourceChar: 306
+      endSourceChar: 318
+      line: 16
+      lineChar: 12
+      spanCodeSection: 'pedestal == '
+    - startInstruction: 40
+      endInstruction: 87
+      startSourceChar: 318
+      endSourceChar: 333
+      line: 16
+      lineChar: 24
+      spanCodeSection: "null)\r\n        "
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 333
+      endSourceChar: 348
+      line: 17
+      lineChar: 8
+      spanCodeSection: "{\r\n            "
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 348
+      endSourceChar: 348
+      line: 18
+      lineChar: 12
+      spanCodeSection: 
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 348
+      endSourceChar: 359
+      line: 18
+      lineChar: 12
+      spanCodeSection: 'pedestal = '
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 359
+      endSourceChar: 359
+      line: 18
+      lineChar: 23
+      spanCodeSection: 
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 359
+      endSourceChar: 359
+      line: 18
+      lineChar: 23
+      spanCodeSection: 
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 359
+      endSourceChar: 370
+      line: 18
+      lineChar: 23
+      spanCodeSection: gameObject.
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 370
+      endSourceChar: 382
+      line: 18
+      lineChar: 34
+      spanCodeSection: GetComponent
+    - startInstruction: 88
+      endInstruction: 87
+      startSourceChar: 382
+      endSourceChar: 383
+      line: 18
+      lineChar: 46
+      spanCodeSection: <
+    - startInstruction: 88
+      endInstruction: 163
+      startSourceChar: 383
+      endSourceChar: 428
+      line: 18
+      lineChar: 47
+      spanCodeSection: "VRC_AvatarPedestal>();\r\n        }\r\n\r\n        "
+    - startInstruction: 164
+      endInstruction: 163
+      startSourceChar: 428
+      endSourceChar: 428
+      line: 21
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 164
+      endInstruction: 163
+      startSourceChar: 428
+      endSourceChar: 443
+      line: 21
+      lineChar: 8
+      spanCodeSection: 'PlayerApiref = '
+    - startInstruction: 164
+      endInstruction: 163
+      startSourceChar: 443
+      endSourceChar: 443
+      line: 21
+      lineChar: 23
+      spanCodeSection: 
+    - startInstruction: 164
+      endInstruction: 163
+      startSourceChar: 443
+      endSourceChar: 454
+      line: 21
+      lineChar: 23
+      spanCodeSection: Networking.
+    - startInstruction: 164
+      endInstruction: 207
+      startSourceChar: 454
+      endSourceChar: 481
+      line: 21
+      lineChar: 34
+      spanCodeSection: "LocalPlayer;\r\n    }\r\n\r\n    "
+    - startInstruction: 208
+      endInstruction: 227
+      startSourceChar: 481
+      endSourceChar: 502
+      line: 24
+      lineChar: 4
+      spanCodeSection: "void Interact()\r\n    "
+    - startInstruction: 228
+      endInstruction: 227
+      startSourceChar: 502
+      endSourceChar: 513
+      line: 25
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 228
+      endInstruction: 227
+      startSourceChar: 513
+      endSourceChar: 513
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 228
+      endInstruction: 227
+      startSourceChar: 513
+      endSourceChar: 513
+      line: 26
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 228
+      endInstruction: 303
+      startSourceChar: 513
+      endSourceChar: 534
+      line: 26
+      lineChar: 8
+      spanCodeSection: "use();\r\n    }\r\n\r\n    "
+    - startInstruction: 304
+      endInstruction: 323
+      startSourceChar: 534
+      endSourceChar: 557
+      line: 29
+      lineChar: 4
+      spanCodeSection: "public void use()\r\n    "
+    - startInstruction: 324
+      endInstruction: 323
+      startSourceChar: 557
+      endSourceChar: 568
+      line: 30
+      lineChar: 4
+      spanCodeSection: "{\r\n        "
+    - startInstruction: 324
+      endInstruction: 323
+      startSourceChar: 568
+      endSourceChar: 568
+      line: 31
+      lineChar: 8
+      spanCodeSection: 
+    - startInstruction: 324
+      endInstruction: 323
+      startSourceChar: 568
+      endSourceChar: 590
+      line: 31
+      lineChar: 8
+      spanCodeSection: pedestal.SetAvatarUse(
+    - startInstruction: 324
+      endInstruction: 324
+      startSourceChar: 590
+      endSourceChar: 590
+      line: 31
+      lineChar: 30
+      spanCodeSection: 
+  hasInteractEvent: 1
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: fieldDefinitions
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UdonSharp.FieldDefinition,
+        UdonSharp.Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pedestal
+    - Name: $v
+      Entry: 7
+      Data: 2|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 3|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VRC.SDKBase.VRC_AvatarPedestal, VRCSDKBase
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCSDK3ComponentsVRCAvatarPedestal
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: pedestal
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: pedestal
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: input
+    - Name: $v
+      Entry: 7
+      Data: 6|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 7|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 8|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: UnityEngine.UI.InputField, UnityEngine.UI
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 1
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: UnityEngineUIInputField
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: input
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: input
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: PlayerApiref
+    - Name: $v
+      Entry: 7
+      Data: 10|UdonSharp.FieldDefinition, UdonSharp.Editor
+    - Name: fieldSymbol
+      Entry: 7
+      Data: 11|UdonSharp.SymbolDefinition, UdonSharp.Editor
+    - Name: internalType
+      Entry: 7
+      Data: 12|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: VRC.SDKBase.VRCPlayerApi, VRCSDKBase
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: declarationType
+      Entry: 3
+      Data: 2
+    - Name: syncMode
+      Entry: 3
+      Data: 0
+    - Name: symbolResolvedTypeName
+      Entry: 1
+      Data: VRCSDKBaseVRCPlayerApi
+    - Name: symbolOriginalName
+      Entry: 1
+      Data: PlayerApiref
+    - Name: symbolUniqueName
+      Entry: 1
+      Data: PlayerApiref
+    - Name: symbolDefaultValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: fieldAttributes
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: userBehaviourSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

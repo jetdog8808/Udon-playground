@@ -33,8 +33,9 @@ MonoBehaviour:
     \   __6_intnl_SystemBoolean: %SystemBoolean, null\r\n    __0_intnl_UnityEngineGameObject:
     %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject: %UnityEngineGameObject,
     null\r\n    __2_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n
-    \   __0_intnl_SystemInt32: %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32,
-    null\r\n    __2_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_oldReturnLoc_UInt32:
+    \   __3_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_oldReturnLoc_UInt32:
     %SystemUInt32, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n
     \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
     \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
@@ -62,78 +63,87 @@ MonoBehaviour:
     to false\r\n        PUSH, state\r\n        PUSH, __1_const_intnl_SystemInt32\r\n
     \       PUSH, __1_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
     \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000000F4\r\n
-    \       JUMP, 0x00000270\r\n        \r\n         # case 3: //will invert all gamobjects\r\n
+    \       JUMP, 0x00000298\r\n        \r\n         # case 3: //will invert all gamobjects\r\n
     \       PUSH, state\r\n        PUSH, __2_const_intnl_SystemInt32\r\n        PUSH,
     __2_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Equality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
     \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000012C\r\n
-    \       JUMP, 0x000003AC\r\n        \r\n         # default: //if given invalid
-    value\r\n        JUMP, 0x00000538\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
-    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
-    __0_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
-    \       PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemInt32\r\n        PUSH,
-    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000268\r\n
-    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
-    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000218\r\n
+    \       JUMP, 0x000003FC\r\n        \r\n         # default: //if given invalid
+    value\r\n        JUMP, 0x000005B0\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, __0_i_Int32\r\n        PUSH,
+    __0_intnl_SystemInt32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
+    __1_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000290\r\n
     \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       COPY\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH,
+    __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __4_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000240\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \       PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
-    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
-    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
-    \       JUMP, 0x00000148\r\n        JUMP, 0x00000550\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
-    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
-    __0_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
-    \       PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemInt32\r\n        PUSH,
-    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000003A4\r\n
-    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
-    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000354\r\n
+    __3_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __3_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x00000148\r\n        JUMP, 0x000005C8\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, __0_i_Int32\r\n        PUSH,
+    __0_intnl_SystemInt32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
+    __1_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000003F4\r\n
     \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       COPY\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH,
+    __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __4_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000003A4\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \       PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
-    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
-    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
-    \       JUMP, 0x00000284\r\n        JUMP, 0x00000550\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
-    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
-    __0_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
-    \       PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_SystemInt32\r\n        PUSH,
-    __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000530\r\n
-    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
-    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000004E0\r\n
+    __3_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __3_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x000002AC\r\n        JUMP, 0x000005C8\r\n        PUSH, __3_const_intnl_SystemInt32\r\n
+    \       PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH, __0_i_Int32\r\n        PUSH,
+    __0_intnl_SystemInt32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
+    __1_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
+    \       PUSH, __0_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000005A8\r\n
     \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __5_intnl_SystemBoolean\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       COPY\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH,
+    __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __4_intnl_SystemBoolean\r\n
+    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000558\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __5_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__get_activeSelf__SystemBoolean\"\r\n
     \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, __6_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __3_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __6_intnl_SystemBoolean\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH, __6_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \       PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_SystemInt32\r\n        COPY\r\n
+    \       PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __0_i_Int32\r\n        PUSH, __0_const_intnl_SystemInt32\r\n        PUSH,
-    __2_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
-    \       PUSH, __2_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
-    \       JUMP, 0x000003C0\r\n        JUMP, 0x00000550\r\n        \r\n         #
+    __3_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
+    \       PUSH, __3_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n
+    \       JUMP, 0x00000410\r\n        JUMP, 0x000005C8\r\n        \r\n         #
     Debug.LogWarning(\"select 1-3 | 1=True | 2=False | 3=Toggle\");\r\n        PUSH,
     __2_const_intnl_SystemString\r\n        EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
-    \       \r\n         # break;\r\n        JUMP, 0x00000550\r\n        JUMP_INDIRECT,
+    \       \r\n         # break;\r\n        JUMP, 0x000005C8\r\n        JUMP_INDIRECT,
     __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: cb1328796a9e8b34fb47c7219a53f679, type: 3}
@@ -480,35 +490,35 @@ MonoBehaviour:
         (receivers[i] != null)\r\n                    {\r\n                        receivers[i].SetActive(!receivers[i].activeSelf);\r\n
         \                   }\r\n                }\r\n                break;\r\n            "
     - startInstruction: 300
-      endInstruction: 1335
+      endInstruction: 1455
       startSourceChar: 1412
       endSourceChar: 1463
       line: 49
       lineChar: 12
       spanCodeSection: "default: //if given invalid value\r\n                "
-    - startInstruction: 1336
-      endInstruction: 1335
+    - startInstruction: 1456
+      endInstruction: 1455
       startSourceChar: 1463
       endSourceChar: 1463
       line: 50
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1336
-      endInstruction: 1335
+    - startInstruction: 1456
+      endInstruction: 1455
       startSourceChar: 1463
       endSourceChar: 1480
       line: 50
       lineChar: 16
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 1336
-      endInstruction: 1351
+    - startInstruction: 1456
+      endInstruction: 1471
       startSourceChar: 1480
       endSourceChar: 1542
       line: 50
       lineChar: 33
       spanCodeSection: "\"select 1-3 | 1=True | 2=False | 3=Toggle\");\r\n                "
-    - startInstruction: 1352
-      endInstruction: 1352
+    - startInstruction: 1472
+      endInstruction: 1472
       startSourceChar: 1542
       endSourceChar: 1542
       line: 51

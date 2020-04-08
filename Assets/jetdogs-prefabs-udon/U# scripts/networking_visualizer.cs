@@ -7,7 +7,7 @@ using VRC.Udon;
 
 public class networking_visualizer : UdonSharpBehaviour
 {
-    public VRCPlayerApi PlayerApiref;
+    private VRCPlayerApi PlayerApiref;
 
     public Text networksettled;
     public Text ismaster;
@@ -33,7 +33,7 @@ public class networking_visualizer : UdonSharpBehaviour
         ismaster.text = "ismaster: " + Networking.IsMaster.ToString();
         netdatatime.text = "networkdatatime: " + Networking.GetNetworkDateTime().ToString();
         servertimesec.text = "servertimeinseconds: " + secs.ToString();
-        serverdeltatime.text = "serverdeltatime: " + Networking.CalculateServerDeltaTime(secs, prevtime).ToString();
+        serverdeltatime.text = "serverdeltatime: " + Networking.CalculateServerDeltaTime(secs, prevtime).ToString("0.0000");
         prevtime = secs;
 
 
