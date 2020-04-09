@@ -37,23 +37,22 @@ MonoBehaviour:
     \   __0_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __1_intnl_UnityEngineGameObject:
     %UnityEngineGameObject, null\r\n    __2_intnl_UnityEngineGameObject: %UnityEngineGameObject,
     null\r\n    __3_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n
-    \   __4_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __5_intnl_UnityEngineGameObject:
-    %UnityEngineGameObject, null\r\n    __6_intnl_UnityEngineGameObject: %UnityEngineGameObject,
-    null\r\n    __0_intnl_SystemInt32: %SystemInt32, null\r\n    __1_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __2_intnl_SystemInt32: %SystemInt32, null\r\n    __3_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __4_intnl_SystemInt32: %SystemInt32, null\r\n    __5_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __6_intnl_SystemInt32: %SystemInt32, null\r\n    __7_intnl_SystemInt32:
-    %SystemInt32, null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n
-    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
-    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
-    \       \r\n         # public class gameobject_state_controller : UdonSharpBehaviour\r\n.code_start\r\n
-    \       \r\n         # public GameObject[] receivers;\r\n        \r\n         #
-    [Tooltip(\"1=True | 2=False | 3=Toggle\")]\r\n        \r\n         # public bool
-    others_state = false;\r\n        \r\n         # [Tooltip(\"sets all in receivers
-    active state to others state\")]\r\n        \r\n         # public bool start_set
-    = true;\r\n        \r\n         # [HideInInspector]\r\n        \r\n         #
-    public int index = -1;\r\n        \r\n         # private void Start()\r\n    .export
-    _start\r\n        \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
+    \   __4_intnl_UnityEngineGameObject: %UnityEngineGameObject, null\r\n    __0_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __1_intnl_SystemInt32: %SystemInt32, null\r\n    __2_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __3_intnl_SystemInt32: %SystemInt32, null\r\n    __4_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __5_intnl_SystemInt32: %SystemInt32, null\r\n    __6_intnl_SystemInt32:
+    %SystemInt32, null\r\n    __7_intnl_SystemInt32: %SystemInt32, null\r\n    __0_intnl_returnTarget_UInt32:
+    %SystemUInt32, null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n
+    \       \r\n         # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
+    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
+    gameobject_state_controller : UdonSharpBehaviour\r\n.code_start\r\n        \r\n
+    \        # public GameObject[] receivers;\r\n        \r\n         # [Tooltip(\"1=True
+    | 2=False | 3=Toggle\")]\r\n        \r\n         # public bool others_state =
+    false;\r\n        \r\n         # [Tooltip(\"sets all in receivers active state
+    to others state\")]\r\n        \r\n         # public bool start_set = true;\r\n
+    \       \r\n         # [HideInInspector]\r\n        \r\n         # public int
+    index = -1;\r\n        \r\n         # private void Start()\r\n    .export _start\r\n
+    \       \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
     \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
     {\r\n        \r\n         # for (int i = 0; i < receivers.Length; i++)\r\n        PUSH,
     __0_const_intnl_SystemInt32\r\n        PUSH, __0_i_Int32\r\n        COPY\r\n        PUSH,
@@ -61,19 +60,17 @@ MonoBehaviour:
     receivers\r\n        PUSH, __1_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
     \       PUSH, __0_intnl_SystemInt32\r\n        PUSH, __1_intnl_SystemInt32\r\n
     \       PUSH, __0_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000170\r\n
+    \       PUSH, __0_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000015C\r\n
     \       \r\n         # {\r\n        \r\n         # if (receivers[i] != null)\r\n
+    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
+    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000010C\r\n
+    \       \r\n         # {\r\n        \r\n         # receivers[i].SetActive(others_state);\r\n
     \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __1_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n
-    \       COPY\r\n        PUSH, __0_intnl_UnityEngineGameObject\r\n        PUSH,
-    __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __1_intnl_SystemBoolean\r\n
-    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
-    \       PUSH, __1_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000120\r\n
-    \       \r\n         # {\r\n        \r\n         # receivers[i].SetActive(others_state);\r\n
-    \       PUSH, receivers\r\n        PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
-    \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, others_state\r\n
+    \       PUSH, __1_intnl_UnityEngineGameObject\r\n        PUSH, others_state\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
     \       PUSH, __0_i_Int32\r\n        PUSH, __2_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __0_i_Int32\r\n        PUSH, __1_const_intnl_SystemInt32\r\n        PUSH,
@@ -86,96 +83,92 @@ MonoBehaviour:
     {\r\n        \r\n         # switch (others_state)\r\n        \r\n         # case
     true:\r\n        PUSH, others_state\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
     \       PUSH, __2_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001C4\r\n
-    \       JUMP, 0x00000204\r\n        \r\n         # case false:\r\n        PUSH,
+    \       PUSH, __2_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001B0\r\n
+    \       JUMP, 0x000001F0\r\n        \r\n         # case false:\r\n        PUSH,
     others_state\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n        PUSH, __3_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001FC\r\n
-    \       JUMP, 0x00000484\r\n        \r\n         # default:\r\n        JUMP, 0x00000704\r\n
+    \       PUSH, __3_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000001E8\r\n
+    \       JUMP, 0x0000045C\r\n        \r\n         # default:\r\n        JUMP, 0x000006C8\r\n
     \       PUSH, __0_const_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __4_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, receivers\r\n        PUSH, __5_intnl_SystemInt32\r\n        EXTERN,
     \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n        PUSH, __4_intnl_SystemInt32\r\n
     \       PUSH, __5_intnl_SystemInt32\r\n        PUSH, __4_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x0000047C\r\n
-    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __4_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x00000454\r\n
+    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __4_intnl_UnityEngineGameObject\r\n        PUSH, __3_intnl_UnityEngineGameObject\r\n
-    \       COPY\r\n        PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH,
-    __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __6_intnl_SystemBoolean\r\n
-    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __6_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
     \       PUSH, __6_intnl_SystemBoolean\r\n        PUSH, __5_intnl_SystemBoolean\r\n
     \       COPY\r\n        PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x00000354\r\n        PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n
+    0x0000032C\r\n        PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n
     \       COPY\r\n        PUSH, __6_intnl_SystemInt32\r\n        PUSH, index\r\n
     \       PUSH, __7_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
     \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, __7_intnl_SystemBoolean\r\n
     \       PUSH, __8_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
     \       PUSH, __8_intnl_SystemBoolean\r\n        PUSH, __5_intnl_SystemBoolean\r\n
     \       COPY\r\n        PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x000003A4\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH,
-    __5_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
+    0x0000037C\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH,
+    __3_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \       JUMP, 0x0000042C\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n
-    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        PUSH, __9_intnl_SystemBoolean\r\n
+    \       JUMP, 0x00000404\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH, __9_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__get_activeSelf__SystemBoolean\"\r\n
     \       PUSH, __9_intnl_SystemBoolean\r\n        PUSH, __10_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_UnityEngineGameObject\r\n
+    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __4_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __6_intnl_UnityEngineGameObject\r\n        PUSH, __10_intnl_SystemBoolean\r\n
+    \       PUSH, __4_intnl_UnityEngineGameObject\r\n        PUSH, __10_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __1_const_intnl_SystemInt32\r\n        PUSH,
     __7_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
     \       PUSH, __7_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n
-    \       JUMP, 0x00000218\r\n        JUMP, 0x0000071C\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
+    \       JUMP, 0x00000204\r\n        JUMP, 0x000006E0\r\n        PUSH, __0_const_intnl_SystemInt32\r\n
     \       PUSH, __1_i_Int32\r\n        COPY\r\n        PUSH, __1_i_Int32\r\n        PUSH,
     __4_intnl_SystemInt32\r\n        COPY\r\n        PUSH, receivers\r\n        PUSH,
     __5_intnl_SystemInt32\r\n        EXTERN, \"UnityEngineGameObjectArray.__get_Length__SystemInt32\"\r\n
     \       PUSH, __4_intnl_SystemInt32\r\n        PUSH, __5_intnl_SystemInt32\r\n
     \       PUSH, __4_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\r\n
-    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000006FC\r\n
-    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __4_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __4_intnl_SystemBoolean\r\n        JUMP_IF_FALSE, 0x000006C0\r\n
+    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __2_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __4_intnl_UnityEngineGameObject\r\n        PUSH, __3_intnl_UnityEngineGameObject\r\n
-    \       COPY\r\n        PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH,
-    __0_const_intnl_UnityEngineGameObject\r\n        PUSH, __6_intnl_SystemBoolean\r\n
-    \       EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
+    \       PUSH, __2_intnl_UnityEngineGameObject\r\n        PUSH, __0_const_intnl_UnityEngineGameObject\r\n
+    \       PUSH, __6_intnl_SystemBoolean\r\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\r\n
     \       PUSH, __6_intnl_SystemBoolean\r\n        PUSH, __5_intnl_SystemBoolean\r\n
     \       COPY\r\n        PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x000005D4\r\n        PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n
+    0x00000598\r\n        PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n
     \       COPY\r\n        PUSH, __6_intnl_SystemInt32\r\n        PUSH, index\r\n
     \       PUSH, __7_intnl_SystemBoolean\r\n        EXTERN, \"SystemInt32.__op_Inequality__SystemInt32_SystemInt32__SystemBoolean\"\r\n
     \       PUSH, __5_intnl_SystemBoolean\r\n        PUSH, __7_intnl_SystemBoolean\r\n
     \       PUSH, __8_intnl_SystemBoolean\r\n        EXTERN, \"SystemBoolean.__op_ConditionalAnd__SystemBoolean_SystemBoolean__SystemBoolean\"\r\n
     \       PUSH, __8_intnl_SystemBoolean\r\n        PUSH, __5_intnl_SystemBoolean\r\n
     \       COPY\r\n        PUSH, __5_intnl_SystemBoolean\r\n        JUMP_IF_FALSE,
-    0x00000624\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH,
-    __5_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n
+    0x000005E8\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH,
+    __3_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH, __1_const_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
-    \       JUMP, 0x000006AC\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n
-    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __5_intnl_UnityEngineGameObject\r\n        PUSH, __9_intnl_SystemBoolean\r\n
+    \       JUMP, 0x00000670\r\n        PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
+    \       PUSH, __3_intnl_UnityEngineGameObject\r\n        PUSH, __9_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__get_activeSelf__SystemBoolean\"\r\n
     \       PUSH, __9_intnl_SystemBoolean\r\n        PUSH, __10_intnl_SystemBoolean\r\n
     \       EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n
-    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_UnityEngineGameObject\r\n
+    \       PUSH, receivers\r\n        PUSH, __1_i_Int32\r\n        PUSH, __4_intnl_UnityEngineGameObject\r\n
     \       EXTERN, \"UnityEngineGameObjectArray.__Get__SystemInt32__UnityEngineGameObject\"\r\n
-    \       PUSH, __6_intnl_UnityEngineGameObject\r\n        PUSH, __10_intnl_SystemBoolean\r\n
+    \       PUSH, __4_intnl_UnityEngineGameObject\r\n        PUSH, __10_intnl_SystemBoolean\r\n
     \       EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __6_intnl_SystemInt32\r\n        COPY\r\n
     \       PUSH, __1_i_Int32\r\n        PUSH, __1_const_intnl_SystemInt32\r\n        PUSH,
     __7_intnl_SystemInt32\r\n        EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n
     \       PUSH, __7_intnl_SystemInt32\r\n        PUSH, __1_i_Int32\r\n        COPY\r\n
-    \       JUMP, 0x00000498\r\n        JUMP, 0x0000071C\r\n        \r\n         #
+    \       JUMP, 0x00000470\r\n        JUMP, 0x000006E0\r\n        \r\n         #
     Debug.LogWarning(\"how did you break this...\");\r\n        PUSH, __2_const_intnl_SystemString\r\n
     \       EXTERN, \"UnityEngineDebug.__LogWarning__SystemObject__SystemVoid\"\r\n
-    \       \r\n         # break;\r\n        JUMP, 0x0000071C\r\n        JUMP_INDIRECT,
+    \       \r\n         # break;\r\n        JUMP, 0x000006E0\r\n        JUMP_INDIRECT,
     __0_intnl_returnTarget_UInt32\r\n        \r\n.code_end\r\n"
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 42443d38f7a365b4b90c172363aa710f, type: 3}
@@ -605,85 +598,85 @@ MonoBehaviour:
       lineChar: 26
       spanCodeSection: 
     - startInstruction: 132
-      endInstruction: 183
+      endInstruction: 163
       startSourceChar: 545
       endSourceChar: 551
       line: 20
       lineChar: 26
       spanCodeSection: 'i] != '
-    - startInstruction: 184
-      endInstruction: 231
+    - startInstruction: 164
+      endInstruction: 211
       startSourceChar: 551
       endSourceChar: 570
       line: 20
       lineChar: 32
       spanCodeSection: "null)\r\n            "
-    - startInstruction: 232
-      endInstruction: 231
+    - startInstruction: 212
+      endInstruction: 211
       startSourceChar: 570
       endSourceChar: 589
       line: 21
       lineChar: 12
       spanCodeSection: "{\r\n                "
-    - startInstruction: 232
-      endInstruction: 231
+    - startInstruction: 212
+      endInstruction: 211
       startSourceChar: 589
       endSourceChar: 589
       line: 22
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 232
-      endInstruction: 231
+    - startInstruction: 212
+      endInstruction: 211
       startSourceChar: 589
       endSourceChar: 612
       line: 22
       lineChar: 16
       spanCodeSection: receivers[i].SetActive(
-    - startInstruction: 232
-      endInstruction: 375
+    - startInstruction: 212
+      endInstruction: 355
       startSourceChar: 612
       endSourceChar: 667
       line: 22
       lineChar: 39
       spanCodeSection: "others_state);\r\n            }\r\n        }\r\n    }\r\n\r\n
         \   "
-    - startInstruction: 376
-      endInstruction: 395
+    - startInstruction: 356
+      endInstruction: 375
       startSourceChar: 667
       endSourceChar: 697
       line: 27
       lineChar: 4
       spanCodeSection: "public void active_int()\r\n    "
-    - startInstruction: 396
-      endInstruction: 395
+    - startInstruction: 376
+      endInstruction: 375
       startSourceChar: 697
       endSourceChar: 708
       line: 28
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 396
-      endInstruction: 395
+    - startInstruction: 376
+      endInstruction: 375
       startSourceChar: 708
       endSourceChar: 716
       line: 29
       lineChar: 8
       spanCodeSection: switch (
-    - startInstruction: 396
-      endInstruction: 395
+    - startInstruction: 376
+      endInstruction: 375
       startSourceChar: 716
       endSourceChar: 754
       line: 29
       lineChar: 16
       spanCodeSection: "others_state)\r\n        {\r\n            "
-    - startInstruction: 396
-      endInstruction: 395
+    - startInstruction: 376
+      endInstruction: 375
       startSourceChar: 754
       endSourceChar: 759
       line: 31
       lineChar: 12
       spanCodeSection: 'case '
-    - startInstruction: 396
-      endInstruction: 451
+    - startInstruction: 376
+      endInstruction: 431
       startSourceChar: 759
       endSourceChar: 1210
       line: 31
@@ -694,15 +687,15 @@ MonoBehaviour:
         \                   }\r\n                    else\r\n                    {\r\n
         \                       receivers[i].SetActive(!receivers[i].activeSelf);\r\n
         \                   }\r\n                }\r\n                break;\r\n            "
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 432
+      endInstruction: 431
       startSourceChar: 1210
       endSourceChar: 1215
       line: 44
       lineChar: 12
       spanCodeSection: 'case '
-    - startInstruction: 452
-      endInstruction: 507
+    - startInstruction: 432
+      endInstruction: 487
       startSourceChar: 1215
       endSourceChar: 1668
       line: 44
@@ -713,36 +706,36 @@ MonoBehaviour:
         \                   }\r\n                    else\r\n                    {\r\n
         \                       receivers[i].SetActive(!receivers[i].activeSelf);\r\n
         \                   }\r\n                }\r\n                break;\r\n            "
-    - startInstruction: 508
-      endInstruction: 1795
+    - startInstruction: 488
+      endInstruction: 1735
       startSourceChar: 1668
       endSourceChar: 1695
       line: 57
       lineChar: 12
       spanCodeSection: "default: \r\n                "
-    - startInstruction: 1796
-      endInstruction: 1795
+    - startInstruction: 1736
+      endInstruction: 1735
       startSourceChar: 1695
       endSourceChar: 1695
       line: 58
       lineChar: 16
       spanCodeSection: 
-    - startInstruction: 1796
-      endInstruction: 1795
+    - startInstruction: 1736
+      endInstruction: 1735
       startSourceChar: 1695
       endSourceChar: 1712
       line: 58
       lineChar: 16
       spanCodeSection: Debug.LogWarning(
-    - startInstruction: 1796
-      endInstruction: 1811
+    - startInstruction: 1736
+      endInstruction: 1751
       startSourceChar: 1712
       endSourceChar: 1759
       line: 58
       lineChar: 33
       spanCodeSection: "\"how did you break this...\");\r\n                "
-    - startInstruction: 1812
-      endInstruction: 1812
+    - startInstruction: 1752
+      endInstruction: 1752
       startSourceChar: 1759
       endSourceChar: 1759
       line: 59

@@ -23,22 +23,22 @@ MonoBehaviour:
     \   __0_const_intnl_SystemBoolean: %SystemBoolean, null\r\n    __1_const_intnl_SystemBoolean:
     %SystemBoolean, null\r\n    __0_const_intnl_SystemType: %SystemType, null\r\n
     \   __0_const_intnl_SystemUInt32: %SystemUInt32, null\r\n    __0_intnl_UnityEngineQuaternion:
-    %UnityEngineQuaternion, null\r\n    __1_intnl_UnityEngineQuaternion: %UnityEngineQuaternion,
-    null\r\n    __0_intnl_UnityEngineTransform: %UnityEngineTransform, null\r\n    __0_intnl_returnTarget_UInt32:
-    %SystemUInt32, null\r\n    __0_intnl_UnityEngineVector3: %UnityEngineVector3,
-    null\r\n    __1_intnl_UnityEngineVector3: %UnityEngineVector3, null\r\n    __2_intnl_UnityEngineVector3:
-    %UnityEngineVector3, null\r\n    __3_intnl_UnityEngineVector3: %UnityEngineVector3,
-    null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi, null\r\n\r\n.data_end\r\n\r\n
-    \       \r\n         # using UdonSharp;\r\n        \r\n         # using UnityEngine;\r\n
-    \       \r\n         # using VRC.SDKBase;\r\n        \r\n         # using VRC.Udon;\r\n
-    \       \r\n         # public class pickup_setvelocity : UdonSharpBehaviour\r\n.code_start\r\n
-    \       \r\n         # public VRCPlayerApi PlayerApiref;\r\n        \r\n         #
-    private Transform transform;\r\n        \r\n         # public Vector3 direction;\r\n
-    \       \r\n         # public float speed = 1;\r\n        \r\n         # private
-    bool state = false;\r\n        \r\n         # void Start()\r\n    .export _start\r\n
-    \       \r\n    _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n
-    \       PUSH, __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         #
-    {\r\n        \r\n         # transform = GetComponent<Transform>();\r\n        PUSH,
+    %UnityEngineQuaternion, null\r\n    __0_intnl_UnityEngineTransform: %UnityEngineTransform,
+    null\r\n    __0_intnl_returnTarget_UInt32: %SystemUInt32, null\r\n    __0_intnl_UnityEngineVector3:
+    %UnityEngineVector3, null\r\n    __1_intnl_UnityEngineVector3: %UnityEngineVector3,
+    null\r\n    __2_intnl_UnityEngineVector3: %UnityEngineVector3, null\r\n    __3_intnl_UnityEngineVector3:
+    %UnityEngineVector3, null\r\n    __0_intnl_VRCSDKBaseVRCPlayerApi: %VRCSDKBaseVRCPlayerApi,
+    null\r\n\r\n.data_end\r\n\r\n        \r\n         # using UdonSharp;\r\n        \r\n
+    \        # using UnityEngine;\r\n        \r\n         # using VRC.SDKBase;\r\n
+    \       \r\n         # using VRC.Udon;\r\n        \r\n         # public class
+    pickup_setvelocity : UdonSharpBehaviour\r\n.code_start\r\n        \r\n         #
+    public VRCPlayerApi PlayerApiref;\r\n        \r\n         # private Transform
+    transform;\r\n        \r\n         # public Vector3 direction;\r\n        \r\n
+    \        # public float speed = 1;\r\n        \r\n         # private bool state
+    = false;\r\n        \r\n         # void Start()\r\n    .export _start\r\n        \r\n
+    \   _start:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
+    __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
+    \       \r\n         # transform = GetComponent<Transform>();\r\n        PUSH,
     __0_this_intnl_pickup_setvelocity\r\n        PUSH, __0_const_intnl_SystemType\r\n
     \       PUSH, __0_intnl_UnityEngineTransform\r\n        EXTERN, \"UnityEngineTransform.__GetComponent__T\"\r\n
     \       PUSH, __0_intnl_UnityEngineTransform\r\n        PUSH, transform\r\n        COPY\r\n
@@ -50,14 +50,13 @@ MonoBehaviour:
     \   _update:\r\n        \r\n        PUSH, __0_const_intnl_SystemUInt32\r\n        PUSH,
     __0_intnl_returnTarget_UInt32\r\n        COPY\r\n        \r\n         # {\r\n
     \       \r\n         # if (state)\r\n        PUSH, state\r\n        JUMP_IF_FALSE,
-    0x00000148\r\n        \r\n         # {\r\n        \r\n         # PlayerApiref.SetVelocity(transform.rotation
-    * direction.normalized * speed);\r\n        PUSH, transform\r\n        PUSH, __1_intnl_UnityEngineQuaternion\r\n
+    0x00000134\r\n        \r\n         # {\r\n        \r\n         # PlayerApiref.SetVelocity(transform.rotation
+    * direction.normalized * speed);\r\n        PUSH, transform\r\n        PUSH, __0_intnl_UnityEngineQuaternion\r\n
     \       EXTERN, \"UnityEngineTransform.__get_rotation__UnityEngineQuaternion\"\r\n
-    \       PUSH, __1_intnl_UnityEngineQuaternion\r\n        PUSH, __0_intnl_UnityEngineQuaternion\r\n
-    \       COPY\r\n        PUSH, direction\r\n        PUSH, __0_intnl_UnityEngineVector3\r\n
-    \       EXTERN, \"UnityEngineVector3.__get_normalized__UnityEngineVector3\"\r\n
-    \       PUSH, __0_intnl_UnityEngineQuaternion\r\n        PUSH, __0_intnl_UnityEngineVector3\r\n
-    \       PUSH, __1_intnl_UnityEngineVector3\r\n        EXTERN, \"UnityEngineQuaternion.__op_Multiply__UnityEngineQuaternion_UnityEngineVector3__UnityEngineVector3\"\r\n
+    \       PUSH, direction\r\n        PUSH, __0_intnl_UnityEngineVector3\r\n        EXTERN,
+    \"UnityEngineVector3.__get_normalized__UnityEngineVector3\"\r\n        PUSH, __0_intnl_UnityEngineQuaternion\r\n
+    \       PUSH, __0_intnl_UnityEngineVector3\r\n        PUSH, __1_intnl_UnityEngineVector3\r\n
+    \       EXTERN, \"UnityEngineQuaternion.__op_Multiply__UnityEngineQuaternion_UnityEngineVector3__UnityEngineVector3\"\r\n
     \       PUSH, __1_intnl_UnityEngineVector3\r\n        PUSH, __2_intnl_UnityEngineVector3\r\n
     \       COPY\r\n        PUSH, __2_intnl_UnityEngineVector3\r\n        PUSH, speed\r\n
     \       PUSH, __3_intnl_UnityEngineVector3\r\n        EXTERN, \"UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3\"\r\n
@@ -486,140 +485,140 @@ MonoBehaviour:
       lineChar: 37
       spanCodeSection: transform.
     - startInstruction: 152
-      endInstruction: 195
+      endInstruction: 175
       startSourceChar: 546
       endSourceChar: 557
       line: 24
       lineChar: 47
       spanCodeSection: 'rotation * '
-    - startInstruction: 196
-      endInstruction: 195
+    - startInstruction: 176
+      endInstruction: 175
       startSourceChar: 557
       endSourceChar: 557
       line: 24
       lineChar: 58
       spanCodeSection: 
-    - startInstruction: 196
-      endInstruction: 195
+    - startInstruction: 176
+      endInstruction: 175
       startSourceChar: 557
       endSourceChar: 567
       line: 24
       lineChar: 58
       spanCodeSection: direction.
-    - startInstruction: 196
-      endInstruction: 271
+    - startInstruction: 176
+      endInstruction: 251
       startSourceChar: 567
       endSourceChar: 580
       line: 24
       lineChar: 68
       spanCodeSection: 'normalized * '
-    - startInstruction: 272
-      endInstruction: 335
+    - startInstruction: 252
+      endInstruction: 315
       startSourceChar: 580
       endSourceChar: 613
       line: 24
       lineChar: 81
       spanCodeSection: "speed);\r\n        }\r\n    }\r\n\r\n    "
-    - startInstruction: 336
-      endInstruction: 355
+    - startInstruction: 316
+      endInstruction: 335
       startSourceChar: 613
       endSourceChar: 648
       line: 28
       lineChar: 4
       spanCodeSection: "public void OnPickupUseDown()\r\n    "
-    - startInstruction: 356
-      endInstruction: 355
+    - startInstruction: 336
+      endInstruction: 335
       startSourceChar: 648
       endSourceChar: 659
       line: 29
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 356
-      endInstruction: 355
+    - startInstruction: 336
+      endInstruction: 335
       startSourceChar: 659
       endSourceChar: 659
       line: 30
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 356
-      endInstruction: 355
+    - startInstruction: 336
+      endInstruction: 335
       startSourceChar: 659
       endSourceChar: 667
       line: 30
       lineChar: 8
       spanCodeSection: 'state = '
-    - startInstruction: 356
-      endInstruction: 383
+    - startInstruction: 336
+      endInstruction: 363
       startSourceChar: 667
       endSourceChar: 687
       line: 30
       lineChar: 16
       spanCodeSection: "true;\r\n    }\r\n\r\n    "
-    - startInstruction: 384
-      endInstruction: 403
+    - startInstruction: 364
+      endInstruction: 383
       startSourceChar: 687
       endSourceChar: 720
       line: 33
       lineChar: 4
       spanCodeSection: "public void OnPickupUseUp()\r\n    "
-    - startInstruction: 404
-      endInstruction: 403
+    - startInstruction: 384
+      endInstruction: 383
       startSourceChar: 720
       endSourceChar: 731
       line: 34
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 404
-      endInstruction: 403
+    - startInstruction: 384
+      endInstruction: 383
       startSourceChar: 731
       endSourceChar: 731
       line: 35
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 404
-      endInstruction: 403
+    - startInstruction: 384
+      endInstruction: 383
       startSourceChar: 731
       endSourceChar: 739
       line: 35
       lineChar: 8
       spanCodeSection: 'state = '
-    - startInstruction: 404
-      endInstruction: 431
+    - startInstruction: 384
+      endInstruction: 411
       startSourceChar: 739
       endSourceChar: 760
       line: 35
       lineChar: 16
       spanCodeSection: "false;\r\n    }\r\n\r\n    "
-    - startInstruction: 432
-      endInstruction: 451
+    - startInstruction: 412
+      endInstruction: 431
       startSourceChar: 760
       endSourceChar: 786
       line: 38
       lineChar: 4
       spanCodeSection: "public void OnDrop()\r\n    "
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 432
+      endInstruction: 431
       startSourceChar: 786
       endSourceChar: 797
       line: 39
       lineChar: 4
       spanCodeSection: "{\r\n        "
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 432
+      endInstruction: 431
       startSourceChar: 797
       endSourceChar: 797
       line: 40
       lineChar: 8
       spanCodeSection: 
-    - startInstruction: 452
-      endInstruction: 451
+    - startInstruction: 432
+      endInstruction: 431
       startSourceChar: 797
       endSourceChar: 805
       line: 40
       lineChar: 8
       spanCodeSection: 'state = '
-    - startInstruction: 452
-      endInstruction: 452
+    - startInstruction: 432
+      endInstruction: 432
       startSourceChar: 805
       endSourceChar: 805
       line: 40

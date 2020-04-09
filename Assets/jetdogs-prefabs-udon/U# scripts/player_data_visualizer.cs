@@ -97,22 +97,16 @@ public class player_data_visualizer : UdonSharpBehaviour
             jumpimpulse.text = "jumpimpulse: NULL";
         }
         
-        Debug.Log("get velocity");
         velocity.text = "velocity: " + PlayerApiref.GetVelocity().ToString();
-        Debug.Log("get position");
         position.text = "position: " + PlayerApiref.GetPosition().ToString();
-        Debug.Log("get rotation");
         rotation.text = "rotation: " + PlayerApiref.GetRotation().ToString();
     }
 
     public void initupdate()
     {
-        Debug.Log("get local");
         islocal.text = "islocal: " + PlayerApiref.isLocal.ToString();
-        Debug.Log("get name");
         displayname.text = "displayname: " + PlayerApiref.displayName;
         enablepickups.isOn = true;
-        Debug.Log("get in vr");
         isvr.text = "isuserinvr: " + PlayerApiref.IsUserInVR().ToString();
         immobilize.isOn = false;
     }
