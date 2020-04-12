@@ -50,6 +50,8 @@ public class pickup_information : UdonSharpBehaviour
                 currentplayer.text = "currentplayer: null";
             }
 
+            isheld.text = "owned by: " + Networking.GetOwner(pickup.gameObject).displayName;
+
         }
     }
 

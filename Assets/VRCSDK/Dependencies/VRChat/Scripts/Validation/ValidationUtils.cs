@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Reflection;
@@ -8,95 +7,159 @@ namespace VRCSDK2.Validation
 {
     public static class ValidationUtils
     {
-        public static void RemoveIllegalComponents(GameObject target, System.Type[] whitelist, bool retry = true, bool onlySceneObjects = false, bool logStripping = true)
+        public static void RemoveIllegalComponents(GameObject target, HashSet<Type> whitelist, bool retry = true, bool onlySceneObjects = false, bool logStripping = true)
         {
-            bool foundBad = false;
-            FindIllegalComponents(target, whitelist, (c) =>
+            IEnumerable<Component> foundComponents = FindIllegalComponents(target, whitelist);
+            foreach(Component component in foundComponents)
             {
-                if (c != null)
+                if(component == null)
                 {
-                    if (onlySceneObjects && c.GetInstanceID() < 0)
-                        return;
-
-                    if (logStripping)
-                        VRC.Core.Logger.LogWarning(string.Format("Removing {0} comp from {1}", c.GetType().Name, c.gameObject.name));
-
-                    RemoveComponent(c);
-
-                    foundBad = true;
+                    return;
                 }
-            });
+                
+                if (onlySceneObjects && component.GetInstanceID() < 0)
+                {
+                    return;
+                }
 
-            if (retry && foundBad)
-                RemoveIllegalComponents(target, whitelist, false, onlySceneObjects);
+                if (logStripping)
+                {
+                    VRC.Core.Logger.LogWarning(string.Format("Removing {0} comp from {1}", component.GetType().Name, component.gameObject.name));
+                }
+
+                RemoveComponent(component);
+            }
         }
 
-        public static IEnumerable<Component> FindIllegalComponents(GameObject target, System.Type[] whitelist, System.Action<Component> onFound = null)
+        public static IEnumerable<Component> FindIllegalComponents(GameObject target, HashSet<Type> whitelist)
         {
-            System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
-
-            HashSet<System.Type> typesInUse = new HashSet<System.Type>();
-            Queue<GameObject> children = new Queue<GameObject>();
-            children.Enqueue(target.gameObject);
             List<Component> foundComponents = new List<Component>();
-            while (children.Count > 0)
+            Component[] allComponents = target.GetComponentsInChildren<Component>(true);
+            foreach(Component component in allComponents)
             {
-                GameObject child = children.Dequeue();
-                if (child == null)
-                    continue;
-
-                int childCount = child.transform.childCount;
-                for (int idx = 0; idx < childCount; ++idx)
-                    children.Enqueue(child.transform.GetChild(idx).gameObject);
-                foreach (Component c in child.transform.GetComponents<Component>())
+                if(component == null)
                 {
-                    if (c == null)
-                        continue;
-
-                    if (typesInUse.Contains(c.GetType()) == false)
-                        typesInUse.Add(c.GetType());
-
-                    if (!whitelist.Any(allowedType => c.GetType() == allowedType || c.GetType().IsSubclassOf(allowedType)))
-                    {
-                        foundComponents.Add(c);
-                        if (onFound != null)
-                            onFound(c);
-                    }
+                    continue;
                 }
+
+                Type componentType = component.GetType();
+                if(whitelist.Contains(componentType))
+                {
+                    continue;
+                }
+
+                foundComponents.Add(component);
             }
+
             return foundComponents;
         }
 
-        private static Dictionary<string, System.Type> _typeCache = new Dictionary<string, System.Type>();
-        private static Dictionary<string, System.Type[]> _whitelistCache = new Dictionary<string, System.Type[]>();
-        public static System.Type[] WhitelistedTypes(string whitelistName, string[] ComponentTypeWhitelist)
+        private static readonly Dictionary<string, Type> _typeCache = new Dictionary<string, Type>();
+        private static readonly Dictionary<string, HashSet<Type>> _whitelistCache = new Dictionary<string, HashSet<Type>>();
+        public static HashSet<Type> WhitelistedTypes(string whitelistName, IEnumerable<string> componentTypeWhitelist)
         {
             if (_whitelistCache.ContainsKey(whitelistName))
+            {
                 return _whitelistCache[whitelistName];
+            }
 
-            Assembly[] assemblies = System.AppDomain.CurrentDomain.GetAssemblies();
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            HashSet<Type> whitelist = new HashSet<Type>();
+            foreach(string whitelistedTypeName in componentTypeWhitelist)
+            {
+                Type whitelistedType = GetTypeFromName(whitelistedTypeName, assemblies);
+                if(whitelistedType == null)
+                {
+                    continue;
+                }
 
-            _whitelistCache[whitelistName] = ComponentTypeWhitelist.Select((name) => GetTypeFromName(name, assemblies)).Where(t => t != null).ToArray();
+                if(whitelist.Contains(whitelistedType))
+                {
+                    continue;
+                }
+
+                whitelist.Add(whitelistedType);
+            }
+
+            AddDerivedClasses(whitelist);
+
+            _whitelistCache[whitelistName] = whitelist;
 
             return _whitelistCache[whitelistName];
         }
 
-        public static System.Type GetTypeFromName(string name, Assembly[] assemblies = null)
+        public static HashSet<Type> WhitelistedTypes(string whitelistName, IEnumerable<Type> componentTypeWhitelist)
+        {
+            if (_whitelistCache.ContainsKey(whitelistName))
+            {
+                return _whitelistCache[whitelistName];
+            }
+
+            HashSet<Type> whitelist = new HashSet<Type>();
+            whitelist.UnionWith(componentTypeWhitelist);
+
+            AddDerivedClasses(whitelist);
+
+            _whitelistCache[whitelistName] = whitelist;
+
+            return _whitelistCache[whitelistName];
+        }
+
+        private static void AddDerivedClasses(HashSet<Type> whitelist)
+        {
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach(Assembly assembly in assemblies)
+            {
+                foreach(Type type in assembly.GetTypes())
+                {
+                    if(whitelist.Contains(type))
+                    {
+                        continue;
+                    }
+
+                    if(!typeof(Component).IsAssignableFrom(type))
+                    {
+                        continue;
+                    }
+
+                    Type currentType = type;
+                    while(currentType != typeof(object) && currentType != null)
+                    {
+                        if(whitelist.Contains(currentType))
+                        {
+                            whitelist.Add(type);
+                            break;
+                        }
+
+                        currentType = currentType.BaseType;
+                    }
+                }
+            }
+        }
+
+        public static Type GetTypeFromName(string name, Assembly[] assemblies = null)
         {
             if (_typeCache.ContainsKey(name))
+            {
+                
                 return _typeCache[name];
+            }
 
             if (assemblies == null)
-                assemblies = System.AppDomain.CurrentDomain.GetAssemblies();
-
-            foreach (Assembly a in assemblies)
             {
-                System.Type found = a.GetType(name);
-                if (found != null)
+                assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            }
+
+            foreach (Assembly assembly in assemblies)
+            {
+                Type found = assembly.GetType(name);
+                if(found == null)
                 {
-                    _typeCache[name] = found;
-                    return found;
+                    continue;
                 }
+
+                _typeCache[name] = found;
+                return found;
             }
 
             //This is really verbose for some SDK scenes, eg.
@@ -104,11 +167,12 @@ namespace VRCSDK2.Validation
 #if VRC_CLIENT && UNITY_EDITOR
             Debug.LogWarningFormat("Could not find type {0}", name);
 #endif
+
             _typeCache[name] = null;
             return null;
         }
 
-        static void RemoveDependencies(Component component)
+        private static void RemoveDependencies(Component component)
         {
             if (component == null)
                 return;
@@ -156,9 +220,9 @@ namespace VRCSDK2.Validation
             RemoveDependencies(comp);
 
 #if VRC_CLIENT
-            Object.DestroyImmediate(comp, true);
+            UnityEngine.Object.DestroyImmediate(comp, true);
 #else
-            Object.DestroyImmediate(comp, false);
+            UnityEngine.Object.DestroyImmediate(comp, false);
 #endif
         }
 

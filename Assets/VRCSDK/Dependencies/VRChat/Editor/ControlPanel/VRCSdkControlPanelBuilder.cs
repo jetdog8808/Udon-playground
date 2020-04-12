@@ -1,15 +1,21 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+#if UDON
+using VRC.Udon;
+using VRC.Udon.Common.Interfaces;
+#endif
 using VRCSDK2.Validation;
 using VRCSDK2.Validation.Performance;
 using VRCSDK2.Validation.Performance.Stats;
+using Object = UnityEngine.Object;
 
 public partial class VRCSdkControlPanel : EditorWindow
 {
@@ -269,6 +275,18 @@ public partial class VRCSdkControlPanel : EditorWindow
             );
         }
 
+#if UDON
+        {
+            List<UdonBehaviour> failedBehaviours = ShouldShowPrimitivesWarning(); 
+            if (failedBehaviours.Count > 0)
+            {
+                OnGUIWarning(null,
+                    "Udon Objects reference builtin Unity mesh assets, this won't work. Consider making a copy of the mesh to use instead.",
+                    () => { Selection.objects = failedBehaviours.Select(s => s.gameObject).Cast<Object>().ToArray(); }, FixPrimitivesWarning);
+            }
+        }
+#endif
+
         FindScenesAndAvatars();
 
         if ((null == scenes) || (null == avatars))
@@ -523,6 +541,131 @@ public partial class VRCSdkControlPanel : EditorWindow
             return lightmapStripping.enumValueIndex == 0;
         }
     }
+    
+#if UDON
+
+    private static Mesh[] _primitiveMeshes;
+
+    private static List<UdonBehaviour> ShouldShowPrimitivesWarning()
+    {
+        if (_primitiveMeshes == null)
+        {
+            PrimitiveType[] primitiveTypes = (PrimitiveType[]) Enum.GetValues(typeof(PrimitiveType));
+            _primitiveMeshes = new Mesh[primitiveTypes.Length];
+
+            for (int i = 0; i < primitiveTypes.Length; i++)
+            {
+                PrimitiveType primitiveType = primitiveTypes[i];
+                GameObject go = GameObject.CreatePrimitive(primitiveType);
+                _primitiveMeshes[i] = go.GetComponent<MeshFilter>().sharedMesh;
+                DestroyImmediate(go);
+            }
+        }
+        
+        UdonBehaviour[] allBehaviours = FindObjectsOfType<UdonBehaviour>();
+        List<UdonBehaviour> failedBehaviours = new List<UdonBehaviour>(allBehaviours.Length);
+        foreach (UdonBehaviour behaviour in allBehaviours)
+        {
+            IUdonVariableTable publicVariables = behaviour.publicVariables;
+            foreach (string symbol in publicVariables.VariableSymbols)
+            {
+                if (!publicVariables.TryGetVariableValue(symbol, out Mesh mesh))
+                {
+                    continue;
+                }
+                if (mesh == null)
+                {
+                    continue;
+                }
+
+                bool all = true;
+                foreach (Mesh primitiveMesh in _primitiveMeshes)
+                {
+                    if (mesh != primitiveMesh)
+                    {
+                        continue;
+                    }
+                    all = false;
+                    break;
+                }
+
+                if (all)
+                {
+                    continue;
+                }
+
+                failedBehaviours.Add(behaviour);
+            }
+        }
+
+        return failedBehaviours;
+    }
+
+    void FixPrimitivesWarning()
+    {
+        UdonBehaviour[] allObjects = FindObjectsOfType<UdonBehaviour>();
+        foreach (UdonBehaviour behaviour in allObjects)
+        { 
+            IUdonVariableTable publicVariables = behaviour.publicVariables;
+            foreach (string symbol in publicVariables.VariableSymbols)
+            {
+                if (!publicVariables.TryGetVariableValue(symbol, out Mesh mesh))
+                {
+                    continue;
+                }
+                if (mesh == null)
+                {
+                    continue;
+                }
+
+                bool all = true;
+                foreach (Mesh primitiveMesh in _primitiveMeshes)
+                {
+                    if (mesh != primitiveMesh)
+                    {
+                        continue;
+                    }
+                    all = false;
+                    break;
+                }
+
+                if (all)
+                {
+                    continue;
+                }
+                
+                Mesh clone = Instantiate(mesh);
+
+                Scene scene = behaviour.gameObject.scene;
+                string scenePath = Path.GetDirectoryName(scene.path) ?? "Assets";
+
+                string folderName = $"{scene.name}_MeshClones";
+                string folderPath = Path.Combine(scenePath, folderName);
+
+                if(!AssetDatabase.IsValidFolder(folderPath))
+                {
+                    AssetDatabase.CreateFolder(scenePath, folderName);
+                }
+
+                string assetPath = Path.Combine(folderPath, $"{clone.name}.asset");
+
+                Mesh existingClone = AssetDatabase.LoadAssetAtPath<Mesh>(assetPath);
+                if (existingClone == null)
+                {
+                    AssetDatabase.CreateAsset(clone, assetPath);
+                    AssetDatabase.Refresh();
+                }
+                else
+                {
+                    clone = existingClone;
+                }
+                
+                publicVariables.TrySetVariableValue(symbol, clone);
+                EditorSceneManager.MarkSceneDirty(behaviour.gameObject.scene);
+            }
+        }
+    }
+#endif
 
     void DrawIssueBox(MessageType msgType, Texture icon, string message, System.Action show, System.Action fix)
     {

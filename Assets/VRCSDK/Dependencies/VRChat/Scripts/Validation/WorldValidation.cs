@@ -1,5 +1,6 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace VRCSDK2.Validation
@@ -448,51 +449,82 @@ namespace VRCSDK2.Validation
             "UI/Default",
         };
 
-        private static List<int> scannedObjects = new List<int>();
+        private static readonly HashSet<int> scannedObjects = new HashSet<int>();
 
-        static void ConfigureWhiteList(WhiteListConfiguration config)
+        private static void ConfigureWhiteList(WhiteListConfiguration config)
         {
             if (ComponentTypeWhiteListConfiguration == config ||
                 config == WhiteListConfiguration.Unchanged)
+            {
                 return;
+            }
 
             List<string> concatenation = new List<string>();
             concatenation.AddRange(ComponentTypeWhiteListCommon);
 
-            if (config == WhiteListConfiguration.None)
-            { }
-            else if (config == WhiteListConfiguration.VRCSDK2)
-                concatenation.AddRange(ComponentTypeWhiteListSdk2);
-            else if (config == WhiteListConfiguration.VRCSDK3)
-                concatenation.AddRange(ComponentTypeWhiteListSdk3);
+            switch(config)
+            {
+                case WhiteListConfiguration.VRCSDK2:
+                    concatenation.AddRange(ComponentTypeWhiteListSdk2);
+                    break;
+                case WhiteListConfiguration.VRCSDK3:
+                    concatenation.AddRange(ComponentTypeWhiteListSdk3);
+                    break;
+            }
 
             ComponentTypeWhiteListConfiguration = config;
             ComponentTypeWhiteList = concatenation.ToArray();
         }
 
-        public static void RemoveIllegalComponents(GameObject[] targets, WhiteListConfiguration config, bool retry = true)
+        [PublicAPI]
+        public static void RemoveIllegalComponents(IEnumerable<GameObject> targets, WhiteListConfiguration config, bool retry = true)
         {
             ConfigureWhiteList(config);
-            foreach (GameObject target in targets)
-                ValidationUtils.RemoveIllegalComponents(target, ValidationUtils.WhitelistedTypes("world" + config.ToString(), ComponentTypeWhiteList), retry, true);
+            HashSet<Type> whitelist = ValidationUtils.WhitelistedTypes("world" + config, ComponentTypeWhiteList);
+            foreach(GameObject target in targets)
+            {
+                ValidationUtils.RemoveIllegalComponents(target, whitelist, retry, true);
+                AddScanned(target);
+            }
         }
 
-        public static void ScanGameobject(GameObject target, WhiteListConfiguration config)
+        private static void AddScanned(GameObject obj)
         {
-            if (scannedObjects.Contains(target.GetInstanceID()))
+            if (obj == null)
                 return;
-
-            ConfigureWhiteList(config);
-            ValidationUtils.RemoveIllegalComponents(target, ValidationUtils.WhitelistedTypes("world", ComponentTypeWhiteList));
-
-            scannedObjects.Add(target.GetInstanceID());
+            if (!scannedObjects.Contains(obj.GetInstanceID()))
+                scannedObjects.Add(obj.GetInstanceID());
+            for (int idx = 0; idx < obj.transform.childCount; ++idx)
+                AddScanned(obj.transform.GetChild(idx)?.gameObject);
         }
 
-        public static void ClearScannedGameobjectCache()
+        private static bool WasScanned(GameObject obj)
+        {
+            return scannedObjects.Contains(obj.GetInstanceID());
+        }
+
+        [PublicAPI]
+        public static void ScanGameObject(GameObject target, WhiteListConfiguration config)
+        {
+            if (WasScanned(target))
+            {
+                return;
+            }
+
+            ConfigureWhiteList(config);
+            HashSet<Type> whitelist = ValidationUtils.WhitelistedTypes("world", ComponentTypeWhiteList);
+            ValidationUtils.RemoveIllegalComponents(target, whitelist);
+
+            AddScanned(target);
+        }
+
+        [PublicAPI]
+        public static void ClearScannedGameObjectCache()
         {
             scannedObjects.Clear();
         }
 
+        [PublicAPI]
         public static IEnumerable<Shader> FindIllegalShaders(GameObject target)
         {
             return ShaderValidation.FindIllegalShaders(target, ShaderWhiteList);

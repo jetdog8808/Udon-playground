@@ -110,6 +110,15 @@ namespace VRC.Udon
             {
                 DestroyImmediate(this);
             }
+            
+            PrimitiveType[] primitiveTypes = (PrimitiveType[]) Enum.GetValues(typeof(PrimitiveType));
+            foreach (PrimitiveType primitiveType in primitiveTypes)
+            {
+                GameObject go = GameObject.CreatePrimitive(primitiveType);
+                Mesh primitiveMesh = go.GetComponent<MeshFilter>().sharedMesh;
+                Destroy(go);
+                Blacklist(primitiveMesh);
+            }
         }
 
         [PublicAPI]

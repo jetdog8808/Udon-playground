@@ -1252,6 +1252,11 @@ namespace VRCSDK2
 
             ParameterInfo[] paramInfo = info.GetParameters();
 
+            // Editor-only
+            foreach (var p in paramInfo)
+                if (p.ParameterType.Namespace.StartsWith("VRCSDK2"))
+                    VRC.SDKBase.VRC_Serialization.RegisterType(p.ParameterType);
+
             object[] parameters = null;
             if (rpcByteCache.ContainsKey(eventProperty.propertyPath))
                 parameters = rpcByteCache[eventProperty.propertyPath];

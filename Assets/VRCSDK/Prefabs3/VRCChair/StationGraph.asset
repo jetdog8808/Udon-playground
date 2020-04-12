@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: StationGraph
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: b4ce86978c33dcc48b39d0d5f4df1dd5,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: a36dd96ac7a6c93418ce357333eb3b18,
     type: 2}
-  udonAssembly: ".data_start\n\n    \n    instance_0: %VRCSDKBaseVRCPlayerApi, null\n\n.data_end\n\n.code_start\n\n
-    \   .export _interact\n    \n    _interact:\n    \n        PUSH, instance_0\n
-    \       EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\n
-    \       PUSH, instance_0\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__UseAttachedStation__SystemVoid\"\n
-    \       JUMP, 0xFFFFFFFC\n    \n\n.code_end\n"
+  udonAssembly: ".data_start\r\n\r\n    \r\n    instance_0: %VRCSDKBaseVRCPlayerApi,
+    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _interact\r\n    \r\n
+    \   _interact:\r\n    \r\n        PUSH, instance_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
+    \       PUSH, instance_0\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__UseAttachedStation__SystemVoid\"\r\n
+    \       JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
